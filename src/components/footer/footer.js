@@ -100,7 +100,7 @@ const Footer = () => {
           <div className="footer-company">
             <p><strong>I-Pro Infinity Insurance Broking Services LLP</strong><br />
               <strong>IRDAI Licence Number:</strong> 925<br />
-              <strong>CIN No:</strong> sscdcdcdwc1374524</p>
+              <strong>CIN No:</strong> ABC-6580</p>
           </div>
         </div>
 
