@@ -1,0 +1,170 @@
+
+body {
+    font-family: "Century Gothic", "Trebuchet MS", Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.ourbelief-container {
+    width: 100%;
+        font-family: Arial, sans-serif;
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+}
+
+.beliefs-section h2 {
+    color: #0d47a1;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.vision-mission {
+    display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-evenly;
+        padding: 20px 60px;
+        background-color: #fff;
+}
+
+.vision-mission-text {
+    width: 60%;
+    /* 60% width for text */
+    text-align: left;
+    text-align: justify;
+}
+
+.vision-mission-image {
+    width: 35%;
+    /* 35% width for image */
+    margin-left: 5%;
+    /* Space between the image and text */
+}
+
+
+.values-section{
+    display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-evenly;
+        padding: 20px 60px;
+        background-color: #fff;
+}
+.vision h3,
+.mission h3,
+.values-section h3 {
+    color: #000;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    text-align: justify;
+    
+}
+
+.mission ul {
+    padding-left: 1.5rem;
+    text-align: justify;
+}
+
+.values-section .cards {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    /* 5 equal columns */
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+/* .card {
+    background: #f2f2f2;
+    border-radius: 20px;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+} */
+
+.card img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: 1rem;
+}
+
+.card p {
+    font-size: 0.95rem;
+    color: #444;
+    margin-bottom: 1rem;
+    text-align: justify;
+}
+
+.card h4 {
+    font-weight: bold;
+    font-size: 1rem;
+    color: #222;
+}
+
+.card {
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #fff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: #f2f2f2;
+        border-radius: 20px;
+        padding: 1.5rem;
+        text-align: center;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .vision-mission {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .vision-mission-text {
+        width: 90%;
+        /* Make text take more space on smaller screens */
+    }
+
+    .vision-mission-image {
+        width: 90%;
+        margin-top: 1rem;
+    }
+
+    .values-section .cards {
+        grid-template-columns: repeat(3, 1fr);
+        /* 3 items per row on medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .values-section .cards {
+        grid-template-columns: 1fr;
+        /* 1 item per row on small screens */
+    }
+
+    .vision,
+    .mission {
+        padding: 0rem;
+        margin-left: -8%;
+    }
+
+    .vision-mission-image{
+       max-width: 100%;
+            /* 35% width for image */
+            margin-left: -105%;
+            padding: 10px;
+            object-fit:cover;
+    }
+
+    .vission-image{
+        width: 350px;
+        margin-left: 55%;
+    }
+}

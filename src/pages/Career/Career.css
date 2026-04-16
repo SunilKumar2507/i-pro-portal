@@ -1,0 +1,112 @@
+.career-container {
+    max-width:100%;
+    padding: 0;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+}
+
+.career-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.career-banner {
+    width: 40%;
+    max-height: 250px;
+    object-fit: contain;
+    border-radius: 8px;
+   
+}
+
+.beach-background{
+  
+}
+.career-content {
+    margin-bottom: 30px;
+}
+
+.career-content h2 {
+    text-align: center;
+    color: #000;
+    margin-bottom: 20px;
+}
+
+.career-content p {
+    text-align: center;
+    /* better for bullets */
+    line-height: 1.8;
+    margin: 8px 0;
+}
+
+.career-content ul {
+    list-style-type: disc;
+    padding-left: 40px;
+}
+
+.career-content li {
+    margin-bottom: 10px;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.career-form-section {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.career-form-section h3 {
+    color: #004080;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.career-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-row {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.form-row input[type="text"],
+.form-row input[type="tel"],
+.form-row input[type="email"],
+.form-row input[type="file"] {
+    flex: 1 1 45%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.submit-button {
+    background-color: #4d94ff;
+    color: white;
+    padding: 10px 20px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+    width: 150px;
+    align-self: center;
+    cursor: pointer;
+}
+
+.submit-button:hover {
+    background-color: #3366cc;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .form-row {
+        flex-direction: column;
+    }
+
+    .form-row input {
+        flex: 1 1 100%;
+    }
+}

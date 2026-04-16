@@ -1,0 +1,228 @@
+body{
+    font-family: "Century Gothic","Trebuchet MS",Arial,sans-serif;
+    margin:0;
+    padding:0;
+}
+
+/* PAGE */
+
+.difference-section{
+    width:100%;
+}
+
+/* MAIN CONTENT */
+
+.difference-content{
+    width:100%;
+    padding:60px 8%;
+    box-sizing:border-box;
+}
+
+/* TEXT */
+
+.difference-text{
+    width:100%;
+}
+
+/* MAIN HEADING */
+
+.our-services-heading{
+    font-size:32px;
+    font-weight:700;
+    text-align:center;
+    margin-bottom:40px;
+}
+
+/* PHILOSOPHY */
+
+.business-philosophy-container{
+    display:flex;
+    justify-content:center;
+}
+
+.business-philosophy-list{
+    list-style:none;
+    padding:0;
+    max-width:700px;
+}
+
+.business-philosophy-list li{
+    display:flex;
+    gap:12px;
+    margin-bottom:15px;
+    font-size:17px;
+    line-height:1.6;
+}
+
+.icon{
+    color:#1976d2;
+    margin-top:4px;
+}
+
+/* WHAT MAKES US DIFFERENT */
+
+.difference-text h2{
+    margin-top:60px;
+    font-size:26px;
+}
+
+.difference-text p{
+    font-size:16px;
+    line-height:1.7;
+}
+
+/* BUSINESS SECTION */
+
+.business-container{
+    width:100%;
+    padding:80px 8%;
+    box-sizing:border-box;
+}
+
+.business-title{
+    text-align:center;
+    font-size:30px;
+    margin-bottom:50px;
+}
+
+.business-cards{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:30px;
+}
+
+.business-card{
+    background:#fff;
+    padding:25px;
+    border-radius:10px;
+    box-shadow:0 6px 15px rgba(0,0,0,0.08);
+}
+
+.business-img{
+    width:100%;
+    border-radius:8px;
+    margin-bottom:20px;
+}
+
+.business-text{
+    font-size:15px;
+    line-height:1.7;
+}
+
+/* IPRO DIFFERENCE */
+
+.ipro-container{
+    width:100%;
+    padding:80px 8%;
+}
+
+.ipro-title{
+    text-align:center;
+    font-size:30px;
+    margin-bottom:50px;
+}
+
+.ipro-content{
+    display:flex;
+    justify-content:center;
+    gap:60px;
+}
+
+.ipro-card{
+    width:400px;
+    padding:30px;
+    background:#fff;
+    border-radius:10px;
+    box-shadow:0 6px 15px rgba(0,0,0,0.08);
+    text-align:center;
+}
+
+.ipro-img{
+    width:140px;
+    margin:20px auto;
+}
+
+.ipro-text{
+    font-size:15px;
+    line-height:1.7;
+}
+
+/* WHATSAPP */
+
+.whatsapp-float{
+    position:fixed;
+    bottom:25px;
+    right:25px;
+    width:60px;
+    height:60px;
+    background:#25D366;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:white;
+    font-size:28px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.3);
+}
+
+.whatsapp-float:hover{
+    transform:scale(1.1);
+}
+
+/* ------------------ */
+/* RESPONSIVE */
+/* ------------------ */
+
+@media(max-width:1024px){
+
+.business-cards{
+    grid-template-columns:repeat(2,1fr);
+}
+
+.ipro-content{
+    flex-direction:column;
+    align-items:center;
+}
+
+}
+
+@media(max-width:768px){
+
+.our-services-heading{
+    font-size:24px;
+}
+
+.business-cards{
+    grid-template-columns:1fr;
+}
+
+.ipro-card{
+    width:100%;
+}
+
+.business-container,
+.ipro-container,
+.difference-content{
+    padding:50px 6%;
+}
+
+}
+
+@media(max-width:480px){
+
+.our-services-heading{
+    font-size:20px;
+}
+
+.business-text,
+.ipro-text,
+.difference-text p{
+    font-size:14px;
+}
+
+.whatsapp-float{
+    width:55px;
+    height:55px;
+}
+
+}

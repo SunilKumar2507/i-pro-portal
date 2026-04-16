@@ -1,0 +1,151 @@
+.app-bar {
+    background-color: white !important;
+    width: 100% !important;
+    position: sticky !important;
+    top: 0;
+    left: 0;
+    z-index: 1100;
+    box-shadow: 0px 2px 6px rgba(0,0,0,0.08);
+}
+
+body,html{
+    margin:0;
+    padding:0;
+    width:100%;
+    font-family:'Segoe UI',sans-serif;
+}
+
+/* Logo */
+.header-logo{
+    width:180px !important;
+    height:auto !important;
+}
+
+/* Toolbar */
+.toolbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    width:100%;
+    padding:8px 20px;
+}
+
+/* Menu container */
+.menu-items{
+    margin-left:auto;
+    margin-right:40px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+/* Desktop Buttons */
+.menu-items .MuiButton-root{
+    position:relative;
+    transition:transform 0.3s ease;
+    padding:8px 12px;
+    font-size:15px;
+}
+
+/* Hover */
+.menu-items .MuiButton-root:hover{
+    transform:scale(1.08);
+}
+
+/* Links */
+.nav-link,
+.menu-link{
+    color:#175A9E;
+    text-decoration:none;
+    font-weight:500;
+}
+
+/* Dropdown Menu */
+.MuiMenu-paper{
+    max-height:300px !important;
+    width:250px;
+    z-index:1300 !important;
+}
+
+/* Hamburger icon */
+.hamburger-icon{
+    z-index:9999;
+    color:#175A9E !important;
+    display:none;
+}
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+/* Tablet */
+@media (max-width:1024px){
+
+.menu-items{
+margin-right:20px;
+gap:8px;
+}
+
+.menu-items .MuiButton-root{
+font-size:14px;
+padding:6px 10px;
+}
+
+.header-logo{
+width:150px !important;
+}
+
+}
+
+/* Mobile */
+@media (max-width:960px){
+
+/* hide desktop buttons only */
+.menu-items .MuiButton-root{
+display:none;
+}
+
+/* show hamburger */
+.hamburger-icon{
+display:block;
+}
+
+.toolbar{
+padding:8px 12px;
+}
+
+.header-logo{
+width:140px !important;
+}
+
+}
+
+/* Small phones */
+@media (max-width:480px){
+
+.header-logo{
+width:120px !important;
+}
+
+}
+
+.menu-link {
+    text-decoration: none;
+    color: #0d47a1;
+    font-size: 15px;
+    font-weight: 500;
+    display: block;
+    width: 100%;
+}
+
+.MuiMenuItem-root:hover {
+    background-color: #0d47a1 !important;
+}
+
+.MuiMenuItem-root:hover .menu-link {
+    color: white !important;
+}
+
+.MuiMenuItem-root {
+    padding: 12px 18px !important;
+}

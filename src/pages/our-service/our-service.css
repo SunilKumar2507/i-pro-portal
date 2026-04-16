@@ -1,0 +1,436 @@
+/* General Container */
+body,
+html {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: "Century Gothic", "Trebuchet MS", Arial, sans-serif;
+}
+
+.services-containers {
+    max-width: 100%;
+    align-items: center;
+    overflow-x: hidden;
+    width: 100%;
+    max-width: auto;
+    box-sizing: border-box;
+    margin: auto;
+    padding: 0rem;
+    background-color: #ffffff;
+}
+
+/* Our Services Container */
+.our-services-container {
+    text-align: center;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.our-services-heading {
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: #097ABF;
+    margin-bottom: 15px;
+}
+
+.our-services-para {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin: 0 auto;
+    padding: 0 20px;
+    text-align: justify;
+}
+
+/* Business Philosophy Container */
+.business-philosophy-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Content Section */
+.business-philosophy-content {
+    flex: 6;
+    max-width: 50%;
+    text-align: left;
+    padding: 20px;
+}
+
+/* Heading Styling */
+.business-philosophy-heading {
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #097ABF;
+    text-align: justify;
+}
+
+/* List Styling */
+.business-philosophy-list {
+    list-style-type: none;
+    padding: 0;
+    text-align: justify;
+}
+
+.business-philosophy-list li {
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    gap: 10px;
+}
+
+.business-philosophy-list .icon {
+    color: #007bff;
+    font-size: 1.2rem;
+}
+
+.business-philosophy-img-container {
+    flex: 4;
+    max-width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.business-philosophy-img {
+    width: 80%;
+    max-width: 500px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .business-philosophy-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .business-philosophy-content,
+    .business-philosophy-img-container {
+        max-width: 100%;
+    }
+
+    .business-philosophy-heading {
+        font-size: 1.6rem;
+    }
+
+    .business-philosophy-list li {
+        font-size: 1rem;
+    }
+}
+
+/* Personal Insurance */
+/* Insurance Broker*/
+.personal-insurance-container,
+.insurance-broker-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Image Section */
+.personal-insurance-img-container,
+.insurance-broker-img-container {
+    flex: 1;
+    max-width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.personal-insurance-img,
+.insurance-broker-img {
+    width: 80%;
+    max-width: 400px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Content Section */
+.personal-insurance-content,
+.insurance-broker-content {
+    flex: 1;
+    max-width: 50%;
+    text-align: left;
+    padding: 20px;
+}
+
+/* Heading Styling */
+.personal-insurance-heading,
+.insurance-broker-heading {
+    font-size: clamp(1.2rem, 3vw, 1.4rem);
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #097ABF;
+}
+
+/* Paragraph Styling */
+.personal-insurance-para,
+.insurance-broker-para {
+    font-size: clamp(1rem, 1.5vw, 1.1rem);
+    line-height: 1.6;
+    text-align: justify;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+
+    .personal-insurance-container,
+    .insurance-broker-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .personal-insurance-content,
+    .insurance-broker-content {
+        order: 1;
+        max-width: 100%;
+    }
+
+    .personal-insurance-img-container,
+    .insurance-broker-img-container {
+        order: 2;
+        max-width: 100%;
+    }
+
+    .personal-insurance-heading,
+    .insurance-broker-heading {
+        font-size: 1.6rem;
+    }
+
+    .personal-insurance-para,
+    .insurance-broker-para {
+        font-size: 1.1rem;
+        text-align: justify;
+    }
+}
+
+/* Corporate Insurace Container */
+.corporate-insurance-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Content Section */
+.corporate-insurance-content {
+    flex: 6;
+    max-width: 50%;
+    text-align: left;
+    padding: 20px;
+}
+
+/* Heading Styling */
+.corporate-insurance-heading {
+    font-size: clamp(1.2rem, 3vw, 1.4rem);
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #097ABF;
+    text-align: justify;
+}
+
+/* Paragraph Styling */
+.corporate-insurance-para {
+    font-size: clamp(1rem, 1.5vw, 1.1rem);
+    line-height: 1.6;
+    text-align: justify;
+}
+
+.corporate-insurance-img-container {
+    flex: 4;
+    max-width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.corporate-insurance-img {
+    width: 80%;
+    max-width: 500px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .corporate-insurance-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .corporate-insurance-content,
+    .corporate-insurance-img-container {
+        max-width: 100%;
+    }
+
+    .corporate-insurance-heading {
+        font-size: 1.6rem;
+        text-align: justify;
+    }
+
+    .corporate-insurance-para {
+        font-size: 1.1rem;
+    }
+}
+
+/* Business Container */
+.business-container {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.business-title {
+    font-size: 22px;
+    color: #1A3D7C;
+    margin-bottom: 40px;
+}
+
+/* Business Cards */
+.business-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    overflow-x: auto;
+    justify-content: center;
+}
+
+
+.business-card {
+    background: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.business-card:hover {
+    transform: translateY(-5px);
+}
+
+.business-img {
+    width: 100%;
+    border-bottom: 2px solid #1A3D7C;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+
+.business-text {
+    font-size: 14px;
+    color: #333;
+    line-height: 1.5;
+    text-align: justify;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .business-cards {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .business-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .business-cards {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+/* i-Pro Infinity Section */
+.ipro-container {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+    background-color: #FFFFFF;
+}
+
+.ipro-title {
+    font-size: 22px;
+    color: #1A3D7C;
+    margin-bottom: 20px;
+}
+
+/* i-Pro Cards */
+.ipro-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    justify-content: center;
+}
+
+.ipro-card {
+    background-color: #EAF6FF;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.ipro-subtitle {
+    font-size: 18px;
+    color: #1A3D7C;
+    margin-bottom: 10px;
+}
+
+.ipro-img {
+    width: 50%;
+    border-bottom: 2px solid #1A3D7C;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+
+.ipro-text {
+    font-size: 14px;
+    color: #333;
+    line-height: 1.5;
+    text-align: justify;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .ipro-card {
+        width: 90%;
+    }
+}
+
+@media (max-width: 768px) {
+    .ipro-text {
+        font-size: 12px;
+        width: 310px;
+        text-align: justify;
+       
+    }
+}

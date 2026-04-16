@@ -1,0 +1,406 @@
+.twowheeler-container {
+    width: 100%;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.twowheeler-hero {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 40px 20px;
+    background-color: #fff;
+}
+
+.title{
+    text-align: justify;
+}
+
+.h-second-section-paragraph{
+    text-align: justify;
+}
+.twowheeler-image img {
+
+    width: 650px;
+    height: auto;
+}
+@media (max-width: 1024px) {
+.healthinsurance-image{
+    width: 650px;
+    height: auto;
+    margin-left: -25%;
+}
+.health-insurance-heading{
+    margin-top: -50%;
+    margin-left: 30%;
+}
+.health-insurance-paragraph{
+    margin-top: 5%;
+    width:80%;
+        margin-left: 30% !important;
+        text-align: justify;
+}
+.quotes-btn-health {
+    padding: 10px 20px;
+    font-size: 14px;
+    margin-right: 30%;
+    width: 350px;
+    margin-left: 40% !important;
+}
+}
+
+@media (max-width: 768px) {
+    .healthinsurance-image {
+        width: 650px;
+        height: auto;
+        margin-left: -60%;
+    }
+}
+@media (max-width: 768px) {
+.health-insurance-heading{
+ margin-left: 40%;
+ margin-top: -65% !important;
+}
+}
+
+@media (max-width: 768px) {
+.health-insurance-paragraph{
+    font-size: 14px !important;
+    margin-left: 40% !important;
+    width:400px;
+    text-align: justify;
+    margin-top: 10%;
+}
+}
+
+.twowheeler-description {
+    max-width: 600px;
+    color: #1e1e1e;
+}
+
+.twowheeler-description h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.twowheeler-description p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.quotes-btn-health {
+    padding: 10px 20px;
+        font-size: 14px;
+        align-items: center;
+        /* Responsive width */
+        max-width: 150px;
+        color: #fff;
+        border-radius: 25px;
+        background-color: #007bff;
+        animation: blink 1.5s infinite;
+        /* Optional: Prevent it from being too wide */
+        margin: 15px auto 0 auto;
+        /* Center the button */
+        display: block;
+        justify-content: center;
+        /* Horizontally center */
+        align-items: center;
+        /* Vertically center */
+        text-align: center;
+        margin-left: -10%;
+        margin-top: 10%;
+        /* Required to make auto margins work */
+    }
+    
+    @keyframes blink {
+        0% {
+            opacity: 1;
+        }
+    
+        50% {
+            opacity: 0;
+        }
+    
+        100% {
+            opacity: 1;
+        }
+    }
+
+
+.twowheeler-coverage-section {
+    background: #175A9E;
+    padding: 50px 20px;
+    color: #fff;
+    text-align: center;
+}
+
+.coverage-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* Fixed 3 cards per row */
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.coverage-card {
+    background-color: #ffffff;
+    color: #000;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: left;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.coverage-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.coverage-card h4 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.coverage-card p {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.coverage-title {
+    color: #fff;
+    font-weight: bold;
+    font-size: 16px;
+    text-align: center;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 900px) {
+    .coverage-grid {
+        grid-template-columns: repeat(2, 1fr);
+        /* 2 cards per row on tablets */
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .coverage-grid {
+        grid-template-columns: 1fr;
+        /* 1 card per row on mobile */
+    }
+
+    .twowheeler-hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .twowheeler-description {
+        max-width: 100%;
+    }
+
+    .twowheeler-image img {
+        width: 200px;
+    }
+}
+
+
+.own-damage-coverage {
+    width: 200px;
+    height: auto;
+    display: flex;
+    align-items: center;
+    /* vertically center */
+    justify-content: center;
+    /* horizontally center */
+    overflow: hidden;
+    margin: 0 auto;
+    /* center the whole box if needed */
+    flex-direction: column;
+    /* stack image and text vertically */
+    text-align: center;
+    /* center text inside */
+}
+
+.own-damage-coverage img {
+    max-width: 100%;
+    max-height: auto;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+}
+
+.commercialbus-coverage {
+    width: 350px;
+    height: 200px;
+}
+
+.coverage-container {
+    padding: 2rem;
+    font-family: Arial, sans-serif;
+}
+
+.coverage-title {
+    text-align: center;
+    color: #000;
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+}
+
+.coverage-grid-section2 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.coverage-item-health {
+    display: flex;
+    align-items: center;
+    max-width: 500px;
+    width: 100%;
+    background-color: #f9f9f9;
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.coverage-item-health img {
+    width: 80px;
+    height: auto;
+    margin-right: 1rem;
+}
+
+.coverage-text h3 {
+    font-size: 1rem;
+    margin: 0;
+    font-weight: bold;
+}
+
+.coverage-text p {
+    font-size: 0.9rem;
+    margin: 0.5rem 0 0 0;
+    color: #555;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+   
+
+    .coverage-text {
+        text-align: left;
+    }
+
+        .quotes-btn-health {
+            width: 100%;
+            margin-left: 30% !important;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+}
+
+@media (max-width: 480px) {
+    .twowheeler-hero {
+        flex-direction: column;
+        padding: 20px 10px;
+    }
+
+    .healthinsurance-image {
+        width: 60%;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .healthinsurance-image img {
+        width: 100%;
+        height: auto;
+    }
+
+    .twowheeler-description {
+        max-width: 100%;
+        padding: 0 10px;
+    }
+        .quotes-btn-health {
+            padding: 10px 20px;
+            font-size: 14px;
+            margin-right: 30%;
+            width: 350px;
+            margin-left: 14% !important;
+        }
+    .health-insurance-heading {
+        font-size: 20px;
+        margin-left: 0;
+        margin-top: 10% !important;
+        text-align: center;
+    }
+
+    .health-insurance-paragraph {
+        font-size: 13px;
+        width:300px !important;
+        margin-left: 5% !important;
+        margin-top: 10%;
+        text-align: justify;
+    }
+
+    .quote-btn {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 10px;
+        font-size: 14px;
+    }
+
+    .coverage-grid {
+        grid-template-columns: 1fr;
+        /* One column */
+        gap: 15px;
+    }
+
+    .coverage-card {
+        padding: 15px;
+    }
+
+    .coverage-card h4 {
+        font-size: 16px;
+    }
+
+    .coverage-card p {
+        font-size: 13px;
+    }
+
+    .coverage-title {
+        font-size: 18px;
+        padding: 10px;
+        text-align: center;
+    }
+
+    .coverage-grid-section2 {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 0 10px;
+    }
+
+        .coverage-item-health {
+            width: 100%;
+            max-width: 500px;
+            text-align: center;
+            margin-left: -5%;
+        }
+    
+        .coverage-item-health img {
+            width: 60px;
+            height: auto;
+    
+        }
+
+    .coverage-text h3 {
+        font-size: 16px;
+    }
+
+    .coverage-text p {
+        font-size: 13px;
+        text-align: justify;
+    } 
+}

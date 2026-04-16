@@ -1,0 +1,205 @@
+.about-us-text-content {
+    width: 45%;
+    text-align: left;
+    margin-top: 4vw;
+    padding: 20px;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+/* Corporate Insurace Container */
+.about-ipro-container,
+.suresh-container,
+.padmanabh-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Content Section */
+.about-ipro-content,
+.suresh-content,
+.padmanabh-content {
+    flex: 6;
+    max-width: 50%;
+    text-align: left;
+    padding: 20px;
+}
+
+/* Heading Styling */
+.about-ipro-heading,
+
+.padmanabh-heading {
+    font-size: clamp(1.2rem, 3vw, 1.4rem);
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #000;
+    text-align: justify;
+    
+}
+
+.suresh-heading{
+    color: #000;
+}
+/* Paragraph Styling */
+
+.suresh-para,
+.padmanabh-para {
+    font-size: clamp(1rem, 1.5vw, 1.1rem);
+    line-height: 1.4;
+    text-align: justify;
+}
+
+.about-ipro-para{
+    text-align: justify;
+}
+.about-ipro-img-container,
+.suresh-img-container,
+.padmanabh-img-container {
+    flex: 4;
+    max-width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-ipro-img,
+.suresh-img,
+.padmanabh-img {
+    width: 80%;
+    max-width: 500px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+
+    .about-ipro-container,
+    .suresh-container,
+    .padmanabh-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-ipro-content,
+    .about-ipro-img-container,
+    .suresh-content,
+    .suresh-img-container,
+    .padmanabh-content,
+    .padmanabh-img-container {
+        max-width: 100%;
+    }
+
+    .about-ipro-heading,
+    .suresh-heading,
+    .padmanabh-heading {
+        font-size: 1.6rem;
+    }
+
+    .about-ipro-para,
+    .suresh-para,
+    .padmanabh-para {
+        font-size: 1.1rem;
+        text-align: justify;
+    }
+}
+
+
+/* Our Teams */
+/* Insurance Broker*/
+.our-teams-container,
+.umesh-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Image Section */
+.our-teams-img-container,
+.umesh-img-container {
+    flex: 1;
+    max-width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.our-teams-img,
+.umesh-img {
+    width: 80%;
+    max-width: 400px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Content Section */
+.our-teams-content,
+.umesh-content {
+    flex: 1;
+    max-width: 50%;
+    text-align: left;
+    padding: 20px;
+}
+
+/* Heading Styling */
+.our-teams-heading,
+.umesh-heading {
+    font-size: clamp(1.2rem, 3vw, 1.4rem);
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #000;
+}
+
+/* Paragraph Styling */
+.our-teams-para,
+.umesh-para {
+    font-size: clamp(1rem, 1.5vw, 1.1rem);
+    line-height: 1.6;
+    text-align: justify;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+
+    .our-teams-container,
+    .umesh-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .our-teams-content,
+    .umesh-content {
+        order: 1;
+        max-width: 100%;
+    }
+
+    .our-teams-img-container,
+    .umesh-img-container {
+        order: 2;
+        max-width: 100%;
+    }
+
+    .our-teams-heading,
+    .umesh-heading {
+        font-size: 1.6rem;
+    }
+
+    .our-teams-para,
+    .umesh-para {
+        font-size: 1.1rem;
+    }
+}

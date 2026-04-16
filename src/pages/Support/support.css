@@ -1,0 +1,234 @@
+body {
+    font-family: "Century Gothic", "Trebuchet MS", Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.contact-container {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #FFFFFF;
+}
+
+.contact-headers {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+}
+
+.contact-img {
+    width: 80%;
+    max-width: 600px;
+    border-radius: 10px;
+}
+
+.contact-form {
+    width: 50%;
+}
+
+@media (max-width: 1240px) {
+    .contact-form {
+        width: 45%;
+        margin-left: 5%;
+    }
+}
+
+.contact-form h2 {
+    font-size: 20px;
+    color: #1A3D7C;
+    margin-bottom: 15px;
+}
+
+.contact-form label {
+    display: block;
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #EAF6FF;
+}
+
+.contact-form .send-button {
+    width: 100%;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.contact-info {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.info-cards {
+    text-align: center;
+    width: 30%;
+}
+
+
+.calling {
+    width: 50%;
+}
+
+.emailimage {
+    width: 70%;
+}
+
+.addresss {
+    width: 50%;
+}
+
+.info-card img {
+    width: 50px;
+    height: 60px;
+    margin-bottom: 10px;
+}
+
+.info-card p {
+    margin: 0;
+    font-size: 14px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .contact-headers {
+        flex-direction: column;
+    }
+
+    .contact-img,
+    .contact-form {
+        width: 100%;
+    }
+
+    .info-card {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 1240px) {
+    .contact-img {
+        width: 40%
+    }
+}
+
+
+@media (max-width: 768px) {
+    .contact-form h2 {
+        font-size: 18px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        font-size: 14px;
+    }
+}
+
+.faq-container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+@media (max-width: 1240px) {
+    .faq-container {
+        width: 85%
+    }
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.faq-item {
+    border-top: 1px solid #ccc;
+    cursor: pointer;
+}
+
+.faq-question {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0;
+    font-weight: 500;
+    color: #333;
+}
+
+.faq-icon {
+    transition: transform 0.3s ease;
+}
+
+.faq-icon.open {
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    padding: 10px 15px;
+    background-color: #f9f9f9;
+    border-top: 1px solid #eee;
+    color: #555;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .faq-container {
+        padding: 10px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    .faq-question {
+        font-size: 14px;
+    }
+
+    .faq-answer {
+        font-size: 13px;
+    }
+
+    .contact-form input
+    {
+        width: 85%;
+    }
+
+    .textarea{
+        width: 85% !important; 
+    }
+
+    .send-button{
+        width: 85% !important;
+    }
+}
+@media screen and (max-width: 480px) {
+.contact-us{
+   font-size: 10px !important;
+}
+}
+
+@media screen and (max-width: 480px) {
+.contact-us-email{
+    display: flex;
+    font-size: 10px !important;
+    flex-wrap: wrap;
+    margin-left: -15%;
+    margin-top: -4%;
+}
+}
