@@ -1,15 +1,7 @@
 import React from 'react';
-import { FaCheckCircle } from "react-icons/fa";
 import Header from "../../components/Header/header";
 import Footer from "../../components/footer/footer";
-import ourservicescreenimg from "../../assets/City Businessman11.png";
 import time24hrs from "../../assets/time24hrs.png";
-import customerinterview from "../../assets/Customer Interview Animation - Free Download Business Animations _ IconScout 1.png.png"
-import businessmeeting from "../../assets/businessmeeting.jpg";
-import business1 from "../../assets/business11.jpg (2).png";
-import business2 from "../../assets/business22.png";
-import business3 from "../../assets/business33.png";
-import business4 from "../../assets/business44.png";
 import { FaWhatsapp } from "react-icons/fa";
 import './personal.css';
 

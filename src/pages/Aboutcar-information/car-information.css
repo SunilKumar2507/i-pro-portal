@@ -1,316 +1,969 @@
-.Carinformation-container{
-    max-width: 100%;
-    justify-content: center;
-    justify-items: center;
-    margin: 0%;
-    padding: 0%;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+.Carinformation-container {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  color: #1f2933;
+  background:
+    linear-gradient(180deg, rgba(66, 151, 216, 0.12) 0%, rgba(255, 255, 255, 0) 34%),
+    linear-gradient(180deg, #ffffff 0%, #f5f9fd 100%);
+  font-family: "Century Gothic", "Trebuchet MS", Arial, sans-serif;
 }
 
-.herosection-carinfomation{
-    display: flex;
-    width: 100%;
-    justify-content:space-evenly;
-    justify-items: center;
-
+.car-information-page {
+  width: 100%;
+  overflow: hidden;
 }
 
-.car-information-image,
-.car-information-firstpara{
-    display: flex;
-    white-space: nowrap;
-    justify-content: center;
-        flex-direction: column;
-        align-items: center;
-}
-.car-image{
-    width:85%
-}
-.coverage-item-car {
-    display: flex;
-    align-items: center;
-    max-width: 500px;
-    width: 100%;
-    background-color: #f9f9f9;
-    padding: 1rem;
-    border-radius: 12px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+.herosection-carinfomation {
+  width: min(1180px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 34px 0 28px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(360px, 0.92fr);
+  gap: 28px;
+  align-items: stretch;
 }
 
-.coverage-item-car img {
-    width: 80px;
-    height: auto;
-    margin-right: 1rem;
+.car-hero-copy,
+.car-information-image {
+  min-width: 0;
+  border-radius: 8px;
+  border: 1px solid rgba(23, 90, 158, 0.12);
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow: 0 16px 42px rgba(23, 90, 158, 0.14);
+  backdrop-filter: blur(18px);
 }
 
-
-.quotes-btn-carinformation {
-    padding: 10px 20px;
-    font-size: 14px;
-    align-items: center;
-    /* Responsive width */
-    max-width: 150px;
-    color: #fff;
-    border-radius: 25px;
-    background-color: #007bff;
-    animation: blink 1.5s infinite;
-    /* Optional: Prevent it from being too wide */
-    margin: 15px auto 0 auto;
-    /* Center the button */
-    display: block;
-    justify-content: center;
-        /* Horizontally center */
-        align-items: center;
-        /* Vertically center */
-        text-align: center;
-    /* Required to make auto margins work */
-}
-@keyframes blink {
-    0% {
-        opacity: 1;
-    }
-
-    50% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
-}
-@media (max-width: 768px) {
-    .car-image {
-            width: 70% !important;
-            margin-left: -30% !important;
-        }
+.car-hero-copy {
+  padding: clamp(24px, 3.6vw, 46px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
 }
 
-
-@media (max-width: 768px) {
-    .car-information-image{
-        max-width: 70% !important;
-        margin-right: -20%;
-    }
+.car-info-eyebrow {
+  width: fit-content;
+  margin: 0 0 12px;
+  padding: 7px 10px;
+  color: #175A9E;
+  font-size: 12px;
+  font-weight: 750;
+  line-height: 1;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  border-radius: 8px;
+  background: #eef7ff;
+  border: 1px solid rgba(23, 90, 158, 0.12);
 }
 
-
-@media (max-width: 768px) {
-.private-car-insurance-heading{
-    width:50%;
-    margin-left: -40%;
-    font-size: 18px;
-    text-align: justify;
-
-}
-}
-
-@media (max-width: 768px) {
-.private-car-paragraph{
-    text-align: justify;
-
-    margin-left: 10%;
-    margin-bottom: 10px;
-    font-size: 12px;
-    text-align: justify;
-}
+.private-car-insurance-heading {
+  max-width: 760px;
+  margin: 0;
+  color: #175A9E;
+  font-size: clamp(28px, 4vw, 48px);
+  font-weight: 750;
+  line-height: 1.08;
+  letter-spacing: 0;
 }
 
-@media (max-width: 768px) {
-    .car-image {
-            width: 85% !important;
-            margin-left: 20%;
-        }
-}
-/* .quote-container {
-    text-align: center;
-    margin-top: -40px;
-    margin-left: 90px;
-   
-} */
-
-
-@keyframes blink {
-    0% {
-        opacity: 1;
-    }
-
-    50% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
+.private-car-paragraph {
+  max-width: 720px;
+  margin: 18px 0 0;
+  color: #344054;
+  font-size: 16px;
+  line-height: 1.72;
 }
 
+.car-hero-highlights {
+  margin-top: 22px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.car-hero-chip {
+  min-height: 36px;
+  padding: 0 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #175A9E;
+  font-size: 13px;
+  font-weight: 700;
+  border-radius: 8px;
+  background: rgba(238, 247, 255, 0.86);
+  border: 1px solid rgba(23, 90, 158, 0.12);
+}
+
+.car-hero-chip svg {
+  flex: 0 0 auto;
+  color: #25a45a;
+}
+
+.quote-container {
+  width: 100%;
+  margin-top: 28px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+
+.car-info-btn {
+  position: relative;
+  min-height: 46px;
+  padding: 0 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 750;
+  line-height: 1;
+  text-decoration: none;
+  overflow: hidden;
+  cursor: pointer;
+  box-sizing: border-box;
+  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease, background 0.22s ease;
+}
+
+.car-info-btn::after {
+  content: "";
+  position: absolute;
+  inset: 50% auto auto 50%;
+  width: 0;
+  height: 0;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.38s ease, height 0.38s ease;
+}
+
+.car-info-btn:hover::after {
+  width: 220px;
+  height: 220px;
+}
+
+.car-info-btn span,
+.car-info-btn svg {
+  position: relative;
+  z-index: 1;
+}
+
+.car-info-btn-primary {
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: linear-gradient(90deg, #4297D8 0%, #175A9E 100%);
+  box-shadow: 0 10px 24px rgba(23, 90, 158, 0.28);
+}
+
+.car-info-btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 32px rgba(23, 90, 158, 0.34);
+}
+
+.car-info-btn-primary:active,
+.car-info-btn-secondary:active {
+  transform: translateY(-1px);
+}
+
+.car-info-btn-primary[aria-disabled="true"],
+.car-info-btn-primary.is-disabled,
+.car-info-btn-primary.is-loading {
+  opacity: 0.64;
+  pointer-events: none;
+  transform: none;
+  box-shadow: none;
+}
+
+.car-info-btn-primary.is-loading span {
+  padding-left: 22px;
+}
+
+.car-info-btn-primary.is-loading span::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 13px;
+  height: 13px;
+  border: 2px solid rgba(255, 255, 255, 0.88);
+  border-top-color: transparent;
+  border-radius: 50%;
+  transform: translateY(-50%);
+  animation: car-info-spin 0.8s linear infinite;
+}
+
+.car-info-btn-secondary {
+  color: #175A9E;
+  border: 1px solid rgba(23, 90, 158, 0.28);
+  background: rgba(255, 255, 255, 0.74);
+  box-shadow: 0 8px 18px rgba(23, 90, 158, 0.08);
+}
+
+.car-info-btn-secondary:hover {
+  transform: translateY(-2px);
+  border-color: rgba(23, 90, 158, 0.52);
+  background: #eef7ff;
+  box-shadow: 0 12px 24px rgba(23, 90, 158, 0.14);
+}
+
+.car-information-image {
+  position: relative;
+  min-height: 460px;
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    linear-gradient(145deg, rgba(66, 151, 216, 0.18), rgba(255, 255, 255, 0.86)),
+    #fff;
+}
+
+.car-information-image::before {
+  content: "";
+  position: absolute;
+  inset: 82px 32px 64px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #4297D8, #175A9E);
+  opacity: 0.16;
+}
+
+.car-image {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: min(100%, 500px);
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 24px 26px rgba(23, 90, 158, 0.24));
+  transition: transform 0.45s ease;
+}
+
+.car-information-image:hover .car-image {
+  transform: translateY(-4px) scale(1.015);
+}
+
+.car-visual-toolbar,
+.car-visual-card {
+  position: absolute;
+  z-index: 2;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.78);
+  background: rgba(255, 255, 255, 0.86);
+  box-shadow: 0 12px 28px rgba(23, 90, 158, 0.14);
+  backdrop-filter: blur(16px);
+}
+
+.car-visual-toolbar {
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  min-height: 42px;
+  padding: 0 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #175A9E;
+  font-size: 13px;
+  font-weight: 750;
+}
+
+.car-visual-toolbar span {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.car-visual-card {
+  left: 22px;
+  bottom: 22px;
+  max-width: calc(100% - 44px);
+  padding: 13px 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.car-visual-card svg {
+  flex: 0 0 auto;
+  color: #175A9E;
+  font-size: 21px;
+}
+
+.car-visual-card strong,
+.car-visual-card span {
+  display: block;
+}
+
+.car-visual-card strong {
+  color: #175A9E;
+  font-size: 14px;
+  line-height: 1.2;
+}
+
+.car-visual-card span {
+  margin-top: 3px;
+  color: #475467;
+  font-size: 12px;
+}
+
+.car-info-stats,
+.backgroundsection-carinformation,
+.coverage-container {
+  width: min(1180px, calc(100% - 48px));
+  margin: 0 auto 44px;
+  box-sizing: border-box;
+}
+
+.car-info-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.car-info-stat {
+  min-height: 96px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 8px;
+  background: #fff;
+  border: 1px solid rgba(23, 90, 158, 0.12);
+  box-shadow: 0 4px 12px #007bc133;
+}
+
+.car-info-stat strong {
+  color: #175A9E;
+  font-size: 24px;
+  font-weight: 750;
+  line-height: 1.1;
+}
+
+.car-info-stat span {
+  margin-top: 8px;
+  color: #475467;
+  font-size: 14px;
+  line-height: 1.3;
+}
 
 .backgroundsection-carinformation {
-    background: linear-gradient(to right, #4297D8,
-        #175A9E);
-    padding: 30px 20px;
-    border-radius: 8px;
-    color: #fff;
-    font-family: Arial, sans-serif;
-    max-width: 100%;
-        margin: auto;
+  padding: 34px;
+  border-radius: 8px;
+  color: #fff;
+  background: linear-gradient(135deg, #4297D8 0%, #175A9E 100%);
+  box-shadow: 0 18px 44px rgba(23, 90, 158, 0.18);
+}
+
+.car-info-section-header {
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.backgroundsection-carinformation .car-info-eyebrow {
+  display: inline-flex;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 18px;
+  color: #175A9E;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.bacground-sec-heading,
+.coverage-title {
+  margin: 0;
+  color: #175A9E;
+  font-size: clamp(22px, 2.4vw, 32px);
+  font-weight: 750;
+  line-height: 1.2;
 }
 
 .bacground-sec-heading {
-    text-align: center;
-    font-size: 20px;
-    font-weight: bold;
-    color: #000;
-    margin-bottom: 30px;
+  color: #fff;
 }
 
 .carinfo-content {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
 }
 
 .carinfo-section {
-    background: #ffffff;
-    color: #000;
-    border-radius: 10px;
-    padding: 20px;
-    flex: 1 1 45%;
-    min-width: 300px;
-    display: flex;
-    align-items: flex-start;
-    gap: 15px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  min-width: 0;
+  padding: 18px;
+  display: grid;
+  grid-template-columns: 160px minmax(0, 1fr);
+  gap: 18px;
+  align-items: stretch;
+  border-radius: 8px;
+  color: #1f2933;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+  backdrop-filter: blur(14px);
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+
+.carinfo-section:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 34px rgba(0, 0, 0, 0.16);
+}
+
+.carinfo-media {
+  min-height: 180px;
+  overflow: hidden;
+  border-radius: 8px;
 }
 
 .carinfo-image {
-    width: 80px;
-    height: auto;
-    border-radius: 10px;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.35s ease;
 }
 
-.carinfo-section p {
-    margin: 0;
-    font-size: 16px;
-    line-height: 1.6;
-    text-align: justify;
+.carinfo-section:hover .carinfo-image {
+  transform: scale(1.04);
 }
 
-.carimages-carinformation-screen{
-    display: flex;
-    justify-content: space-evenly;
-    justify-items: center;
+.carinfo-copy {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
+.carinfo-copy span {
+  color: #4297D8;
+  font-size: 12px;
+  font-weight: 750;
+  line-height: 1;
+}
+
+.carinfo-copy h3 {
+  margin: 8px 0 10px;
+  color: #175A9E;
+  font-size: 18px;
+  font-weight: 750;
+  line-height: 1.25;
+}
+
+.carinfo-copy p {
+  margin: 0;
+  color: #344054;
+  font-size: 14px;
+  line-height: 1.62;
+}
+
+.coverage-container {
+  padding: 6px 0 12px;
+}
+
+.coverage-container .car-info-eyebrow {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.coverage-grid-section2 {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.coverage-item-car {
+  position: relative;
+  min-width: 0;
+  min-height: 220px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid rgba(23, 90, 158, 0.12);
+  box-shadow: 0 4px 12px #007bc133;
+  box-sizing: border-box;
+  overflow: hidden;
+  transition: transform 0.22s ease, box-shadow 0.22s ease, background-color 0.22s ease;
+}
+
+.coverage-item-car:hover {
+  transform: translateY(-3px);
+  background-color: #eef7ff;
+  box-shadow: 0 12px 26px #007bc144;
+}
+
+.coverage-card-topline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.coverage-card-topline img {
+  width: 74px;
+  height: 74px;
+  border-radius: 8px;
+  object-fit: cover;
+  box-shadow: 0 8px 18px rgba(23, 90, 158, 0.14);
+}
+
+.coverage-card-topline span {
+  color: rgba(23, 90, 158, 0.16);
+  font-size: 34px;
+  font-weight: 750;
+  line-height: 1;
+}
+
+.coverage-text {
+  position: relative;
+  z-index: 1;
+}
+
+.coverage-text h3 {
+  margin: 0;
+  color: #175A9E;
+  font-size: 17px;
+  font-weight: 750;
+  line-height: 1.25;
+}
+
+.coverage-text p {
+  margin: 8px 0 0;
+  color: #475467;
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.coverage-card-icon {
+  position: absolute;
+  right: 18px;
+  bottom: 16px;
+  color: rgba(66, 151, 216, 0.11);
+  font-size: 54px;
+}
+
+.whatsapp-float {
+  position: fixed;
+  right: 25px;
+  bottom: 25px;
+  width: 60px;
+  height: 60px;
+  background-color: #25D366;
+  color: #fff;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 32px;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  animation: whatsapp-pulse 1.5s infinite;
+  transition: transform 0.22s ease, background-color 0.22s ease;
+}
+
+.whatsapp-icon {
+  font-size: 32px;
+}
+
+.whatsapp-float:hover {
+  background-color: #20b954;
+  transform: translateY(-3px);
+}
+
+@keyframes car-info-spin {
+  to {
+    transform: translateY(-50%) rotate(360deg);
+  }
+}
+
+@keyframes whatsapp-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.58);
+  }
+  70% {
+    box-shadow: 0 0 0 14px rgba(37, 211, 102, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+  }
+}
+
+@media (max-width: 1024px) {
+  .herosection-carinfomation,
+  .car-info-stats,
+  .backgroundsection-carinformation,
+  .coverage-container {
+    width: min(920px, calc(100% - 36px));
+  }
+
+  .herosection-carinfomation {
+    grid-template-columns: 1fr;
+  }
+
+  .car-information-image {
+    min-height: 390px;
+  }
+
+  .coverage-grid-section2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .herosection-carinfomation,
+  .car-info-stats,
+  .backgroundsection-carinformation,
+  .coverage-container {
+    width: calc(100% - 28px);
+  }
+
+  .herosection-carinfomation {
+    gap: 18px;
+    padding: 20px 0 24px;
+  }
+
+  .private-car-paragraph {
+    font-size: 15px;
+  }
+
+  .quote-container {
+    align-items: stretch;
+  }
+
+  .car-info-btn {
+    flex: 1 1 180px;
+  }
+
+  .car-information-image {
+    min-height: 340px;
+  }
+
+  .car-info-stats,
+  .carinfo-content,
+  .coverage-grid-section2 {
+    grid-template-columns: 1fr;
+  }
+
+  .car-info-stats {
+    gap: 12px;
+  }
+
+  .car-info-stat {
+    min-height: 82px;
+  }
+
+  .carinfo-section {
+    grid-template-columns: 1fr;
+  }
+
+  .carinfo-media {
+    min-height: 170px;
+  }
+
+  .whatsapp-float {
+    right: 16px;
+    bottom: 16px;
+    width: 52px;
+    height: 52px;
+  }
+
+  .whatsapp-icon {
+    font-size: 28px;
+  }
 }
 
 @media (max-width: 480px) {
-    .herosection-carinfomation {
-        flex-direction: column;
-        align-items: center;
-    }
+  .herosection-carinfomation,
+  .car-info-stats,
+  .backgroundsection-carinformation,
+  .coverage-container {
+    width: calc(100% - 20px);
+  }
 
-    .car-information-image {
-        max-width: 90% !important;
-        margin: 0 auto;
-    }
+  .car-hero-copy,
+  .backgroundsection-carinformation {
+    padding: 18px;
+  }
 
-    .car-image {
-        width: 100% !important;
-        margin: 0 auto;
-        margin-left: 0% !important;
-    }
+  .private-car-insurance-heading {
+    font-size: 27px;
+  }
 
-    .car-information-firstpara {
-        width: 90%;
-        padding: 10px;
-        align-items: center;
-        text-align: center;
-    }
+  .private-car-paragraph {
+    font-size: 14px;
+    line-height: 1.65;
+  }
 
-    .private-car-insurance-heading {
-        font-size: 18px;
-        width: 100%;
-        margin: 0 auto 10px;
-    }
+  .quote-container {
+    flex-direction: column;
+  }
 
-    .private-car-paragraph {
-        font-size: 12px;
-        width: 100%;
-        margin: 0 auto;
-        text-align: justify;
-            text-justify: inter-word;
-            line-height: 1.6;
-        
-    }
+  .car-info-btn {
+    width: 100%;
+    flex-basis: auto;
+  }
 
-         .quotes-btn-carinformation {
-            padding: 10px 20px;
-            font-size: 14px;
-            margin-right: 30% !important;
-            width:350px ;
-           
-        }
+  .car-information-image {
+    min-height: 300px;
+    padding: 18px;
+  }
 
-    
-    .backgroundsection-carinformation {
-        padding: 20px 10px;
-    }
+  .car-visual-toolbar {
+    left: 14px;
+    right: 14px;
+    top: 14px;
+  }
 
-    .bacground-sec-heading {
-        font-size: 18px;
-    }
+  .car-visual-card {
+    left: 14px;
+    bottom: 14px;
+    max-width: calc(100% - 28px);
+  }
 
-    .carinfo-content {
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    .carinfo-section {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    .carinfo-image {
-        width: 60px;
-    }
-
-    .coverage-title {
-        font-size: 18px;
-        text-align: center;
-        margin: 20px 0;
-        text-align: justify;
-    }
-
-    .coverage-grid-section2 {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        align-items: center;
-    }
-
-    .coverage-item-car {
-        width: 100%;
-        max-width: 500px;
-        text-align: center;
-        margin-left: -5%;
-    }
-
-    .coverage-item-car img {
-        width: 60px;
-        height: auto;
-       
-    }
-
-    .coverage-text h3 {
-        font-size: 16px;
-    }
-
-    .coverage-text p {
-        font-size: 14px;
-    }
+  .coverage-item-car {
+    min-height: auto;
+  }
 }
 
+/* Scoped safeguards: several insurance pages reuse these class names globally. */
+.Carinformation-container .herosection-carinfomation {
+  width: min(1180px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 34px 0 28px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(360px, 0.92fr);
+  gap: 28px;
+  align-items: stretch;
+}
 
+.Carinformation-container .car-hero-copy,
+.Carinformation-container .car-information-image {
+  width: 100%;
+  max-width: none;
+  min-width: 0;
+  margin: 0;
+  justify-self: stretch;
+  box-sizing: border-box;
+}
+
+.Carinformation-container .private-car-insurance-heading {
+  width: auto;
+  max-width: 760px;
+  margin: 0;
+  color: #175A9E;
+  font-size: clamp(28px, 4vw, 48px);
+  line-height: 1.08;
+  text-align: left;
+}
+
+.Carinformation-container .private-car-paragraph {
+  width: auto;
+  max-width: 720px;
+  margin: 18px 0 0;
+  color: #344054;
+  font-size: 16px;
+  line-height: 1.72;
+  text-align: left;
+}
+
+.Carinformation-container .backgroundsection-carinformation,
+.Carinformation-container .coverage-container {
+  width: min(1180px, calc(100% - 48px));
+  margin: 0 auto 44px;
+  box-sizing: border-box;
+}
+
+.Carinformation-container .backgroundsection-carinformation {
+  padding: 34px;
+  border-radius: 8px;
+}
+
+.Carinformation-container .carinfo-content {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  padding: 0;
+  margin: 0;
+}
+
+.Carinformation-container .carinfo-section {
+  width: auto;
+  min-width: 0;
+  max-width: none;
+  margin: 0;
+  padding: 18px;
+  display: grid;
+  grid-template-columns: 160px minmax(0, 1fr);
+  gap: 18px;
+  align-items: stretch;
+  box-sizing: border-box;
+}
+
+.Carinformation-container .carinfo-image {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+.Carinformation-container .car-info-stat {
+  min-height: 96px;
+  box-sizing: border-box;
+}
+
+.Carinformation-container .coverage-container {
+  padding: 6px 0 12px;
+}
+
+.Carinformation-container .coverage-grid-section2 {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  padding: 0;
+  margin: 0;
+  align-items: stretch;
+}
+
+.Carinformation-container .coverage-item-car {
+  width: auto;
+  max-width: none;
+  min-width: 0;
+  min-height: 220px;
+  margin: 0;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.Carinformation-container .coverage-card-topline img {
+  width: 74px;
+  height: 74px;
+  margin: 0;
+}
+
+@media (max-width: 1024px) {
+  .Carinformation-container .herosection-carinfomation,
+  .Carinformation-container .car-info-stats,
+  .Carinformation-container .backgroundsection-carinformation,
+  .Carinformation-container .coverage-container {
+    width: min(920px, calc(100% - 36px));
+  }
+
+  .Carinformation-container .herosection-carinfomation {
+    grid-template-columns: 1fr;
+  }
+
+  .Carinformation-container .coverage-grid-section2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .Carinformation-container .herosection-carinfomation,
+  .Carinformation-container .car-info-stats,
+  .Carinformation-container .backgroundsection-carinformation,
+  .Carinformation-container .coverage-container {
+    width: calc(100% - 28px);
+  }
+
+  .Carinformation-container .herosection-carinfomation {
+    gap: 18px;
+    padding: 20px 0 24px;
+  }
+
+  .Carinformation-container .private-car-insurance-heading {
+    font-size: clamp(26px, 6vw, 36px);
+  }
+
+  .Carinformation-container .private-car-paragraph {
+    font-size: 15px;
+  }
+
+  .Carinformation-container .carinfo-content,
+  .Carinformation-container .coverage-grid-section2 {
+    grid-template-columns: 1fr;
+  }
+
+  .Carinformation-container .carinfo-section {
+    grid-template-columns: 1fr;
+  }
+
+  .Carinformation-container .coverage-item-car {
+    min-height: auto;
+  }
+}
+
+@media (min-width: 700px) and (max-width: 768px) {
+  .Carinformation-container .car-info-stats,
+  .Carinformation-container .coverage-grid-section2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .Carinformation-container .car-info-stats {
+    gap: 14px;
+  }
+
+  .Carinformation-container .car-info-stat:last-child {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 480px) {
+  .Carinformation-container .herosection-carinfomation,
+  .Carinformation-container .car-info-stats,
+  .Carinformation-container .backgroundsection-carinformation,
+  .Carinformation-container .coverage-container {
+    width: calc(100% - 20px);
+  }
+
+  .Carinformation-container .car-hero-copy,
+  .Carinformation-container .backgroundsection-carinformation {
+    padding: 18px;
+  }
+
+  .Carinformation-container .private-car-insurance-heading {
+    font-size: 27px;
+  }
+
+  .Carinformation-container .private-car-paragraph {
+    font-size: 14px;
+  }
+
+  .Carinformation-container .coverage-grid-section2 {
+    gap: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .Carinformation-container .carinfo-media {
+    height: 190px;
+    min-height: 0;
+  }
+
+  .Carinformation-container .carinfo-image {
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+@media (max-width: 480px) {
+  .Carinformation-container .car-info-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .Carinformation-container .car-info-stat:last-child {
+    grid-column: auto;
+  }
+
+  .Carinformation-container .carinfo-media {
+    height: 160px;
+  }
+}

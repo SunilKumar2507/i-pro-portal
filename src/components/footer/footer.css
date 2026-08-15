@@ -92,11 +92,20 @@
     padding: 0;
 }
 
-.footer-links a {
+.footer-links a,
+.footer-link-button {
     color: #fff;
     text-decoration: none;
     display: block;
     margin-bottom: 8px;
+}
+
+.footer-link-button {
+    background: none;
+    border: 0;
+    font: inherit;
+    padding: 0;
+    text-align: left;
 }
 
 .footer-links a:hover {
@@ -129,11 +138,15 @@
     margin-bottom: 15px;
 }
 
-.social-icons a {
+.social-icons a,
+.social-icon-button {
     font-size: 20px;
     margin: 0 10px;
     color: #fff;
     text-decoration: none;
+    background: none;
+    border: 0;
+    padding: 0;
 }
 
 hr {

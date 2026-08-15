@@ -10,7 +10,7 @@ import Lifeinsurance13 from '../../assets/Lifeinsurance13.jpg';
 import Lifeinsurance14 from '../../assets/Lifeinsurance14.jpg';
 import Lifeinsurance15 from '../../assets/Lifeinsurance15.jpg';
 import Lifeinsurance16 from '../../assets/Lifeinsurance16.jpg';
-import { FaWhatsapp } from "react-icons/fa";
+import { FaArrowRight, FaCheckCircle, FaHandHoldingHeart, FaShieldAlt, FaUmbrella, FaWhatsapp } from "react-icons/fa";
 import './lifeinsurance.css';
 
 
@@ -49,79 +49,150 @@ function Lifeinsurance() {
             image: Lifeinsurance16
         },
     ];
+
+    const policyHighlights = [
+        "Family financial safety net",
+        "Long-term protection planning",
+        "Savings and benefit options",
+    ];
+
+    const planCards = [
+        {
+            title: "Term Life Insurance",
+            label: "Red Heart",
+            description: "Term Life Insurance offers high coverage at low premiums and ensures your family's financial security in case of an untimely demise.",
+            image: lifeinsuranceimage1
+        },
+        {
+            title: "Endowment & Whole Life Plans",
+            label: "Golden Tree",
+            description: "Endowment & Whole Life Plans combine life cover with savings or investment benefits, helping you build a financial corpus for the future.",
+            image: Lifeinsuranceimage2
+        },
+    ];
+
+    const quickStats = [
+        { value: "6", label: "Core policy benefits" },
+        { value: "Long-term", label: "Family protection" },
+        { value: "Soon", label: "Digital quote access" },
+    ];
+
     return (
-        <div className='Carinformation-container'>
+        <div className="lii-container">
             <Header />
-            <div className='herosection-carinfomation'>
-                <div className='car-information-image'>
-                    <img src={Lifeinsuranceimage} alt='car-information-image' className='car-image' />
-                </div>
 
-                <div className="car-information-firstpara" style={{ textAlign: "left" }}>
-                    <h1 className='travel-insurance-heading'>What is Life Insurance?</h1>
-                    <p className='private-car-paragraph'>
-                        Life insurance is a long-term financial safety net that provides a lump-sum payment <br></br>to your beneficiaries in the event of your death. It ensures your loved ones<br></br>are financially secure even in your absence. It can also serve as a savings or investment tool for future needs.
-
-                    </p>
-                </div>
-
-            </div>
-
-            <div className="quote-container">
-                <a
-                    // href="https://uatweb.iproinfinity.com/carinsurance/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="quotes-btn-carinformation"
-                >
-                    Coming soon
-                </a>
-            </div>
-            <br></br>
-            <div className='backgroundsection-carinformation'>
-                <div className='bacground-sec-heading'>Life Insurance – Secure Your Family's Future</div>
-
-                <div className='carinfo-content'>
-                    <div className='carinfo-section'>
-                        <img src={lifeinsuranceimage1} alt="Green Car" className='carinfo-image' />
-                        <p>
-                            Red Heart
-                        Term Life Insurance offers high coverage at low premiums and ensures your family’s financial security in case of an untimely demise.
+            <main className="lii-page">
+                <section className="lii-hero">
+                    <div className="lii-hero-copy">
+                        <span className="lii-eyebrow">Life Insurance</span>
+                        <h1 className="lii-title">Life cover built to protect your family's financial future</h1>
+                        <p className="lii-description">
+                            Life insurance is a long-term financial safety net that provides a lump-sum payment to your beneficiaries in the event of your death. It ensures your loved ones are financially secure even in your absence. It can also serve as a savings or investment tool for future needs.
                         </p>
+
+                        <div className="lii-highlight-list" aria-label="Life insurance highlights">
+                            {policyHighlights.map((item, index) => (
+                                <span key={index} className="lii-highlight-chip">
+                                    <FaCheckCircle />
+                                    {item}
+                                </span>
+                            ))}
+                        </div>
+
+                        <div className="lii-actions">
+                            <button
+                                type="button"
+                                className="quotes-btn-carinformation lii-btn lii-btn-primary is-disabled"
+                                disabled
+                            >
+                                <span>Coming soon</span>
+                                <FaArrowRight />
+                            </button>
+                            <a href="#life-coverages" className="lii-btn lii-btn-secondary">
+                                <span>View Coverages</span>
+                            </a>
+                        </div>
                     </div>
 
-                    <div className='carinfo-section'>
-                        <img src={Lifeinsuranceimage2} alt="Orange Car" className='carinfo-image' />
-                        <p>
-                            Golden Tree
-                            Endowment & Whole Life Plans combine life cover with savings or investment benefits, helping you build a financial corpus for the future.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div className="coverage-container">
-                <h2 className="coverage-title">Coverages of Life Insurance</h2>
-                <div className="coverage-grid-section2">
-                    {data.map((item, index) => (
-                        <div key={index} className="coverage-item-car">
-                            <img src={item.image} alt={item.title} />
-                            <div className="coverage-text">
-                                <h3>{item.title}</h3>
-                                <p>{item.description}</p>
+                    <div className="lii-hero-visual">
+                        <div className="lii-visual-toolbar">
+                            <span><FaShieldAlt /> Family cover</span>
+                            <span>Secure future</span>
+                        </div>
+                        <img src={Lifeinsuranceimage} alt="Life insurance" className="lii-main-image" />
+                        <div className="lii-visual-card">
+                            <FaHandHoldingHeart />
+                            <div>
+                                <strong>Protection planning</strong>
+                                <span>Designed for long-term confidence</span>
                             </div>
                         </div>
+                    </div>
+                </section>
+
+                <section className="lii-stats" aria-label="Life insurance overview">
+                    {quickStats.map((item, index) => (
+                        <div className="lii-stat" key={index}>
+                            <strong>{item.value}</strong>
+                            <span>{item.label}</span>
+                        </div>
                     ))}
-                </div>
-                 <a
-                                                href="https://wa.me/919380029170"
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                className="whatsapp-float"
-                                              >
-                                                <FaWhatsapp className="whatsapp-icon" />
-                                              </a>
-            </div>
+                </section>
+
+                <section className="lii-plan-section">
+                    <div className="lii-section-header">
+                        <span className="lii-eyebrow">Future Security</span>
+                        <h2>Life Insurance - Secure Your Family's Future</h2>
+                    </div>
+
+                    <div className="lii-plan-grid">
+                        {planCards.map((item, index) => (
+                            <div className="lii-plan-card" key={index}>
+                                <div className="lii-plan-media">
+                                    <img src={item.image} alt={item.title} />
+                                </div>
+                                <div className="lii-plan-copy">
+                                    <span>{item.label}</span>
+                                    <h3>{item.title}</h3>
+                                    <p>{item.description}</p>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </section>
+
+                <section className="lii-coverage-section" id="life-coverages">
+                    <div className="lii-section-header">
+                        <span className="lii-eyebrow">Protection Suite</span>
+                        <h2>Coverages of Life Insurance</h2>
+                    </div>
+                    <div className="lii-coverage-grid">
+                        {data.map((item, index) => (
+                            <div key={index} className="lii-coverage-card">
+                                <div className="lii-coverage-topline">
+                                    <img src={item.image} alt={item.title} />
+                                    <span>{String(index + 1).padStart(2, "0")}</span>
+                                </div>
+                                <div className="lii-coverage-copy">
+                                    <h3>{item.title}</h3>
+                                    <p>{item.description}</p>
+                                </div>
+                                <FaUmbrella className="lii-coverage-icon" />
+                            </div>
+                        ))}
+                    </div>
+                    <a
+                        href="https://wa.me/919380029170"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="whatsapp-float lii-whatsapp"
+                        aria-label="Contact on WhatsApp"
+                    >
+                        <FaWhatsapp className="whatsapp-icon" />
+                    </a>
+                </section>
+            </main>
+
             <Footer />
         </div>
 

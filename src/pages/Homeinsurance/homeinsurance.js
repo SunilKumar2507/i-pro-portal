@@ -10,7 +10,7 @@ import Homeinsurance13 from '../../assets/Homeinsurance13.jpg';
 import Homeinsurance14 from '../../assets/Homeinsurance14.jpg';
 import Homeinsurance15 from '../../assets/Homeinsurance15.jpg';
 import Homeinsurance16 from '../../assets/Homeinsurance16.jpg'
-import { FaWhatsapp } from "react-icons/fa";
+import { FaArrowRight, FaCheckCircle, FaHome, FaHouseDamage, FaShieldAlt, FaWhatsapp } from "react-icons/fa";
 import './homeinsurance.css';
 
 
@@ -49,79 +49,148 @@ function Homeinsurance() {
             image: Homeinsurance16
         },
     ];
+
+    const policyHighlights = [
+        "Home structure protection",
+        "Contents and belongings cover",
+        "Family liability support",
+    ];
+
+    const planCards = [
+        {
+            title: "Building & Contents Insurance",
+            description: "Covers damages to the structure of your home and the belongings inside, protecting you from losses due to fire, theft, or natural disasters.",
+            image: Homeinsurance1
+        },
+        {
+            title: "Personal Liability Insurance",
+            description: "Protects you against legal claims if someone is injured on your property or if you accidentally cause damage to others' property.",
+            image: Homeinsurance2
+        },
+    ];
+
+    const quickStats = [
+        { value: "6", label: "Core home coverages" },
+        { value: "Home", label: "Structure and contents" },
+        { value: "Soon", label: "Digital quote access" },
+    ];
+
     return (
-        <div className='Carinformation-container'>
+        <div className="hoi-container">
             <Header />
-            <div className='herosection-carinfomation'>
-                <div className='car-information-image'>
-                    <img src={Homeinsuranceimage} alt='car-information-image' className='car-image' />
-                </div>
 
-                <div className="car-information-firstpara" style={{ textAlign: "left" }}>
-                    <h1 className='travel-insurance-heading'>What is Home Insurance?</h1>
-                    <p className='private-car-paragraph'>
-                        Home insurance is a comprehensive insurance policy designed to protect your home  <br></br>and belongings from various risks and damages. It offers financial security  <br></br> against unexpected events such as fire, theft, natural disasters, and personal liability, ensuring peace of mind <br></br> for homeowners and their families.
-
-                    </p>
-                </div>
-
-            </div>
-
-            <div className="quote-container">
-                <a
-                    // href="https://uatweb.iproinfinity.com/carinsurance/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="quotes-btn-carinformation"
-                >
-                    Coming soon
-                </a>
-            </div>
-            <br></br>
-            <div className='backgroundsection-carinformation'>
-                <div className='bacground-sec-heading'>Home Insurance – Protect Your Home and Loved Ones</div>
-
-                <div className='carinfo-content'>
-                    <div className='carinfo-section'>
-                        <img src={Homeinsurance1} alt="Green Car" className='carinfo-image' />
-                        <p>
-                            Building & Contents Insurance
-                        Covers damages to the structure of your home and the belongings inside, protecting you from losses due to fire, theft, or natural disasters.
+            <main className="hoi-page">
+                <section className="hoi-hero">
+                    <div className="hoi-hero-copy">
+                        <span className="hoi-eyebrow">Home Insurance</span>
+                        <h1 className="hoi-title">Home protection for the place your family depends on</h1>
+                        <p className="hoi-description">
+                            Home insurance is a comprehensive insurance policy designed to protect your home and belongings from various risks and damages. It offers financial security against unexpected events such as fire, theft, natural disasters, and personal liability, ensuring peace of mind for homeowners and their families.
                         </p>
+
+                        <div className="hoi-highlight-list" aria-label="Home insurance highlights">
+                            {policyHighlights.map((item, index) => (
+                                <span key={index} className="hoi-highlight-chip">
+                                    <FaCheckCircle />
+                                    {item}
+                                </span>
+                            ))}
+                        </div>
+
+                        <div className="hoi-actions">
+                            <button
+                                type="button"
+                                className="quotes-btn-carinformation hoi-btn hoi-btn-primary is-disabled"
+                                disabled
+                            >
+                                <span>Coming soon</span>
+                                <FaArrowRight />
+                            </button>
+                            <a href="#home-coverages" className="hoi-btn hoi-btn-secondary">
+                                <span>View Coverages</span>
+                            </a>
+                        </div>
                     </div>
 
-                    <div className='carinfo-section'>
-                        <img src={Homeinsurance2} alt="Orange Car" className='carinfo-image' />
-                        <p>
-                            Personal Liability Insurance
-                        Protects you against legal claims if someone is injured on your property or if you accidentally cause damage to others’ property.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div className="coverage-container">
-                <h2 className="coverage-title">Coverages of Home Insurance</h2>
-                <div className="coverage-grid-section2">
-                    {data.map((item, index) => (
-                        <div key={index} className="coverage-item-car">
-                            <img src={item.image} alt={item.title} />
-                            <div className="coverage-text">
-                                <h3>{item.title}</h3>
-                                <p>{item.description}</p>
+                    <div className="hoi-hero-visual">
+                        <div className="hoi-visual-toolbar">
+                            <span><FaShieldAlt /> Property cover</span>
+                            <span>Secure home</span>
+                        </div>
+                        <img src={Homeinsuranceimage} alt="Home insurance" className="hoi-main-image" />
+                        <div className="hoi-visual-card">
+                            <FaHome />
+                            <div>
+                                <strong>Home-ready cover</strong>
+                                <span>Protection for structure and belongings</span>
                             </div>
                         </div>
+                    </div>
+                </section>
+
+                <section className="hoi-stats" aria-label="Home insurance overview">
+                    {quickStats.map((item, index) => (
+                        <div className="hoi-stat" key={index}>
+                            <strong>{item.value}</strong>
+                            <span>{item.label}</span>
+                        </div>
                     ))}
-                </div>
-                 <a
-                                href="https://wa.me/919380029170"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="whatsapp-float"
-                              >
-                                <FaWhatsapp className="whatsapp-icon" />
-                              </a>
-            </div>
+                </section>
+
+                <section className="hoi-plan-section">
+                    <div className="hoi-section-header">
+                        <span className="hoi-eyebrow">Home Security</span>
+                        <h2>Home Insurance - Protect Your Home and Loved Ones</h2>
+                    </div>
+
+                    <div className="hoi-plan-grid">
+                        {planCards.map((item, index) => (
+                            <div className="hoi-plan-card" key={index}>
+                                <div className="hoi-plan-media">
+                                    <img src={item.image} alt={item.title} />
+                                </div>
+                                <div className="hoi-plan-copy">
+                                    <span>{String(index + 1).padStart(2, "0")}</span>
+                                    <h3>{item.title}</h3>
+                                    <p>{item.description}</p>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </section>
+
+                <section className="hoi-coverage-section" id="home-coverages">
+                    <div className="hoi-section-header">
+                        <span className="hoi-eyebrow">Protection Suite</span>
+                        <h2>Coverages of Home Insurance</h2>
+                    </div>
+                    <div className="hoi-coverage-grid">
+                        {data.map((item, index) => (
+                            <div key={index} className="hoi-coverage-card">
+                                <div className="hoi-coverage-topline">
+                                    <img src={item.image} alt={item.title} />
+                                    <span>{String(index + 1).padStart(2, "0")}</span>
+                                </div>
+                                <div className="hoi-coverage-copy">
+                                    <h3>{item.title}</h3>
+                                    <p>{item.description}</p>
+                                </div>
+                                <FaHouseDamage className="hoi-coverage-icon" />
+                            </div>
+                        ))}
+                    </div>
+                    <a
+                        href="https://wa.me/919380029170"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="whatsapp-float hoi-whatsapp"
+                        aria-label="Contact on WhatsApp"
+                    >
+                        <FaWhatsapp className="whatsapp-icon" />
+                    </a>
+                </section>
+            </main>
+
             <Footer />
         </div>
 

@@ -1,383 +1,730 @@
-.twowheeler-container {
-    width: 100%;
-    font-family: Arial, sans-serif;
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+.twi-container {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  color: #1f2933;
+  background:
+    linear-gradient(180deg, rgba(66, 151, 216, 0.12) 0%, rgba(255, 255, 255, 0) 34%),
+    linear-gradient(180deg, #ffffff 0%, #f5f9fd 100%);
+  font-family: "Century Gothic", "Trebuchet MS", Arial, sans-serif;
 }
 
-.twowheeler-hero {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-evenly;
-    padding: 40px 20px;
-    background-color: #fff;
+.twi-page {
+  width: 100%;
+  overflow: hidden;
 }
 
-
-.twowheeler-grid-text{
-    text-align: justify;
-}
-.two-wheeler{
-    text-align: justify;
-}
-
-.twowheeler-image img {
-    display: flex;
-    white-space: nowrap;
-    justify-content: center;
-        flex-direction: column;
-        align-items: center;
+.twi-hero {
+  width: min(1180px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 34px 0 28px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(360px, 0.92fr);
+  gap: 28px;
+  align-items: stretch;
 }
 
+.twi-hero-copy,
+.twi-hero-visual {
+  width: 100%;
+  min-width: 0;
+  border-radius: 8px;
+  border: 1px solid rgba(23, 90, 158, 0.12);
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow: 0 16px 42px rgba(23, 90, 158, 0.14);
+  backdrop-filter: blur(18px);
+  box-sizing: border-box;
+}
 
+.twi-hero-copy {
+  padding: clamp(24px, 3.4vw, 44px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.twi-eyebrow {
+  width: fit-content;
+  margin: 0 0 12px;
+  padding: 7px 10px;
+  color: #175A9E;
+  font-size: 12px;
+  font-weight: 750;
+  line-height: 1;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  border-radius: 8px;
+  background: #eef7ff;
+  border: 1px solid rgba(23, 90, 158, 0.12);
+}
+
+.twi-title {
+  max-width: 760px;
+  margin: 0;
+  color: #175A9E;
+  font-size: clamp(28px, 4vw, 48px);
+  font-weight: 750;
+  line-height: 1.08;
+  letter-spacing: 0;
+}
+
+.twi-lead,
+.twi-description {
+  max-width: 720px;
+  color: #344054;
+  font-size: 16px;
+  line-height: 1.68;
+}
+
+.twi-lead {
+  margin: 18px 0 0;
+  font-weight: 700;
+}
+
+.twi-description {
+  margin: 12px 0 0;
+}
+
+.twi-highlight-list {
+  margin-top: 22px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.twi-highlight-chip {
+  min-height: 36px;
+  padding: 0 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #175A9E;
+  font-size: 13px;
+  font-weight: 700;
+  border-radius: 8px;
+  background: rgba(238, 247, 255, 0.86);
+  border: 1px solid rgba(23, 90, 158, 0.12);
+}
+
+.twi-highlight-chip svg {
+  flex: 0 0 auto;
+  color: #25a45a;
+}
+
+.twi-actions {
+  width: 100%;
+  margin-top: 28px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+
+.twi-btn {
+  position: relative;
+  min-height: 46px;
+  padding: 0 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 750;
+  line-height: 1;
+  text-decoration: none;
+  overflow: hidden;
+  cursor: pointer;
+  box-sizing: border-box;
+  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease, background 0.22s ease;
+}
+
+.twi-btn::after {
+  content: "";
+  position: absolute;
+  inset: 50% auto auto 50%;
+  width: 0;
+  height: 0;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.38s ease, height 0.38s ease;
+}
+
+.twi-btn:hover::after {
+  width: 220px;
+  height: 220px;
+}
+
+.twi-btn span,
+.twi-btn svg {
+  position: relative;
+  z-index: 1;
+}
+
+.twi-btn-primary {
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: linear-gradient(90deg, #4297D8 0%, #175A9E 100%);
+  box-shadow: 0 10px 24px rgba(23, 90, 158, 0.28);
+}
+
+.twi-btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 32px rgba(23, 90, 158, 0.34);
+}
+
+.twi-btn-primary:active,
+.twi-btn-secondary:active {
+  transform: translateY(-1px);
+}
+
+.twi-btn-primary[aria-disabled="true"],
+.twi-btn-primary.is-disabled,
+.twi-btn-primary.is-loading {
+  opacity: 0.64;
+  pointer-events: none;
+  transform: none;
+  box-shadow: none;
+}
+
+.twi-btn-primary.is-loading span {
+  padding-left: 22px;
+}
+
+.twi-btn-primary.is-loading span::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 13px;
+  height: 13px;
+  border: 2px solid rgba(255, 255, 255, 0.88);
+  border-top-color: transparent;
+  border-radius: 50%;
+  transform: translateY(-50%);
+  animation: twi-spin 0.8s linear infinite;
+}
+
+.twi-btn-secondary {
+  color: #175A9E;
+  border: 1px solid rgba(23, 90, 158, 0.28);
+  background: rgba(255, 255, 255, 0.74);
+  box-shadow: 0 8px 18px rgba(23, 90, 158, 0.08);
+}
+
+.twi-btn-secondary:hover {
+  transform: translateY(-2px);
+  border-color: rgba(23, 90, 158, 0.52);
+  background: #eef7ff;
+  box-shadow: 0 12px 24px rgba(23, 90, 158, 0.14);
+}
+
+.twi-hero-visual {
+  position: relative;
+  min-height: 500px;
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    linear-gradient(145deg, rgba(66, 151, 216, 0.18), rgba(255, 255, 255, 0.86)),
+    #fff;
+}
+
+.twi-hero-visual::before {
+  content: "";
+  position: absolute;
+  inset: 82px 32px 64px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #4297D8, #175A9E);
+  opacity: 0.16;
+}
+
+.twi-scooter-image {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: min(100%, 500px);
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 24px 26px rgba(23, 90, 158, 0.24));
+  transition: transform 0.45s ease;
+}
+
+.twi-hero-visual:hover .twi-scooter-image {
+  transform: translateY(-4px) scale(1.015);
+}
+
+.twi-visual-toolbar,
+.twi-visual-card {
+  position: absolute;
+  z-index: 2;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.78);
+  background: rgba(255, 255, 255, 0.86);
+  box-shadow: 0 12px 28px rgba(23, 90, 158, 0.14);
+  backdrop-filter: blur(16px);
+}
+
+.twi-visual-toolbar {
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  min-height: 42px;
+  padding: 0 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #175A9E;
+  font-size: 13px;
+  font-weight: 750;
+}
+
+.twi-visual-toolbar span {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.twi-visual-card {
+  left: 22px;
+  bottom: 22px;
+  max-width: calc(100% - 44px);
+  padding: 13px 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.twi-visual-card svg {
+  flex: 0 0 auto;
+  color: #175A9E;
+  font-size: 21px;
+}
+
+.twi-visual-card strong,
+.twi-visual-card span {
+  display: block;
+}
+
+.twi-visual-card strong {
+  color: #175A9E;
+  font-size: 14px;
+  line-height: 1.2;
+}
+
+.twi-visual-card span {
+  margin-top: 3px;
+  color: #475467;
+  font-size: 12px;
+}
+
+.twi-stats,
+.twi-info-section,
+.twi-coverage-section {
+  width: min(1180px, calc(100% - 48px));
+  margin: 0 auto 44px;
+  box-sizing: border-box;
+}
+
+.twi-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.twi-stat {
+  min-height: 96px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 8px;
+  background: #fff;
+  border: 1px solid rgba(23, 90, 158, 0.12);
+  box-shadow: 0 4px 12px #007bc133;
+  box-sizing: border-box;
+}
+
+.twi-stat strong {
+  color: #175A9E;
+  font-size: 24px;
+  font-weight: 750;
+  line-height: 1.1;
+}
+
+.twi-stat span {
+  margin-top: 8px;
+  color: #475467;
+  font-size: 14px;
+  line-height: 1.3;
+}
+
+.twi-info-section {
+  padding: 34px;
+  border-radius: 8px;
+  color: #fff;
+  background: linear-gradient(135deg, #4297D8 0%, #175A9E 100%);
+  box-shadow: 0 18px 44px rgba(23, 90, 158, 0.18);
+}
+
+.twi-section-header {
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.twi-section-header .twi-eyebrow {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.twi-info-section .twi-eyebrow {
+  color: #175A9E;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.twi-section-header h2 {
+  margin: 0;
+  color: #175A9E;
+  font-size: clamp(22px, 2.4vw, 32px);
+  font-weight: 750;
+  line-height: 1.2;
+}
+
+.twi-info-section .twi-section-header h2 {
+  color: #fff;
+}
+
+.twi-info-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.twi-info-card {
+  min-height: 190px;
+  padding: 20px;
+  border-radius: 8px;
+  color: #1f2933;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+  backdrop-filter: blur(14px);
+  box-sizing: border-box;
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+
+.twi-info-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 34px rgba(0, 0, 0, 0.16);
+}
+
+.twi-card-index {
+  color: rgba(23, 90, 158, 0.26);
+  font-size: 26px;
+  font-weight: 750;
+  line-height: 1;
+}
+
+.twi-info-card h3 {
+  margin: 14px 0 10px;
+  color: #175A9E;
+  font-size: 18px;
+  font-weight: 750;
+  line-height: 1.25;
+}
+
+.twi-info-card p {
+  margin: 0;
+  color: #344054;
+  font-size: 14px;
+  line-height: 1.62;
+}
+
+.twi-coverage-section {
+  padding: 6px 0 12px;
+}
+
+.twi-coverage-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+  align-items: stretch;
+}
+
+.twi-coverage-card {
+  position: relative;
+  min-width: 0;
+  min-height: 236px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid rgba(23, 90, 158, 0.12);
+  box-shadow: 0 4px 12px #007bc133;
+  box-sizing: border-box;
+  overflow: hidden;
+  transition: transform 0.22s ease, box-shadow 0.22s ease, background-color 0.22s ease;
+}
+
+.twi-coverage-card:hover {
+  transform: translateY(-3px);
+  background-color: #eef7ff;
+  box-shadow: 0 12px 26px #007bc144;
+}
+
+.twi-coverage-topline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.twi-coverage-topline img {
+  width: 68px;
+  height: 68px;
+  border-radius: 8px;
+  object-fit: contain;
+  background: #f7fbff;
+  box-shadow: 0 8px 18px rgba(23, 90, 158, 0.14);
+}
+
+.twi-coverage-topline span {
+  color: rgba(23, 90, 158, 0.16);
+  font-size: 34px;
+  font-weight: 750;
+  line-height: 1;
+}
+
+.twi-coverage-copy {
+  position: relative;
+  z-index: 1;
+}
+
+.twi-coverage-copy h3 {
+  margin: 0;
+  color: #175A9E;
+  font-size: 17px;
+  font-weight: 750;
+  line-height: 1.25;
+}
+
+.twi-coverage-copy p {
+  margin: 8px 0 0;
+  color: #475467;
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.twi-coverage-icon {
+  position: absolute;
+  right: 18px;
+  bottom: 16px;
+  color: rgba(66, 151, 216, 0.11);
+  font-size: 54px;
+}
+
+.twi-whatsapp {
+  position: fixed;
+  right: 25px;
+  bottom: 25px;
+  width: 60px;
+  height: 60px;
+  background-color: #25D366;
+  color: #fff;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 32px;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  animation: twi-whatsapp-pulse 1.5s infinite;
+  transition: transform 0.22s ease, background-color 0.22s ease;
+}
+
+.whatsapp-icon {
+  font-size: 32px;
+}
+
+.twi-whatsapp:hover {
+  background-color: #20b954;
+  transform: translateY(-3px);
+}
+
+@keyframes twi-spin {
+  to {
+    transform: translateY(-50%) rotate(360deg);
+  }
+}
+
+@keyframes twi-whatsapp-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.58);
+  }
+  70% {
+    box-shadow: 0 0 0 14px rgba(37, 211, 102, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+  }
+}
 
 @media (max-width: 1024px) {
-    .twowheeler-image img {
-            width: 550px !important;
-            height: auto;
-            
-        }
+  .twi-hero,
+  .twi-stats,
+  .twi-info-section,
+  .twi-coverage-section {
+    width: min(920px, calc(100% - 36px));
+  }
 
-        .scooter-image{
-            margin-left: -60%;
-            margin-top: 20%;
-        }
+  .twi-hero {
+    grid-template-columns: 1fr;
+  }
 
-                .quotes-btn-scooty {
-                    padding: 10px 20px;
-                    font-size: 14px;
-                    margin-right: 30%;
-                    width: 350px;
-                    margin-left: -5% !important;
-                }
+  .twi-hero-visual {
+    min-height: 390px;
+  }
+
+  .twi-info-grid,
+  .twi-coverage-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 @media (max-width: 768px) {
-    .twowheeler-image img {
-        width: 450px;
-            height: auto;
-            margin-left: -45%;
-            margin-top: 15%;
-        }
-}
-.scooty-information-firstpara {
-    max-width: 600px;
-    color: #1e1e1e;
-}
+  .twi-hero,
+  .twi-stats,
+  .twi-info-section,
+  .twi-coverage-section {
+    width: calc(100% - 28px);
+  }
 
-@media (max-width: 1024px) {
-    .scooty-information-firstpara {
-            max-width: 500px;
-            color: #1e1e1e;
-            margin-left: 35%;
-            margin-top: -30%;
-        }
+  .twi-hero {
+    gap: 18px;
+    padding: 20px 0 24px;
+  }
 
-               
-}
+  .twi-lead,
+  .twi-description {
+    font-size: 15px;
+  }
 
-@media (max-width: 768px) {
-    .scooty-information-firstpara {
-        font-size: 18px !important;
-    }
-}
-@media (max-width: 768px) {
-.private-scooty-insurance-heading{
- font-size: 18px;
- margin-top: -20%;
-}
-}
-.scooty-information-firstpara h2 {
-    font-size: 24px;
-    margin-bottom: 10px;
-}
+  .twi-actions {
+    align-items: stretch;
+  }
 
-.scooty-information-firstpara p {
-    font-size: 16px;
-    line-height: 1.6;
-    margin-bottom: 10px;
-}
+  .twi-btn {
+    flex: 1 1 180px;
+  }
 
-.quotes-btn-scooty {
-    padding: 10px 20px;
-        font-size: 14px;
-        align-items: center;
-        /* Responsive width */
-        max-width: 150px;
-        color: #fff;
-        border-radius: 25px;
-        background-color: #007bff;
-        animation: blink 1.5s infinite;
-        /* Optional: Prevent it from being too wide */
-        margin: 15px auto 0 auto;
-        /* Center the button */
-        display: block;
-        justify-content: center;
-        /* Horizontally center */
-        align-items: center;
-        /* Vertically center */
-        text-align: center;
-        margin-left: -35%;
-        /* Required to make auto margins work */
-}
- @keyframes blink {
-     0% {
-         opacity: 1;
-     }
+  .twi-hero-visual {
+    min-height: 340px;
+  }
 
-     50% {
-         opacity: 0;
-     }
+  .twi-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
 
-     100% {
-         opacity: 1;
-     }
- }
+  .twi-stat:last-child {
+    grid-column: 1 / -1;
+  }
 
- @media (max-width: 768px) {
-    .quote-btn {
-        margin-left: -1% !important;
-    }
- }
+  .twi-info-grid,
+  .twi-coverage-grid {
+    grid-template-columns: 1fr;
+  }
 
-.twowheeler-coverage-section {
-    background: linear-gradient(to right, #4297D8, #175A9E);
-    padding: 50px 20px;
-    color: #fff;
-    text-align: center;
+  .twi-info-section {
+    padding: 24px;
+  }
+
+  .twi-whatsapp {
+    right: 16px;
+    bottom: 16px;
+    width: 52px;
+    height: 52px;
+  }
+
+  .whatsapp-icon {
+    font-size: 28px;
+  }
 }
 
-.coverage-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    /* Fixed 3 cards per row */
-    gap: 20px;
-    margin-bottom: 30px;
+@media (min-width: 700px) and (max-width: 768px) {
+  .twi-info-grid,
+  .twi-coverage-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
-.coverage-card {
-    background-color: #ffffff;
-    color: #000;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: left;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
+@media (max-width: 480px) {
+  .twi-hero,
+  .twi-stats,
+  .twi-info-section,
+  .twi-coverage-section {
+    width: calc(100% - 20px);
+  }
 
-.coverage-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
+  .twi-hero-copy,
+  .twi-info-section {
+    padding: 18px;
+  }
 
-.coverage-card h4 {
-    font-size: 18px;
-    margin-bottom: 10px;
-}
+  .twi-title {
+    font-size: 27px;
+  }
 
-.coverage-card p {
+  .twi-lead,
+  .twi-description {
     font-size: 14px;
-    line-height: 1.6;
-}
+    line-height: 1.65;
+  }
 
-.coverage-title {
-    color: #fff;
-    font-weight: bold;
-    font-size: 16px;
-    text-align: center;
-}
+  .twi-actions {
+    flex-direction: column;
+  }
 
-/* Responsive Design */
-
-
-.coverage-container {
-    padding: 2rem;
-    font-family: Arial, sans-serif;
-}
-
-.coverage-title {
-    text-align: center;
-    color: #1d4ed8;
-    margin-bottom: 2rem;
-    font-size: 1.5rem;
-}
-
-.coverage-grid-section2 {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 2rem;
-}
-
-.coverage-item-scooty {
-    display: flex;
-    align-items: center;
-    max-width: 500px;
+  .twi-btn {
     width: 100%;
-    background-color: #f9f9f9;
-   
-    border-radius: 12px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
+    flex-basis: auto;
+  }
 
-.coverage-item-scooty img {
-    width: 80px;
-    height: auto;
-    margin-right: 1rem;
-}
+  .twi-hero-visual {
+    min-height: 300px;
+    padding: 18px;
+  }
 
-.coverage-text h3 {
-    font-size: 1rem;
-    margin: 0;
-    font-weight: bold;
-}
+  .twi-visual-toolbar {
+    left: 14px;
+    right: 14px;
+    top: 14px;
+  }
 
-.coverage-text p {
-    font-size: 0.9rem;
-    margin: 0.5rem 0 0 0;
-    color: #555;
-}
+  .twi-visual-card {
+    left: 14px;
+    bottom: 14px;
+    max-width: calc(100% - 28px);
+  }
 
-/* Responsive Styles */
-@media (max-width: 768px) {
-    .coverage-item {
-        flex-direction: column;
-        align-items: flex-start;
-    }
+  .twi-stats {
+    grid-template-columns: 1fr;
+  }
 
-    .coverage-item img {
-        margin-bottom: 0.5rem;
-        margin-right: 0;
-    }
+  .twi-stat:last-child {
+    grid-column: auto;
+  }
 
-    .coverage-text {
-        text-align: left;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .twowheeler-hero {
-        flex-direction: column;
-        align-items: center;
-        padding: 20px 10px;
-    }
-
-    .twowheeler-image img {
-        width: 100%;
-        max-width: 800px !important;
-        margin: 0 auto;
-        margin-left: -18% !important;
-    }
-
-
-
-    .scooter-image{
-        width: 100%;
-            max-width: 600px !important;
-            margin: 0 auto;
-            margin-left: -5% !important;
-    }
-    .scooty-information-firstpara {
-        max-width: 70%;
-        margin: 20px 0;
-        padding: 0 10px;
-        text-align: center;
-        font-size: 14px;
-    }
-
-    .scooty-information-firstpara h2 {
-        font-size: 18px;
-        margin-left: -40%;
-    }
-
-    .scooty-information-firstpara p {
-        font-size: 12px;
-            line-height: 1.6;
-            width: 390px;
-            text-align: justify;
-            margin-left: -45%;
-
-    }
-
-        .private-scooty-insurance-heading {
-            font-size: 18px;
-            margin-top: 6%;      }
-    .private-scooty-paragraph{
-        margin-left: 20%;
-    }
-    .quotes-btn-scooty {
-        padding: 10px 20px;
-            font-size: 14px;
-           
-            width: 350px;
-            margin-left: -10% !important;
-    }
-
-    .coverage-grid {
-        grid-template-columns: 1fr;
-        gap: 15px;
-       
-    }
-
-    .scooter-image{
-        margin-left: -50% !important;
-    }
-    .coverage-card {
-        padding: 15px;
-    }
-
-    .coverage-card h4 {
-        font-size: 16px;
-    }
-
-    .coverage-card p {
-        font-size: 13px;
-        width: 80%;
-            /* or a fixed value like 300px */
-            text-align: justify;
-            text-justify: inter-word;
-            font-size: 14px;
-            line-height: 1.6;
-            margin: 0 auto;
-    }
-
-    .coverage-title {
-        font-size: 18px;
-        margin-bottom: 15px;
-    }
-
-    .coverage-grid-section2 {
-        grid-template-columns: 1fr !important;
-            padding: 10px;
-    }
-
-    .coverage-item {
-        width: 50% !important;
-            max-width: 150px;
-            height: auto;
-            justify-content: center;
-            align-items: center;
-            display: block;
-            margin-left: -10%;
-    }
-
-    .coverage-item img {
-        width: 80px;
-        height: auto;
-        margin-bottom: 10px;
-    }
-
-    .coverage-text h3 {
-        font-size: 16px;
-        margin-bottom: 5px;
-    }
-
-    .coverage-text p {
-        font-size: 14px;
-    }
+  .twi-coverage-card {
+    min-height: auto;
+  }
 }

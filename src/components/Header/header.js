@@ -9,10 +9,53 @@ import {
     useTheme,
     Button,
 } from '@mui/material';
-import { Menu as MenuIcon } from '@mui/icons-material';
+import { Close, Menu as MenuIcon } from '@mui/icons-material';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import logo from '../../assets/ipro new image.png';
 import './header.css';
+
+const productLinks = [
+    { label: 'Car Insurance', to: '/4-wheeler' },
+    { label: 'Two-Wheeler Insurance', to: '/2-wheeler' },
+    { label: 'Commercial Vehicle Insurance', to: '/commercial-insurance' },
+    { label: 'Health Insurance', to: '/healthinsurance' },
+    { label: 'Life Insurance', to: '/lifeinsurance' },
+    { label: 'Home Insurance', to: '/homeinsurance' },
+    { label: 'Travel Insurance', to: '/travelinsurance' },
+    { label: 'Corporate Insurance', to: '/corporate-insurance' },
+];
+
+const advisoryLinks = [
+    { label: 'Our Services', to: '/our-services' },
+    { label: 'Our Business', to: '/our-business' },
+    { label: 'Why Insurance Intermediary?', to: '/why-insurance-intermediary' },
+    { label: 'Why i-Pro Infinity', to: '/why-ipro-infinty' },
+];
+
+const companyLinks = [
+    { label: 'About Us', to: '/Aboutus' },
+    { label: 'Our Beliefs', to: '/beliefs-section' },
+    { label: 'Careers', to: '/career' },
+    { label: 'Contact Us', to: '/contact-us' },
+];
+
+const loginLinks = [
+    { label: 'Customer Login', href: 'https://web.iproinfinity.com/customer-profile/' },
+    { label: 'Partner Login', href: 'https://web.iproinfinity.com/login.php' },
+    { label: 'Partner Registration', href: 'https://web.iproinfinity.com/pos/' },
+];
+
+const menuPaperProps = {
+    sx: {
+        minWidth: 260,
+        maxWidth: 320,
+        maxHeight: '72vh',
+        overflowY: 'auto',
+        p: 0,
+        borderRadius: '10px',
+        boxShadow: '0 10px 30px rgba(13, 71, 161, 0.18)',
+    },
+};
 
 const Header = () => {
     const theme = useTheme();
@@ -20,422 +63,167 @@ const Header = () => {
     const location = useLocation();
     const navigate = useNavigate();
 
-    // Anchors
-    const [menuAnchor, setMenuAnchor] = React.useState(null);
-    const [whatWeDoAnchor, setWhatWeDoAnchor] = React.useState(null);
-    const [aboutUsAnchor, setAboutUsAnchor] = React.useState(null);
+    const [mobileAnchor, setMobileAnchor] = React.useState(null);
     const [productsAnchor, setProductsAnchor] = React.useState(null);
-    const [motorAnchor, setMotorAnchor] = React.useState(null);
-    const [partnersAnchor, setPartnersAnchor] = React.useState(null);
+    const [advisoryAnchor, setAdvisoryAnchor] = React.useState(null);
+    const [companyAnchor, setCompanyAnchor] = React.useState(null);
+    const [loginAnchor, setLoginAnchor] = React.useState(null);
 
-    const handleOpen = setter => event => setter(event.currentTarget);
-    const handleClose = setter => () => setter(null);
-
-    // Shared dropdown menu style
-    const menuPaperProps = {
-        sx: {
-            minWidth: 220,
-            maxWidth: 280,
-            maxHeight: '400px',
-            overflowY: 'auto',
-            p: 0,
-            boxShadow: 3,
-        },
+    const closeAllMenus = () => {
+        setMobileAnchor(null);
+        setProductsAnchor(null);
+        setAdvisoryAnchor(null);
+        setCompanyAnchor(null);
+        setLoginAnchor(null);
     };
 
+    const goHome = () => {
+        closeAllMenus();
+        navigate('/');
+    };
+
+    const renderInternalItem = item => (
+        <MenuItem key={item.to} onClick={closeAllMenus}>
+            <Link to={item.to} className="menu-link">
+                {item.label}
+            </Link>
+        </MenuItem>
+    );
+
+    const renderExternalItem = item => (
+        <MenuItem key={item.href} onClick={closeAllMenus}>
+            <a href={item.href} className="menu-link" target="_blank" rel="noopener noreferrer">
+                {item.label}
+            </a>
+        </MenuItem>
+    );
+
     return (
-        <AppBar
-            position="sticky"
-            className={`app-bar ${isMobile ? 'mobile' : ''}`}
-            sx={{
-                backgroundColor: isMobile ? '#0d47a1' : 'transparent',
-                boxShadow: 'none',
-            }}
-        >
-            <Toolbar className="toolbar" sx={{ display: 'flex', justifyContent: 'space-between' }}>
-                {/* Logo */}
+        <AppBar position="sticky" className="app-bar">
+            <Toolbar className="toolbar">
                 <img
                     src={logo}
                     className="header-logo"
-                    alt="Logo"
-                    style={{
-                        width: isMobile ? '140px' : '180px',
-                        height: isMobile ? '50px' : '70px',
-                        objectFit: 'contain',
-                        cursor: 'pointer',
-                    }}
-                    onClick={() => navigate('/')}
+                    alt="I-Pro Infinity"
+                    onClick={goHome}
                 />
 
-                {/* Menu Items */}
-                <div className="menu-items">
-                    {isMobile ? (
-                        <>
-                            {/* Hamburger Menu */}
-                            <IconButton
-                                color="inherit"
-                                onClick={handleOpen(setMenuAnchor)}
-                                className="hamburger-icon"
-                            >
-                                <MenuIcon />
-                            </IconButton>
-                           <Menu
-  anchorEl={menuAnchor}
-  open={Boolean(menuAnchor)}
-  onClose={handleClose(setMenuAnchor)}
-  anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
-  transformOrigin={{ vertical: 'top', horizontal: 'right' }}
-  PaperProps={{
-    sx: {
-      width: "260px",
-      maxHeight: "80vh",
-      borderRadius: "12px",
-      mt: 1,
-      boxShadow: "0px 4px 20px rgba(0,0,0,0.15)",
-      overflowY: "auto",
-      p: 0
-    }
-  }}
->
-    <MenuItem onClick={handleOpen(setMotorAnchor)}>
-  <span className="menu-link">
-    Motor Insurance ▶
-  </span>
-</MenuItem>
-
-<Menu
-  anchorEl={motorAnchor}
-  open={Boolean(motorAnchor)}
-  onClose={handleClose(setMotorAnchor)}
-  anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
-  transformOrigin={{ vertical: 'top', horizontal: 'left' }}
-  PaperProps={menuPaperProps}
->
-
-<MenuItem onClick={handleClose(setMotorAnchor)}>
-  <Link to="/2-wheeler" className="menu-link">
-    Two-Wheeler Insurance
-  </Link>
-</MenuItem>
-
-<MenuItem onClick={handleClose(setMotorAnchor)}>
-  <Link to="/4-wheeler" className="menu-link">
-    Four-Wheeler Insurance
-  </Link>
-</MenuItem>
-
-<MenuItem onClick={handleClose(setMotorAnchor)}>
-  <Link to="/commercial-insurance" className="menu-link">
-    Commercial Vehicle Insurance
-  </Link>
-</MenuItem>
-
-</Menu>
-                                {location.pathname !== '/' && (
-                                    <MenuItem
-                                        onClick={() => {
-                                            handleClose(setMenuAnchor)();
-                                            navigate('/');
-                                        }}
-                                    >
-                                        <span className="menu-link">Home</span>
-                                    </MenuItem>
-                                )}
-                                <MenuItem onClick={handleClose(setMenuAnchor)}>
-                                    <Link to="/our-services" className="menu-link">
-                                        Our Services
-                                    </Link>
-                                </MenuItem>
-                                <MenuItem onClick={handleClose(setMenuAnchor)}>
-                                    <Link to="/why-ipro-infinty" className="menu-link">
-                                        Why I-Pro Infinity
-                                    </Link>
-                                </MenuItem>
-                                <MenuItem onClick={handleClose(setMenuAnchor)}>
-                                    <Link to="/Aboutus" className="menu-link">
-                                        About Us
-                                    </Link>
-                                </MenuItem>
-                                <MenuItem onClick={handleClose(setMenuAnchor)}>
-                                    <Link to="/beliefs-section" className="menu-link">
-                                        Our Beliefs
-                                    </Link>
-                                </MenuItem>
-                                {/* Products simplified for mobile */}
-                                <MenuItem onClick={handleClose(setMenuAnchor)}>
-                                    <Link to="/healthinsurance" className="menu-link">
-                                        Health Insurance
-                                    </Link>
-                                </MenuItem>
-                               
-                                <MenuItem onClick={handleClose(setMenuAnchor)}>
-                                    <Link to="/corporate" className="menu-link">
-                                        Corporate Insurance
-                                    </Link>
-                                </MenuItem>
-                                <MenuItem onClick={handleClose(setMenuAnchor)}>
-                                    <Link to="/travelinsurance" className="menu-link">
-                                        Travel Insurance
-                                    </Link>
-                                </MenuItem>
-                                <MenuItem onClick={handleClose(setMenuAnchor)}>
-                                    <Link to="/Lifeinsurance" className="menu-link">
-                                        Life Insurance
-                                    </Link>
-                                </MenuItem>
-                                <MenuItem onClick={handleClose(setMenuAnchor)}>
-                                    <Link to="/homeinsurance" className="menu-link">
-                                        Home Insurance
-                                    </Link>
-                                </MenuItem>
-                                <MenuItem onClick={handleClose(setMenuAnchor)}>
-                                    <Link to="/career" className="menu-link">
-                                        Careers
-                                    </Link>
-                                </MenuItem>
-                                <MenuItem onClick={handleClose(setMenuAnchor)}>
-                                    <a
-                                        href="https://web.iproinfinity.com/pos/"
-                                        className="menu-link"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                    >
-                                        Partner Registration
-                                    </a>
-                                </MenuItem>
-                                <MenuItem onClick={handleClose(setMenuAnchor)}>
-                                    <a
-                                        href="https://web.iproinfinity.com/login.php"
-                                        className="menu-link"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                    >
-                                        Partner Login
-                                    </a>
-                                </MenuItem>
-                                <MenuItem onClick={handleClose(setMenuAnchor)}>
-                                    <a
-                                        href="https://web.iproinfinity.com/customer-profile/"
-                                        className="menu-link"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                    >
-                                        Customer Login
-                                    </a>
-                                </MenuItem>
-                            </Menu>
-                        </>
-                    ) : (
-                        <>
-                            {/* Show Home in Desktop if not on home page */}
+                {isMobile ? (
+                    <>
+                        <IconButton
+                            color="inherit"
+                            onClick={event => setMobileAnchor(event.currentTarget)}
+                            className="hamburger-icon"
+                            aria-label={mobileAnchor ? 'Close navigation menu' : 'Open navigation menu'}
+                        >
+                            {mobileAnchor ? <Close /> : <MenuIcon />}
+                        </IconButton>
+                        <Menu
+                            anchorEl={mobileAnchor}
+                            open={Boolean(mobileAnchor)}
+                            onClose={closeAllMenus}
+                            anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
+                            transformOrigin={{ vertical: 'top', horizontal: 'right' }}
+                            PaperProps={{
+                                sx: {
+                                    width: 'min(94vw, 380px)',
+                                    maxHeight: '84vh',
+                                    borderRadius: '12px',
+                                    mt: 1,
+                                    overflowY: 'auto',
+                                    p: 0,
+                                    boxShadow: '0 12px 32px rgba(13, 71, 161, 0.2)',
+                                },
+                            }}
+                        >
+                            <div className="mobile-menu-head">
+                                <span>Menu</span>
+                                <button type="button" onClick={closeAllMenus}>Close</button>
+                            </div>
                             {location.pathname !== '/' && (
-                                <Button color="inherit" onClick={() => navigate('/')}>
-                                    <span className="nav-link">HOME</span>
-                                </Button>
+                                <MenuItem onClick={goHome}>
+                                    <span className="menu-link">Home</span>
+                                </MenuItem>
                             )}
-
-                            {/* What We Do */}
-                            <Button color="inherit" onClick={handleOpen(setWhatWeDoAnchor)}>
-                                <span className="nav-link">WHAT WE DO</span>
+                            <MenuItem className="mobile-menu-label" disabled>Insurance Products</MenuItem>
+                            {productLinks.map(renderInternalItem)}
+                            <MenuItem className="mobile-menu-label" disabled>Advisory</MenuItem>
+                            {advisoryLinks.map(renderInternalItem)}
+                            <MenuItem className="mobile-menu-label" disabled>Company</MenuItem>
+                            {companyLinks.map(renderInternalItem)}
+                            <MenuItem className="mobile-menu-label" disabled>Login</MenuItem>
+                            {loginLinks.map(renderExternalItem)}
+                        </Menu>
+                    </>
+                ) : (
+                    <nav className="menu-items" aria-label="Main navigation">
+                        {location.pathname !== '/' && (
+                            <Button color="inherit" onClick={goHome}>
+                                <span className="nav-link">Home</span>
                             </Button>
-                            <Menu
-                                anchorEl={whatWeDoAnchor}
-                                open={Boolean(whatWeDoAnchor)}
-                                onClose={handleClose(setWhatWeDoAnchor)}
-                                anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
-                                transformOrigin={{ vertical: 'top', horizontal: 'left' }}
-                                PaperProps={menuPaperProps}
-                            >
-                                <MenuItem onClick={handleClose(setWhatWeDoAnchor)}>
-                                        <Link to="/our-business" className="menu-link">
-                                        Our Business
-                                    </Link>
-                                </MenuItem>
-                                    <MenuItem onClick={handleClose(setWhatWeDoAnchor)}>
-                                        <Link to="/why-insurance-intermediary" className="menu-link">
-                                            Why an Insurance intermediary?
-                                        </Link>
-                                    </MenuItem>
-                               
-                                    
-                                    <MenuItem onClick={handleClose(setWhatWeDoAnchor)}>
-                                        <Link to="/why-ipro-infinty" className="menu-link">
-                                            Why i-Pro Infinity
-                                        </Link>
-                                    </MenuItem>
-                            </Menu>
+                        )}
 
-                            {/* About Us */}
-                            <Button color="inherit" onClick={handleOpen(setAboutUsAnchor)}>
-                                <span className="nav-link">ABOUT US</span>
-                            </Button>
-                            <Menu
-                                anchorEl={aboutUsAnchor}
-                                open={Boolean(aboutUsAnchor)}
-                                onClose={handleClose(setAboutUsAnchor)}
-                                anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
-                                transformOrigin={{ vertical: 'top', horizontal: 'left' }}
-                                PaperProps={menuPaperProps}
-                            >
-                                <MenuItem onClick={handleClose(setAboutUsAnchor)}>
-                                    <Link to="/beliefs-section" className="menu-link">
-                                        Our Beliefs
-                                    </Link>
-                                </MenuItem>
-                                {/* <MenuItem onClick={handleClose(setAboutUsAnchor)}>
-                                    <Link to="/2-wheeler" className="menu-link">
-                                        Our Mentors
-                                    </Link>
-                                </MenuItem> */}
-                                <MenuItem onClick={handleClose(setAboutUsAnchor)}>
-                                        <Link to="/Aboutus" className="menu-link">
-                                        Our Team
-                                    </Link>
-                                </MenuItem>
-                            </Menu>
+                        <Button color="inherit" onClick={event => setProductsAnchor(event.currentTarget)}>
+                            <span className="nav-link">Products</span>
+                        </Button>
+                        <Menu
+                            anchorEl={productsAnchor}
+                            open={Boolean(productsAnchor)}
+                            onClose={closeAllMenus}
+                            anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
+                            transformOrigin={{ vertical: 'top', horizontal: 'left' }}
+                            PaperProps={menuPaperProps}
+                        >
+                            {productLinks.map(renderInternalItem)}
+                        </Menu>
 
-                            {/* Products */}
-                            <Button color="inherit" onClick={handleOpen(setProductsAnchor)}>
-                                <span className="nav-link">PRODUCTS</span>
-                            </Button>
-                            <Menu
-                                anchorEl={productsAnchor}
-                                open={Boolean(productsAnchor)}
-                                onClose={handleClose(setProductsAnchor)}
-                                anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
-                                transformOrigin={{ vertical: 'top', horizontal: 'left' }}
-                                PaperProps={menuPaperProps}
-                            >
+                        <Button color="inherit" onClick={event => setAdvisoryAnchor(event.currentTarget)}>
+                            <span className="nav-link">Advisory</span>
+                        </Button>
+                        <Menu
+                            anchorEl={advisoryAnchor}
+                            open={Boolean(advisoryAnchor)}
+                            onClose={closeAllMenus}
+                            anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
+                            transformOrigin={{ vertical: 'top', horizontal: 'left' }}
+                            PaperProps={menuPaperProps}
+                        >
+                            {advisoryLinks.map(renderInternalItem)}
+                        </Menu>
 
-                                    <MenuItem onClick={handleClose(setProductsAnchor)}>
-                                        <Link to="/personal-insurance" className="menu-link">
-                                            Personal Insurance
-                                        </Link>
-                                   
-                                </MenuItem>
-                                {/* Alphabetical order */}
-                                
-                                <MenuItem onClick={handleClose(setProductsAnchor)}>
-                                    <Link to="/healthinsurance" className="menu-link">
-                                        Health Insurance
-                                    </Link>
-                                </MenuItem>
-                                <MenuItem onClick={handleClose(setProductsAnchor)}>
-                                        <Link to="/homeinsurance" className="menu-link">
-                                        Home Insurance
-                                    </Link>
-                                </MenuItem>
-                                    <MenuItem onClick={handleClose(setProductsAnchor)}>
-                                        <Link to="/lifeinsurance" className="menu-link">
-                                            Life Insurance
-                                        </Link>
-                                    </MenuItem>
-                                {/* Motor with submenu */}
-                                <MenuItem onClick={handleOpen(setMotorAnchor)}>
-                                    <span className="menu-link">
-                                        Motor Insurance <span className="menu-arrow">▶</span>
-                                    </span>
-                                </MenuItem>
-                                    <MenuItem onClick={handleClose(setProductsAnchor)}>
-                                        <Link to="/travelinsurance" className="menu-link">
-                                            Travel Insurance
-                                        </Link>
-                                    </MenuItem>
-                                    <MenuItem onClick={handleClose(setProductsAnchor)}>
-                                        <Link to="/corporate-insurance" className="menu-link">
-                                            Corporate
-                                        </Link>
-                                       
-                                    </MenuItem>
-                                    <MenuItem onClick={handleClose(setProductsAnchor)}>
-                                        <Link to="/corporate" className="menu-link">
-                                            Corporate Insurance
-                                        </Link>
-                                    </MenuItem>
-                            </Menu>
+                        <Button color="inherit" onClick={event => setCompanyAnchor(event.currentTarget)}>
+                            <span className="nav-link">Company</span>
+                        </Button>
+                        <Menu
+                            anchorEl={companyAnchor}
+                            open={Boolean(companyAnchor)}
+                            onClose={closeAllMenus}
+                            anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
+                            transformOrigin={{ vertical: 'top', horizontal: 'left' }}
+                            PaperProps={menuPaperProps}
+                        >
+                            {companyLinks.map(renderInternalItem)}
+                        </Menu>
 
-                            {/* Motor Submenu */}
-                            <Menu
-                                anchorEl={motorAnchor}
-                                open={Boolean(motorAnchor)}
-                                onClose={handleClose(setMotorAnchor)}
-                                anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
-                                transformOrigin={{ vertical: 'top', horizontal: 'left' }}
-                                PaperProps={menuPaperProps}
-                            >
-                                <MenuItem onClick={handleClose(setMotorAnchor)}>
-                                        <Link to="/2-wheeler" className="menu-link">
-                                        Two-Wheeler Insurance
-                                    </Link>
-                                </MenuItem>
-                                <MenuItem onClick={handleClose(setMotorAnchor)}>
-                                        <Link to="/4-wheeler" className="menu-link">
-                                        Four-Wheeler Insurance
-                                    </Link>
-                                </MenuItem>
-                                <MenuItem onClick={handleClose(setMotorAnchor)}>
-                                        <Link to="/commercial-insurance" className="menu-link">
-                                        Commercial Vehicle Insurance
-                                    </Link>
-                                </MenuItem>
-                            </Menu>
+                        <Button color="inherit" onClick={event => setLoginAnchor(event.currentTarget)}>
+                            <span className="nav-link">Login</span>
+                        </Button>
+                        <Menu
+                            anchorEl={loginAnchor}
+                            open={Boolean(loginAnchor)}
+                            onClose={closeAllMenus}
+                            anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
+                            transformOrigin={{ vertical: 'top', horizontal: 'left' }}
+                            PaperProps={menuPaperProps}
+                        >
+                            {loginLinks.map(renderExternalItem)}
+                        </Menu>
 
-                              
-
-                            {/* Careers */}
-                            <Button color="inherit">
-                                <Link to="/career" className="nav-link">
-                                    CAREERS
-                                </Link>
-                            </Button>
-
-                            {/* Partners */}
-                            <Button color="inherit" onClick={handleOpen(setPartnersAnchor)}>
-                                <span className="nav-link"> Login </span>
-                            </Button>
-                            <Menu
-                                anchorEl={partnersAnchor}
-                                open={Boolean(partnersAnchor)}
-                                onClose={handleClose(setPartnersAnchor)}
-                                anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
-                                transformOrigin={{ vertical: 'top', horizontal: 'left' }}
-                                PaperProps={menuPaperProps}
-                            >
-                                    <MenuItem onClick={handleClose(setPartnersAnchor)}>
-                                        <a
-                                            href="https://web.iproinfinity.com/customer-profile/"
-                                            className="menu-link"
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                        >
-                                            Customer Login
-                                        </a>
-                                    </MenuItem>
-                                <MenuItem onClick={handleClose(setPartnersAnchor)}>
-                                    <a
-                                        href="https://web.iproinfinity.com/login.php"
-                                        className="menu-link"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                    >
-                                        Partner Login
-                                    </a>
-                                </MenuItem>
-                                    <MenuItem onClick={handleClose(setPartnersAnchor)}>
-                                        <a
-                                            href="https://web.iproinfinity.com/pos/"
-                                            className="menu-link"
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                        >
-                                            Partner Registration
-                                        </a>
-                                    </MenuItem>
-                                
-                            </Menu>
-                        </>
-                    )}
-                </div>
+                        <Button color="inherit" onClick={() => navigate('/contact-us')} className="quote-nav-button">
+                            Get Assistance
+                        </Button>
+                    </nav>
+                )}
             </Toolbar>
         </AppBar>
     );

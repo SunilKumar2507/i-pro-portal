@@ -1,0 +1,36 @@
+.philosophy-hero { min-height: 535px; }
+
+.philosophy-copy {
+    width: min(51%, 640px);
+    min-height: 535px;
+    padding-top: 68px;
+    padding-bottom: 42px;
+}
+
+.philosophy-copy h1 {
+    font-size: 30px;
+    line-height: 1.24;
+    margin-bottom: 25px;
+}
+
+.philosophy-copy li {
+    gap: 12px;
+    max-width: 470px;
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 15px 0;
+}
+
+.philosophy-copy li svg { font-size: 16px; margin-top: 2px; }
+
+@media (max-width: 800px) {
+    .philosophy-hero, .philosophy-copy { min-height: 560px; }
+    .philosophy-copy { width: min(70%, 560px); padding-top: 62px; }
+}
+
+@media (max-width: 520px) {
+    .philosophy-hero, .philosophy-copy { min-height: 570px; }
+    .philosophy-copy { width: 92%; padding-top: 44px; }
+    .philosophy-copy h1 { font-size: 23px; }
+    .philosophy-copy li { font-size: 12px; margin: 13px 0; }
+}

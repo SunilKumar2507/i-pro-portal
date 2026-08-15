@@ -17,9 +17,17 @@ import car from '../../assets/car-insurance-banner.png';
 import scooty from '../../assets/bike-insurance-banner.png';
 import Commercial from '../../assets/commercial-insurance-banner.png';
 import health from '../../assets/health-insurance-banner.png';
-import introVideo from '../../videos/Mysore City in 2024 - 4K Cinematic Drone Tour-inside-1754284286194-inside-1754284451465.mp4';
 
 import "./bannerscreen.css";
+
+const images = [car, scooty, Commercial, health];
+const bannerTexts = [
+  "Car Insurance - Take a 4-wheeler insurance in a few simple steps",
+  "Bike Insurance - Take a 2-wheeler insurance in a few simple steps",
+  "Commercial Vehicle Insurance - Take commercial insurance in a few steps",
+  "Health Insurance - Take a health insurance policy in a few simple steps"
+];
+const bannerLinks = ["/4-wheeler", "/2-wheeler", "/commercial-insurance", "/healthinsurance"];
 
 function Bannerscreen() {
   const navigate = useNavigate();
@@ -29,22 +37,13 @@ function Bannerscreen() {
   name: '',
   phone: '',
   email: '',
-  reference: ''
+  reference_code: ''
 });
   const [imageIndex, setImageIndex] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
   const intervalRef = useRef(null);
   const [loading, setLoading] = useState(false);
   
-  const images = [car, scooty, Commercial, health];
-  const bannerTexts = [
-    "Car Insurance –Take a 4-wheeler insurance in a few simple steps",
-    "Bike Insurance – Take a 2-wheeler insurance in a few simple steps",
-    "Commercial Vehicle Insurance – Take a commercial insurance in a few steps",
-    "Health Insurance – Take a health insurance policy in a few simple steps"
-  ];
-  const bannerLinks = ["/4-wheeler", "/2-wheeler", "/commercial-insurance", "/healthinsurance"];
-
   useEffect(() => {
     // Zoom-in on image load
     setIsHovered(true);
@@ -74,9 +73,19 @@ function Bannerscreen() {
     setIsHovered(false);
   };
 
+  const navigateToRoute = (route) => {
+    if (!route) return;
+
+    if (route.startsWith('http')) {
+      window.location.href = route;
+    } else {
+      navigate(route);
+    }
+  };
+
   const handleGridClick = (gridType, route) => {
-    const userSubmitted = localStorage.getItem('user_submitted');
-    if (userSubmitted) {
+    const userSubmitted = Number(localStorage.getItem('user_submitted'));
+    if (userSubmitted && userSubmitted > Date.now()) {
       if (route.startsWith('http')) {
         window.location.href = route; // ✅ External link
       } else {
@@ -96,8 +105,11 @@ function Bannerscreen() {
   };
 
   const handleCancel = () => {
+    const route = selectedGrid.route;
+
     setShowModal(false);
-    setFormData({ name: '', phone: '', email: '' });
+    setFormData({ name: '', phone: '', email: '', reference_code: '' });
+    navigateToRoute(route);
   };
 
  const handleSubmit = async () => {
@@ -152,11 +164,7 @@ function Bannerscreen() {
       reference_code: ""
     });
 
-    if (selectedGrid.route.startsWith("http")) {
-      window.location.href = selectedGrid.route;
-    } else {
-      navigate(selectedGrid.route);
-    }
+    navigateToRoute(selectedGrid.route);
 
   } catch (error) {
     alert("Failed to send email.");
@@ -250,12 +258,12 @@ function Bannerscreen() {
                       console.log('Center clicked!');
                     }}
                   ></div>
+                  <div className="banner-inside-text">
+                    {bannerTexts[imageIndex]}
+                  </div>
                 </div>
 
               </a>
-              <div className="banner-inside-text">
-                {bannerTexts[imageIndex]}
-              </div>
             </div>
           </div>
         </div>
@@ -301,14 +309,14 @@ function Bannerscreen() {
             </div>
 
             <div className="bannerscreen-home-icons-wrapper">
-              <div className="home-icons-box" onClick={() => handleGridClick('travel', '/corporate')}>
+              <div className="home-icons-box" onClick={() => handleGridClick('corporate', '/corporate-insurance')}>
                 <img src={corporate} alt="Corporate" className="icon-img" />
                 <p className="home-icons-lable">Corporate</p>
               </div>
             </div>
 
             <div className="bannerscreen-home-icons-wrapper">
-              <div className="home-icons-box" onClick={() => handleGridClick('Home', '/Homeisnurance')}>
+              <div className="home-icons-box" onClick={() => handleGridClick('home', '/homeinsurance')}>
                 <img src={homeloan} alt="Home Insurance" className="icon-img" />
                 <p className="home-icons-lable">Home Insurance</p>
               </div>

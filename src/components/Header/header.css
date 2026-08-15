@@ -1,141 +1,107 @@
 .app-bar {
-    background-color: white !important;
-    width: 100% !important;
+    background-color: #fff !important;
+    box-shadow: 0 2px 10px rgba(13, 71, 161, 0.08) !important;
+    left: 0;
     position: sticky !important;
     top: 0;
-    left: 0;
+    width: 100% !important;
     z-index: 1100;
-    box-shadow: 0px 2px 6px rgba(0,0,0,0.08);
 }
 
-body,html{
-    margin:0;
-    padding:0;
-    width:100%;
-    font-family:'Segoe UI',sans-serif;
+body,
+html {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+    width: 100%;
 }
 
-/* Logo */
-.header-logo{
-    width:180px !important;
-    height:auto !important;
+.toolbar {
+    align-items: center;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    min-height: 76px !important;
+    padding: 8px 24px;
+    width: 100%;
 }
 
-/* Toolbar */
-.toolbar{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    width:100%;
-    padding:8px 20px;
+.header-logo {
+    cursor: pointer;
+    height: auto !important;
+    max-height: 62px;
+    object-fit: contain;
+    width: 180px !important;
 }
 
-/* Menu container */
-.menu-items{
-    margin-left:auto;
-    margin-right:40px;
-    display:flex;
-    align-items:center;
-    gap:10px;
+.menu-items {
+    align-items: center;
+    display: flex;
+    gap: 6px;
+    justify-content: flex-end;
+    margin-left: auto;
+    min-width: 0;
 }
 
-/* Desktop Buttons */
-.menu-items .MuiButton-root{
-    position:relative;
-    transition:transform 0.3s ease;
-    padding:8px 12px;
-    font-size:15px;
+.menu-items .MuiButton-root {
+    border-radius: 6px;
+    min-width: auto;
+    padding: 8px 11px;
+    text-transform: none;
+    transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
-/* Hover */
-.menu-items .MuiButton-root:hover{
-    transform:scale(1.08);
+.menu-items .MuiButton-root:hover {
+    background-color: #eef5fb;
+    transform: translateY(-1px);
 }
 
-/* Links */
 .nav-link,
-.menu-link{
-    color:#175A9E;
-    text-decoration:none;
-    font-weight:500;
+.menu-link {
+    color: #175A9E;
+    font-weight: 650;
+    letter-spacing: 0;
+    text-decoration: none;
 }
 
-/* Dropdown Menu */
-.MuiMenu-paper{
-    max-height:300px !important;
-    width:250px;
-    z-index:1300 !important;
-}
-
-/* Hamburger icon */
-.hamburger-icon{
-    z-index:9999;
-    color:#175A9E !important;
-    display:none;
-}
-
-/* =========================
-   RESPONSIVE
-   ========================= */
-
-/* Tablet */
-@media (max-width:1024px){
-
-.menu-items{
-margin-right:20px;
-gap:8px;
-}
-
-.menu-items .MuiButton-root{
-font-size:14px;
-padding:6px 10px;
-}
-
-.header-logo{
-width:150px !important;
-}
-
-}
-
-/* Mobile */
-@media (max-width:960px){
-
-/* hide desktop buttons only */
-.menu-items .MuiButton-root{
-display:none;
-}
-
-/* show hamburger */
-.hamburger-icon{
-display:block;
-}
-
-.toolbar{
-padding:8px 12px;
-}
-
-.header-logo{
-width:140px !important;
-}
-
-}
-
-/* Small phones */
-@media (max-width:480px){
-
-.header-logo{
-width:120px !important;
-}
-
+.nav-link {
+    font-size: 14px;
 }
 
 .menu-link {
-    text-decoration: none;
-    color: #0d47a1;
-    font-size: 15px;
-    font-weight: 500;
     display: block;
+    font-size: 15px;
+    line-height: 1.35;
     width: 100%;
+}
+
+.quote-nav-button {
+    background-color: #175A9E !important;
+    color: #fff !important;
+    font-weight: 700 !important;
+    margin-left: 4px !important;
+    padding: 8px 14px !important;
+}
+
+.quote-nav-button:hover {
+    background-color: #0d47a1 !important;
+}
+
+.hamburger-icon {
+    color: #175A9E !important;
+    display: none !important;
+    height: 44px;
+    width: 44px;
+    z-index: 9999;
+}
+
+.MuiMenu-paper {
+    z-index: 1300 !important;
+}
+
+.MuiMenuItem-root {
+    min-height: 46px !important;
+    padding: 12px 18px !important;
 }
 
 .MuiMenuItem-root:hover {
@@ -143,9 +109,107 @@ width:120px !important;
 }
 
 .MuiMenuItem-root:hover .menu-link {
-    color: white !important;
+    color: #fff !important;
 }
 
-.MuiMenuItem-root {
-    padding: 12px 18px !important;
+.mobile-menu-head {
+    align-items: center;
+    background-color: #175A9E;
+    color: #fff;
+    display: flex;
+    font-size: 16px;
+    font-weight: 700;
+    justify-content: space-between;
+    padding: 14px 16px;
+}
+
+.mobile-menu-head button {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 6px;
+    color: #fff;
+    cursor: pointer;
+    font: inherit;
+    font-size: 13px;
+    padding: 5px 10px;
+}
+
+.mobile-menu-label {
+    background-color: #eef5fb !important;
+    color: #175A9E !important;
+    font-size: 12px !important;
+    font-weight: 800 !important;
+    letter-spacing: 0 !important;
+    min-height: 34px !important;
+    opacity: 1 !important;
+    padding-bottom: 8px !important;
+    padding-top: 8px !important;
+    text-transform: uppercase;
+}
+
+.mobile-menu-label:hover {
+    background-color: #eef5fb !important;
+}
+
+@media (max-width: 1180px) {
+    .toolbar {
+        padding: 8px 18px;
+    }
+
+    .header-logo {
+        width: 154px !important;
+    }
+
+    .menu-items .MuiButton-root {
+        padding: 7px 8px;
+    }
+
+    .nav-link {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 960px) {
+    .toolbar {
+        min-height: 64px !important;
+        padding: 7px 12px;
+    }
+
+    .header-logo {
+        max-height: 50px;
+        width: 140px !important;
+    }
+
+    .menu-items {
+        display: none;
+    }
+
+    .hamburger-icon {
+        display: inline-flex !important;
+    }
+
+    .MuiMenuItem-root {
+        min-height: 48px !important;
+        padding: 13px 18px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .toolbar {
+        min-height: 60px !important;
+        padding: 6px 10px;
+    }
+
+    .header-logo {
+        width: 122px !important;
+    }
+
+    .hamburger-icon {
+        height: 42px;
+        width: 42px;
+    }
+
+    .menu-link {
+        font-size: 14px;
+    }
 }

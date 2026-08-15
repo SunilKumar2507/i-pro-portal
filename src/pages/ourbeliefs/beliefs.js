@@ -64,7 +64,7 @@ const BeliefsSection = () => {
                     </div>
                 </div>
                 <div className="vision-mission-image">
-                    <img src={ourbeliefs} alt="Vision and Mission Image" className='vission-image' />
+                    <img src={ourbeliefs} alt="Vision and Mission" className='vission-image' />
                 </div>
             </div>
 

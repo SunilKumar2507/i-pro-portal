@@ -27,7 +27,7 @@ import './Career.css'
                         <li>Whether you are experienced or just starting out, we welcome talent from all backgrounds.</li>
                         <li>You will have the opportunity to grow your career while making a real impact in customers' lives.</li>
                         <li>Great incentives, training programs, and a supportive team await you.</li>
-                        <li>Submit your resume to <a>careers@iproinfinity.com </a> below to take the first step toward a fulfilling career with us.</li>
+                        <li>Submit your resume to <a href="mailto:careers@iproinfinity.com">careers@iproinfinity.com</a> below to take the first step toward a fulfilling career with us.</li>
                         <li>We are excited - Let us commence a great journey together!</li>
                     </ul>
                 </div>

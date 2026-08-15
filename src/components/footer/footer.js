@@ -36,14 +36,14 @@ const Footer = () => {
                 <li><a href="https://web.iproinfinity.com/car-insurance/" target="_blank" rel="noopener noreferrer">Private Car Insurance</a></li>
                 <li><a href="https://web.iproinfinity.com/two-wheeler-insurance/" target="_blank" rel="noopener noreferrer">Two-Wheeler Insurance</a></li>
                 <li><a href="https://web.iproinfinity.com/commercial-vehicle-insurance/" target="_blank" rel="noopener noreferrer">Commercial Insurance</a></li>
-                <li><a href="#">Corporate Insurance</a></li>
+                <li><a href="/corporate-insurance">Corporate Insurance</a></li>
               </ul>
             </div>
             <div>
               <h4>General</h4>
               <ul>
                 <li><a href="/Aboutus">About Us</a></li>
-                <li><a href="#">Contact Us</a></li>
+                <li><a href="/contact-us">Contact Us</a></li>
                 <li><a href="/career">Careers</a></li>
                 <li><a href="/beliefs-section">Our Beliefs</a></li>
                 <li><a href="/why-ipro-infinty">Why I Pro Infinity</a></li>
@@ -52,10 +52,10 @@ const Footer = () => {
             <div>
               <h4>Policy</h4>
               <ul>
-                <li><a href="#">Privacy Policy</a></li>
-                <li><a href="#">Grievance Policy</a></li>
-                <li><a href="#">Terms Of Use</a></li>
-                <li><a href="#">E-Insurance Accounts</a></li>
+                <li><button type="button" className="footer-link-button" disabled>Privacy Policy</button></li>
+                <li><button type="button" className="footer-link-button" disabled>Grievance Policy</button></li>
+                <li><button type="button" className="footer-link-button" disabled>Terms Of Use</button></li>
+                <li><button type="button" className="footer-link-button" disabled>E-Insurance Accounts</button></li>
               </ul>
             </div>
           </div>
@@ -69,9 +69,9 @@ const Footer = () => {
             <br />
             <br />
             <div className="social-icons">
-              <a href="#" aria-label="Facebook"><img src={facebokLogo} alt="facebook logo" className="facebook-logo" /></a>
-              <a href="#" aria-label="Twitter"><img src={xLogo} alt="X logo" className="x-logo" /></a>
-              <a href="#" aria-label="LinkedIn"><img src={linkedinLogo} alt="linkedin logo" className="linkedin-logo" /></a>
+              <button type="button" className="social-icon-button" aria-label="Facebook" disabled><img src={facebokLogo} alt="facebook logo" className="facebook-logo" /></button>
+              <button type="button" className="social-icon-button" aria-label="Twitter" disabled><img src={xLogo} alt="X logo" className="x-logo" /></button>
+              <button type="button" className="social-icon-button" aria-label="LinkedIn" disabled><img src={linkedinLogo} alt="linkedin logo" className="linkedin-logo" /></button>
              <a 
   href="https://www.instagram.com/i_pro_infinity_insurance?igsh=ZnE3NmoydzNvNmg4"
   target="_blank"

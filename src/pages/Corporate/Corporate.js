@@ -68,14 +68,13 @@ function Corporate() {
             </div>
 
             <div className="quote-container">
-                <a
-                    // href="https://uatweb.iproinfinity.com/carinsurance/"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                <button
+                    type="button"
                     className="quotes-btn-carinformation"
+                    disabled
                 >
                     Coming soon
-                </a>
+                </button>
             </div>
             <br></br>
             <div className='backgroundsection-carinformation'>
