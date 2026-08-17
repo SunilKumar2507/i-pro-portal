@@ -1,135 +1,54 @@
 import React, { useState } from 'react';
-import Footer from "../../components/footer/footer"
-import './support.css';
-import contactImg from '../../assets/customersupport.gif'; // Top-left illustration
+import Footer from '../../components/footer/footer';
 import Header from '../../components/Header/header';
- import Calling from '../../assets/calling.jpg'; // Support icon
-import emailImg from '../../assets/email.jpg'; // Email icon
-import address from '../../assets/addresss.jpg';
-import { FaWhatsapp } from "react-icons/fa"; // WhatsApp icon
+import heroImage from '../../assets/contact_us_hero_img.png';
+import quickAnswerImage from '../../assets/contact_us_quick_ans.png';
+import { FaEnvelope, FaMapMarkerAlt, FaPaperPlane, FaPhoneAlt, FaWhatsapp } from 'react-icons/fa';
+import './support.css';
+
+const faqs = [
+    { question: 'Does this policy cover pre-existing diseases?', answer: 'Some policies may cover pre-existing conditions after a waiting period. Please review your policy details for specifics.' },
+    { question: 'Is there cover for pre-medical conditions like diabetes?', answer: 'Coverage for diabetes may be available under specific policies. Check the policy terms for details.' },
+    { question: 'Why do I need travel insurance?', answer: 'Travel insurance provides financial protection for medical emergencies, trip cancellations and other unforeseen events during a trip.' },
+    { question: 'Is pre-approval required before hospitalisation?', answer: 'Pre-approval is often required for planned treatment. Emergency treatment may not require prior approval.' },
+    { question: 'What is an ASP?', answer: 'An Application Service Provider is a company that offers software applications and related services over the internet.' },
+];
 
 const ContactUs = () => {
-  const [openIndex, setOpenIndex] = useState(null);
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    message: ''
-  });
+    const [openIndex, setOpenIndex] = useState(null);
+    const [formData, setFormData] = useState({ name: '', email: '', phone: '', message: '' });
+    const handleChange = event => setFormData({ ...formData, [event.target.name]: event.target.value });
+    const handleSubmit = event => {
+        event.preventDefault();
+        window.location.href = `mailto:customerfirst@iproinfinity.com?subject=New Contact Inquiry&body=Name: ${formData.name}%0AEmail: ${formData.email}%0APhone: ${formData.phone}%0AMessage: ${formData.message}`;
+    };
 
-  const faqs = [
-    {
-      question: "Does this policy cover Pre-existing diseases?",
-      answer: "Yes, some policies may cover pre-existing conditions after a waiting period. Please review your policy details for specifics."
-    },
-    {
-      question: "Is there cover for pre-medical conditions like diabetes?",
-      answer: "Yes, coverage for diabetes is available under specific policies. Check the policy terms for more details."
-    },
-    {
-      question: "Why do I need travel insurance?",
-      answer: "Travel insurance provides financial protection for medical emergencies, trip cancellations, and other unforeseen incidents during your trip."
-    },
-    {
-      question: "In case medical treatment is required, is there any need for pre-approval before hospitalization?",
-      answer: "Yes, pre-approval is often required for planned treatments. Emergency treatments may not require prior approval."
-    },
-    {
-      question: "What is an ASP?",
-      answer: "An ASP (Application Service Provider) is a company that offers software applications and related services over the internet."
-    }
-  ];
+    return (
+        <div className="contact-page">
+            <Header />
+            <main>
+                <section className="contact-hero" style={{ backgroundImage: `url(${heroImage})` }}>
+                    <div className="contact-hero-copy"><span className="contact-kicker">We are here to help</span><h1>Questions?<br />Let's start a<br /><strong>conversation.</strong></h1><i /><p>Reach out to our team for helpful guidance<br />on your insurance needs.</p></div>
+                </section>
 
-  const toggleFAQ = (index) => {
-    setOpenIndex(openIndex === index ? null : index);
-  };
+                <section className="contact-main-grid">
+                    <form className="contact-message-card" onSubmit={handleSubmit}>
+                        <span className="contact-kicker">Send a message</span><h2>How can we help?</h2>
+                        <div className="contact-two-fields"><label>Name*<input type="text" name="name" placeholder="Enter your full name" value={formData.name} onChange={handleChange} required /></label><label>Email*<input type="email" name="email" placeholder="Enter your email address" value={formData.email} onChange={handleChange} required /></label></div>
+                        <label>Phone number*<input type="tel" name="phone" placeholder="Enter your phone number" value={formData.phone} onChange={handleChange} required /></label>
+                        <label>Message<textarea name="message" placeholder="Tell us how we can help" rows="5" value={formData.message} onChange={handleChange} /></label>
+                        <button type="submit">Send message <FaPaperPlane /></button>
+                    </form>
 
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
+                    <aside className="contact-details-card"><span className="contact-kicker">Contact details</span><h2>Prefer to reach us directly?</h2><div className="contact-details-list"><a href="tel:08025441353" className="contact-detail"><b><FaPhoneAlt /></b><span><strong>Call us</strong><small>080 25441353</small></span></a><a href="mailto:customerfirst@iproinfinity.com" className="contact-detail"><b><FaEnvelope /></b><span><strong>Email</strong><small>customerfirst@iproinfinity.com</small></span></a><div className="contact-detail"><b><FaMapMarkerAlt /></b><span><strong>Visit us</strong><small>#18, 3rd Cross, RMV 2nd Stage, 4th Block,<br />MLA Layout, Sanjaynagar,<br />Bengaluru 560094</small></span></div></div></aside>
+                </section>
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    window.location.href = `mailto:deepthi@iproinfinity.com?subject=New Contact Inquiry&body=Name: ${formData.name}%0AEmail: ${formData.email}%0APhone: ${formData.phone}%0AMessage: ${formData.message}`;
-  };
-
-  return (
-    <div className="container">
-      <Header />
-      <br />
-      <br />
-      <div className="contact-headers">
-        <img src={contactImg} alt="Contact Illustration" className="contact-img" />
-        <div className="contact-form">
-          <h2>Questions? Drop us a line!</h2>
-          <form onSubmit={handleSubmit}>
-            <label>Name*</label>
-            <input type="text" name="name" placeholder="Please enter your full name" value={formData.name} onChange={handleChange} required />
-
-            <label>Email*</label>
-            <input type="email" name="email" placeholder="Please enter your email" value={formData.email} onChange={handleChange} required />
-
-            <label>Phone No*</label>
-            <input type="tel" name="phone" placeholder="Please enter your ph no" value={formData.phone} onChange={handleChange} required />
-
-            <label>Message</label>
-            <textarea className='textarea' name="message" placeholder="Your message..." value={formData.message} onChange={handleChange}></textarea>
-
-            <button type="submit" className="send-button">Send message</button>
-          </form>
+                <section className="contact-faq-section"><div className="contact-faq-intro"><span className="contact-kicker">FAQs</span><h2>Quick answers.</h2><p>Find answers to the most common questions about our insurance policies.</p><img src={quickAnswerImage} alt="Insurance protection checklist" /></div><div className="contact-faq-list">{faqs.map((item, index) => <article className="contact-faq-item" key={item.question}><button type="button" onClick={() => setOpenIndex(openIndex === index ? null : index)} aria-expanded={openIndex === index}><span>{item.question}</span><b>{openIndex === index ? '−' : '+'}</b></button>{openIndex === index && <p>{item.answer}</p>}</article>)}</div></section>
+            </main>
+            <Footer />
+            <a href="https://wa.me/919380029170" target="_blank" rel="noopener noreferrer" className="whatsapp-float" aria-label="Chat with us on WhatsApp"><FaWhatsapp className="whatsapp-icon" /></a>
         </div>
-      </div>
-
-      <div className="contact-info">
-        <div className="info-cards">
-          <img className="calling" src={Calling} alt="Support" />
-          <p className='contact-us'>Contact Us!</p>
-          <p className='contact-us'>080 25441353</p>
-        </div>
-
-        <div className="info-cards">
-          <img className="emailimage" src={emailImg} alt="Email" />
-          <p className='contact-us'>Email</p>
-          <p className='contact-us-email'>customerfirst@iproinfinity.com</p>
-        </div>
-
-        <div className="info-cards">
-          <img className="addresss" src={address} alt="WhatsApp" />
-          <p className='contact-us'>Address</p>
-          <p className='contact-us'>
-            # 18, 3rd Cross, RMV 2nd Stage<br />
-            4th Block, MLA Layout,<br />
-            Sanjaynagar, Bengaluru 560094
-          </p>
-        </div>
-      </div>
-
-      <div className="faq-container">
-        <h2>FAQ's</h2>
-        {faqs.map((item, index) => (
-          <div key={index} className="faq-item">
-            <div className="faq-question" onClick={() => toggleFAQ(index)}>
-              <span>{item.question}</span>
-              <span className={`faq-icon ${openIndex === index ? 'open' : ''}`}>&#9660;</span>
-            </div>
-            {openIndex === index && <div className="faq-answer">{item.answer}</div>}
-          </div>
-        ))}
-
-         <a
-                                        href="https://wa.me/919380029170"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="whatsapp-float"
-                                      >
-                                        <FaWhatsapp className="whatsapp-icon" />
-                                      </a>
-      </div>
-      <div className="footer">
-        <Footer />
-      </div>
-    </div>
-  );
+    );
 };
 
 export default ContactUs;

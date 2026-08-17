@@ -1,109 +1,67 @@
 import React from 'react';
-import Headers from "../../components/Header/header";
-import Profile from "../../assets/profile.jpg"
-import { FaWhatsapp } from "react-icons/fa";
-import Footer from "../../components/footer/footer";
-
+import Headers from '../../components/Header/header';
+import Profile from '../../assets/profile.jpg';
+import { FaWhatsapp } from 'react-icons/fa';
+import Footer from '../../components/footer/footer';
 import './About.css';
 
-const AboutIPro = () => {
-    return (
-        <div className="about-us-conatiner">
-            <header className='header-section'>
-                <Headers />
-            </header>
+const leaders = [
+    { name: 'Mr. Suresh Sivalingam', role: 'Principal Officer & CEO', text: 'A Mechanical Engineer, he entered the insurance sector as a Direct Recruit Officer with United India Insurance Company before working in Oman and the UK. He brings more than three decades of experience across underwriting, claims, reinsurance, risk engineering and risk management.' },
+    { name: 'Mr. Umesh Kadarmandlagi', role: 'Executive Director', text: 'A Commerce Graduate with more than three decades of experience at United India Insurance Company, including leadership roles as Branch Manager and Divisional Manager. He heads the Corporate Insurance Team.' },
+    { name: 'Mr. Padmanabh H. Bhandary', role: 'Executive Director', text: 'A Law Graduate with more than three decades in the insurance industry, serving in leadership roles across regions and superannuating as Regional Manager, Calicut. He heads the Claims and Personal Insurance Team.' },
+];
 
-            <section className='about-ipro-container'>
-                <div className='about-ipro-content'>
-                    <h1 className='about-ipro-heading'>
-                        ABOUT I-PRO INFINITY
-                    </h1>
-                    <p className="about-ipro-para">i-Pro was founded in [year] by <b>Suresh Siva</b>, a visionary entrepreneur with a passion for technology and innovation. What began as a small startup has since grown into a leading provider of cutting-edge solutions in the digital realm.
-                        From humble beginnings to our current position as industry pioneers, our journey has been defined by a relentless
-                        pursuit of excellence and a commitment to pushing the boundaries of what's possible.</p>
+const AboutIPro = () => (
+    <div className="about-page">
+        <header className="header-section"><Headers /></header>
+        <main>
+            <section className="about-hero">
+                <div className="about-orb about-orb-one" />
+                <div className="about-orb about-orb-two" />
+                <div className="about-hero-copy">
+                    <span className="about-eyebrow">About i-Pro Infinity</span>
+                    <h1>Insurance expertise, <em>made personal.</em></h1>
+                    <p>We combine deep insurance knowledge with a modern, people-first approach to protect what matters most.</p>
+                    <div className="about-hero-actions">
+                        <a href="/contact-us" className="about-primary-action">Talk to an expert <span>→</span></a>
+                        <a href="#leadership" className="about-text-action">Meet our leadership</a>
+                    </div>
                 </div>
-                <div className='about-ipro-img-container'>
-                    <img src={Profile} alt="Insurance Expert" className='about-ipro-img' />
+                <div className="about-hero-visual">
+                    <div className="about-image-glow" />
+                    <img src={Profile} alt="i-Pro Infinity insurance professional" />
                 </div>
             </section>
 
-
-            <section className='our-teams-container'>
-                <div className='our-teams-img-container'>
-                    <img src={Profile} alt="Insurance Expert" className='our-teams-img' />
-                </div>
-                <div className='our-teams-content'>
-                    <h1 className='our-teams-heading'>
-                        OUR TEAMS
-                    </h1>
-                    <p className="our-teams-para">i-Pro was founded in [year] by <b>Suresh Siva</b>, a visionary entrepreneur with a passion for technology and innovation.
-                        What began as a small startup has since grown into a leading provider of cutting-edge solutions in the digital realm.
-                        From humble beginnings to our current position as industry pioneers, our journey has been defined by a relentless
-                        pursuit of excellence and a commitment to pushing the boundaries of what's possible.</p>
+            <section className="about-story-section">
+                <div className="about-section-intro"><span className="about-eyebrow">Our story</span><h2>Built on expertise.<br />Driven by trust.</h2></div>
+                <div className="about-story-copy">
+                    <p>i-Pro Infinity was founded by visionary insurance professionals with a passion for helping people make confident decisions. From our early beginnings to our position today, our journey has been shaped by a relentless pursuit of excellence.</p>
+                    <p>We bring together thoughtful advice, broad market understanding and responsive support—creating insurance solutions that feel clear, capable and genuinely human.</p>
                 </div>
             </section>
 
-            <section className='suresh-container'>
-                <div className='suresh-content'>
-                    <h1 className='suresh-heading'>
-                        MR. SURESH SIVALINGAM <br></br>
-                        PRINCIPAL OFFICER AND CEO
-                    </h1>
-                    <p className="suresh-para">A Mechanical Engineer, ventured into insurance sector as a Direct Recruit Officer with M/s.
-                        United India Insurance Company, and then on to Overseas Market in Oman and UK.
-                        Has more than three decades of experience, handling large corporates as an insurer, reinsurer, insurance broker,
-                        and risk manager and across all lines of business and functions – Underwriting, Claims, Reinsurance and Risk Engineering.</p>
-                </div>
-                <div className='suresh-img-container'>
-                    <img src={Profile} alt="Insurance Expert" className='suresh-img' />
-                </div>
+            <section className="about-values-section">
+                <article className="about-value-card"><span className="about-value-number">01</span><h3>Clarity first</h3><p>Clear guidance and transparent advice at every step.</p></article>
+                <article className="about-value-card"><span className="about-value-number">02</span><h3>Built around you</h3><p>Protection shaped around your needs, not a template.</p></article>
+                <article className="about-value-card"><span className="about-value-number">03</span><h3>Here when it counts</h3><p>Steady support when you need it most.</p></article>
             </section>
 
-            <section className='umesh-container'>
-                <div className='umesh-img-container'>
-                    <img src={Profile} alt="Insurance Expert" className='umesh-img' />
-                </div>
-                <div className='umesh-content'>
-                    <h1 className='umesh-heading'>
-                        MR. UMESH KADARMANDALGI<br></br>
-                        EXECUTIVE DIRECTOR
-                    </h1>
-                    <p className="umesh-para">A Commerce Graduate with more than three decades of experience working for M/s.
-                        United India Insurance Company in various capacities as Branch Manager and Divisional Manager across various regions,
-                        and superannuated as Divisional Manager, Bangalore. Heads the Corporate Insurance Team.</p>
+            <section className="about-team-section" id="leadership">
+                <div className="about-team-heading"><span className="about-eyebrow">Leadership</span><h2>People behind the promise.</h2><p>Our leaders bring decades of experience across every dimension of insurance.</p></div>
+                <div className="about-leaders-grid">
+                    {leaders.map((leader, index) => (
+                        <article className="about-leader-card" key={leader.name}>
+                            <div className="about-leader-image"><img src={Profile} alt={leader.name} /><span>{String(index + 1).padStart(2, '0')}</span></div>
+                            <div className="about-leader-content"><p className="about-leader-role">{leader.role}</p><h3>{leader.name}</h3><p>{leader.text}</p></div>
+                        </article>
+                    ))}
                 </div>
             </section>
-
-            <section className='padmanabh-container'>
-                <div className='padmanabh-content'>
-                    <h1 className='padmanabh-heading'>
-                        MR. PADMANABH H BHANDARY<br></br>
-                        EXECUTIVE DIRECTOR
-                    </h1>
-                    <p className="padmanabh-para">A Law Graduate with more than three decades of experience working for M/s.
-                        United India Insurance Company in various capacities as Branch Manager, Divisional Manager across various regions, and superannuated as
-                        Regional Manager, Calicut. Heads Claims and Personal Insurance Team.</p>
-                </div>
-                <div className='padmanabh-img-container'>
-                    <img src={Profile} alt="Insurance Expert" className='padmanabh-img' />
-                </div>
-            </section>
-            <div className="footer">
-                <Footer />
-            </div>
-            <a
-              href="https://wa.me/919380029170"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="whatsapp-float"
-            >
-              <FaWhatsapp className="whatsapp-icon" />
-            </a>
-        </div>
-    );
-};
-
-
-
+        </main>
+        <Footer />
+        <a href="https://wa.me/919380029170" target="_blank" rel="noopener noreferrer" className="whatsapp-float" aria-label="Chat with us on WhatsApp"><FaWhatsapp className="whatsapp-icon" /></a>
+    </div>
+);
 
 export default AboutIPro;

@@ -68,13 +68,43 @@ const Header = () => {
     const [advisoryAnchor, setAdvisoryAnchor] = React.useState(null);
     const [companyAnchor, setCompanyAnchor] = React.useState(null);
     const [loginAnchor, setLoginAnchor] = React.useState(null);
+    const menuCloseTimer = React.useRef(null);
+    const isHoveringMenu = React.useRef(false);
 
-    const closeAllMenus = () => {
+    const closeAllMenus = React.useCallback(() => {
+        clearTimeout(menuCloseTimer.current);
         setMobileAnchor(null);
         setProductsAnchor(null);
         setAdvisoryAnchor(null);
         setCompanyAnchor(null);
         setLoginAnchor(null);
+    }, []);
+
+    React.useEffect(() => {
+        window.addEventListener('scroll', closeAllMenus, { passive: true });
+
+        return () => window.removeEventListener('scroll', closeAllMenus);
+    }, [closeAllMenus]);
+
+    const openHoverMenu = (event, setAnchor) => {
+        closeAllMenus();
+        isHoveringMenu.current = true;
+        setAnchor(event.currentTarget);
+    };
+
+    const keepHoverMenuOpen = () => {
+        isHoveringMenu.current = true;
+        clearTimeout(menuCloseTimer.current);
+    };
+
+    const delayCloseMenus = () => {
+        isHoveringMenu.current = false;
+        clearTimeout(menuCloseTimer.current);
+        menuCloseTimer.current = setTimeout(() => {
+            if (!isHoveringMenu.current) {
+                closeAllMenus();
+            }
+        }, 400);
     };
 
     const goHome = () => {
@@ -105,6 +135,7 @@ const Header = () => {
                     src={logo}
                     className="header-logo"
                     alt="I-Pro Infinity"
+                    style={{ transform: 'scale(1.3)' }}
                     onClick={goHome}
                 />
 
@@ -163,13 +194,21 @@ const Header = () => {
                             </Button>
                         )}
 
-                        <Button color="inherit" onClick={event => setProductsAnchor(event.currentTarget)}>
+                        <Button
+                            color="inherit"
+                            onClick={event => setProductsAnchor(event.currentTarget)}
+                            onMouseEnter={event => openHoverMenu(event, setProductsAnchor)}
+                        >
                             <span className="nav-link">Products</span>
                         </Button>
                         <Menu
                             anchorEl={productsAnchor}
                             open={Boolean(productsAnchor)}
                             onClose={closeAllMenus}
+                            MenuListProps={{
+                                onMouseEnter: keepHoverMenuOpen,
+                                onMouseLeave: delayCloseMenus,
+                            }}
                             anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
                             transformOrigin={{ vertical: 'top', horizontal: 'left' }}
                             PaperProps={menuPaperProps}
@@ -177,13 +216,21 @@ const Header = () => {
                             {productLinks.map(renderInternalItem)}
                         </Menu>
 
-                        <Button color="inherit" onClick={event => setAdvisoryAnchor(event.currentTarget)}>
+                        <Button
+                            color="inherit"
+                            onClick={event => setAdvisoryAnchor(event.currentTarget)}
+                            onMouseEnter={event => openHoverMenu(event, setAdvisoryAnchor)}
+                        >
                             <span className="nav-link">Advisory</span>
                         </Button>
                         <Menu
                             anchorEl={advisoryAnchor}
                             open={Boolean(advisoryAnchor)}
                             onClose={closeAllMenus}
+                            MenuListProps={{
+                                onMouseEnter: keepHoverMenuOpen,
+                                onMouseLeave: delayCloseMenus,
+                            }}
                             anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
                             transformOrigin={{ vertical: 'top', horizontal: 'left' }}
                             PaperProps={menuPaperProps}
@@ -191,13 +238,21 @@ const Header = () => {
                             {advisoryLinks.map(renderInternalItem)}
                         </Menu>
 
-                        <Button color="inherit" onClick={event => setCompanyAnchor(event.currentTarget)}>
+                        <Button
+                            color="inherit"
+                            onClick={event => setCompanyAnchor(event.currentTarget)}
+                            onMouseEnter={event => openHoverMenu(event, setCompanyAnchor)}
+                        >
                             <span className="nav-link">Company</span>
                         </Button>
                         <Menu
                             anchorEl={companyAnchor}
                             open={Boolean(companyAnchor)}
                             onClose={closeAllMenus}
+                            MenuListProps={{
+                                onMouseEnter: keepHoverMenuOpen,
+                                onMouseLeave: delayCloseMenus,
+                            }}
                             anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
                             transformOrigin={{ vertical: 'top', horizontal: 'left' }}
                             PaperProps={menuPaperProps}
@@ -205,13 +260,21 @@ const Header = () => {
                             {companyLinks.map(renderInternalItem)}
                         </Menu>
 
-                        <Button color="inherit" onClick={event => setLoginAnchor(event.currentTarget)}>
+                        <Button
+                            color="inherit"
+                            onClick={event => setLoginAnchor(event.currentTarget)}
+                            onMouseEnter={event => openHoverMenu(event, setLoginAnchor)}
+                        >
                             <span className="nav-link">Login</span>
                         </Button>
                         <Menu
                             anchorEl={loginAnchor}
                             open={Boolean(loginAnchor)}
                             onClose={closeAllMenus}
+                            MenuListProps={{
+                                onMouseEnter: keepHoverMenuOpen,
+                                onMouseLeave: delayCloseMenus,
+                            }}
                             anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
                             transformOrigin={{ vertical: 'top', horizontal: 'left' }}
                             PaperProps={menuPaperProps}
