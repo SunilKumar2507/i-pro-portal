@@ -66,12 +66,6 @@ function TravelInsurance() {
         },
     ];
 
-    const quickStats = [
-        { value: "6", label: "Core travel coverages" },
-        { value: "Trip", label: "Journey and baggage cover" },
-        { value: "Soon", label: "Digital quote access" },
-    ];
-
     return (
         <div className="tri-container">
             <Header />
@@ -95,14 +89,10 @@ function TravelInsurance() {
                         </div>
 
                         <div className="tri-actions">
-                            <button
-                                type="button"
-                                className="tri-btn tri-btn-primary is-disabled"
-                                disabled
-                            >
-                                <span>Coming soon</span>
+                            <a href="/contact-us" className="tri-btn tri-btn-primary">
+                                <span>Contact Us</span>
                                 <FaArrowRight />
-                            </button>
+                            </a>
                             <a href="#travel-coverages" className="tri-btn tri-btn-secondary">
                                 <span>View Coverages</span>
                             </a>
@@ -125,13 +115,13 @@ function TravelInsurance() {
                     </div>
                 </section>
 
-                <section className="tri-stats" aria-label="Travel insurance overview">
-                    {quickStats.map((item, index) => (
-                        <div className="tri-stat" key={index}>
-                            <strong>{item.value}</strong>
-                            <span>{item.label}</span>
-                        </div>
-                    ))}
+                <section className="tri-contact-cta" aria-label="Contact us for travel insurance information">
+                    <div>
+                        <span className="tri-eyebrow">Need More Information?</span>
+                        <h2>Our team can help you travel with confidence.</h2>
+                        <p>Contact us to discuss travel insurance cover for your next journey.</p>
+                    </div>
+                    <a href="/contact-us" className="tri-btn tri-btn-primary">Contact Us <FaArrowRight /></a>
                 </section>
 
                 <section className="tri-plan-section">

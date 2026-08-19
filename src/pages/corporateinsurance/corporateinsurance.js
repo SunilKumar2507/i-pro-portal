@@ -66,12 +66,6 @@ const Corporateinsurancecontant = () => {
         },
     ];
 
-    const quickStats = [
-        { value: "6", label: "Core business coverages" },
-        { value: "Team", label: "Employee and asset cover" },
-        { value: "Soon", label: "Digital quote access" },
-    ];
-
     return (
         <div className="coi-container">
             <Header />
@@ -95,14 +89,10 @@ const Corporateinsurancecontant = () => {
                         </div>
 
                         <div className="coi-actions">
-                            <button
-                                type="button"
-                                className="coi-btn coi-btn-primary is-disabled"
-                                disabled
-                            >
-                                <span>Coming soon</span>
+                            <a href="/contact-us" className="coi-btn coi-btn-primary">
+                                <span>Contact Us</span>
                                 <FaArrowRight />
-                            </button>
+                            </a>
                             <a href="#corporate-coverages" className="coi-btn coi-btn-secondary">
                                 <span>View Coverages</span>
                             </a>
@@ -125,13 +115,13 @@ const Corporateinsurancecontant = () => {
                     </div>
                 </section>
 
-                <section className="coi-stats" aria-label="Corporate insurance overview">
-                    {quickStats.map((item, index) => (
-                        <div className="coi-stat" key={index}>
-                            <strong>{item.value}</strong>
-                            <span>{item.label}</span>
-                        </div>
-                    ))}
+                <section className="coi-contact-cta" aria-label="Contact us for corporate insurance information">
+                    <div>
+                        <span className="coi-eyebrow">Need More Information?</span>
+                        <h2>Our team can help build the right business cover.</h2>
+                        <p>Contact us to discuss protection for your people, assets, and operations.</p>
+                    </div>
+                    <a href="/contact-us" className="coi-btn coi-btn-primary">Contact Us <FaArrowRight /></a>
                 </section>
 
                 <section className="coi-plan-section">

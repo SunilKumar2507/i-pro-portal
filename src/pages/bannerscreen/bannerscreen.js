@@ -28,6 +28,7 @@ const bannerTexts = [
   "Health Insurance - Take a health insurance policy in a few simple steps"
 ];
 const bannerLinks = ["/4-wheeler", "/2-wheeler", "/commercial-insurance", "/healthinsurance"];
+const trustWord = "TRUST";
 
 function Bannerscreen() {
   const navigate = useNavigate();
@@ -41,6 +42,7 @@ function Bannerscreen() {
 });
   const [imageIndex, setImageIndex] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
+  const [typedTrust, setTypedTrust] = useState('');
   const intervalRef = useRef(null);
   const [loading, setLoading] = useState(false);
   
@@ -62,6 +64,34 @@ function Bannerscreen() {
       clearTimeout(imageTimeout);
     };
   }, [imageIndex]);
+
+  useEffect(() => {
+    let characterIndex = 0;
+    let isDeleting = false;
+    let timeoutId;
+
+    const animateTrust = () => {
+      setTypedTrust(trustWord.slice(0, characterIndex));
+
+      if (!isDeleting && characterIndex === trustWord.length) {
+        isDeleting = true;
+        timeoutId = setTimeout(animateTrust, 1100);
+        return;
+      }
+
+      if (isDeleting && characterIndex === 0) {
+        isDeleting = false;
+        timeoutId = setTimeout(animateTrust, 350);
+        return;
+      }
+
+      characterIndex += isDeleting ? -1 : 1;
+      timeoutId = setTimeout(animateTrust, isDeleting ? 120 : 180);
+    };
+
+    animateTrust();
+    return () => clearTimeout(timeoutId);
+  }, []);
 
 
   const handleMouseEnter = () => {
@@ -234,7 +264,13 @@ function Bannerscreen() {
       <div className='hero-section-bannerscreen'>
         <div className='left-container'>
           <div className='bannerscreen-headertext'>
-            <h2 className='insurance-service-main-title'>Insurance Services you can always TRUST upon....</h2>
+            <h2 className='insurance-service-main-title'>
+              Insurance Services you can always{' '}
+              <span className="trust-typing" aria-label="Trust">
+                {typedTrust}
+              </span>{' '}
+              upon....
+            </h2>
           </div>
 
           <div className='banner-section'>

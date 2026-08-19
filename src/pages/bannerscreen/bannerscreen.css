@@ -32,10 +32,17 @@
 
 .insurance-service-main-title {
   margin: 0;
-  color: #175A9E;
+  color: #000;
   font-size: 32px;
   line-height: 1.2;
   font-weight: 750;
+}
+
+.trust-typing {
+  display: inline-block;
+  min-width: 5.3ch;
+  color: #175A9E;
+  font-weight: 800;
 }
 
 .banner-section {
@@ -47,8 +54,11 @@
   position: relative;
   display: block !important;
   width: 100%;
+  padding: 10px;
   overflow: hidden;
   border-radius: 8px;
+  background: #ffffff;
+  box-sizing: border-box;
 }
 
 .banner-image {
@@ -324,6 +334,10 @@
     font-size: clamp(10px, 2.15vw, 14px);
     line-height: 1.3;
     padding: 6px 8px;
+  }
+
+  .image-wrapper {
+    padding: 6px;
   }
 
   .bannerscreen-home-icons {

@@ -26,12 +26,29 @@ html {
     width: 100%;
 }
 
+.brand-identity {
+    align-items: center;
+    display: flex;
+    flex-shrink: 0;
+}
+
 .header-logo {
     cursor: pointer;
     height: auto !important;
     max-height: 62px;
+    margin-right: 20px;
     object-fit: contain;
+    transform: scale(1.3);
+    transform-origin: left center;
     width: 180px !important;
+}
+
+.insurance-broking-text {
+    color: #175A9E;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.2;
+    white-space: nowrap;
 }
 
 .menu-items {
@@ -157,7 +174,12 @@ html {
     }
 
     .header-logo {
+        margin-right: 16px;
         width: 154px !important;
+    }
+
+    .insurance-broking-text {
+        font-size: 14px;
     }
 
     .menu-items .MuiButton-root {
@@ -177,7 +199,12 @@ html {
 
     .header-logo {
         max-height: 50px;
+        margin-right: 14px;
         width: 140px !important;
+    }
+
+    .insurance-broking-text {
+        font-size: 13px;
     }
 
     .menu-items {
@@ -201,7 +228,12 @@ html {
     }
 
     .header-logo {
+        margin-right: 12px;
         width: 122px !important;
+    }
+
+    .insurance-broking-text {
+        font-size: 11px;
     }
 
     .hamburger-icon {

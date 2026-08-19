@@ -1,6 +1,5 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import './whyiproinfinity.css';
-import './hero-sizing.css';
 import Footer from '../../components/footer/footer';
 import Header from '../../components/Header/header';
 import heroImage from '../../assets/why-ipro-hero-image.png';
@@ -10,37 +9,49 @@ import business3 from '../../assets/business33.png';
 import business4 from '../../assets/business44.png';
 import timedifferent from '../../assets/timedifferent11.png';
 import timedifferent2 from '../../assets/timedifferent22.png';
-import { FaCheckCircle, FaUsers, FaUser, FaLightbulb, FaChartLine, FaStar, FaWhatsapp } from 'react-icons/fa';
+import { FaArrowRight, FaCheckCircle, FaChartLine, FaHandshake, FaLightbulb, FaShieldAlt, FaStar, FaUserFriends, FaWhatsapp } from 'react-icons/fa';
 
-const philosophyPoints = ['Confidence that WE understand YOUR business and industry.', 'WE keep your requirements at the centre of all our activities and decisions.', 'OUR team will provide dedicated support when YOU need it most.', 'WE are respected by insurance companies, who actively seek to write business with us.', 'WE invest in technology to provide the best service, meeting YOUR needs.'];
+const philosophyPoints = ['Your business and industry are understood before advice is given.', 'Your requirements stay at the centre of every recommendation.', 'Dedicated support is available when you need it most.'];
 const strengths = [
-    { icon: FaUsers, title: 'Dedicated Claims Management:', text: 'We have a dedicated and experienced claims management team...' },
-    { icon: FaUser, title: 'Client Continuity:', text: 'We aim to provide stability and continuity...' },
-    { icon: FaLightbulb, title: 'Innovation through Technology:', text: 'We are a progressive and ambitious team...' },
-    { icon: FaChartLine, title: 'Committed to Growth:', text: 'We are here to stay and growing...' },
-    { icon: FaStar, title: 'Core Values:', text: 'We live by our core values...' },
+    { icon: FaUserFriends, title: 'Dedicated claims management', text: 'Experienced support when a claim needs careful attention.' },
+    { icon: FaHandshake, title: 'Client continuity', text: 'A steady team that learns your needs and stays close to them.' },
+    { icon: FaLightbulb, title: 'Technology-led service', text: 'Better information and responsive service at every step.' },
+    { icon: FaChartLine, title: 'Committed to growth', text: 'An ambitious team that keeps investing in our clients.' },
+    { icon: FaStar, title: 'Values in action', text: 'Professional advice built on trust, care and accountability.' },
 ];
 const businessCards = [
-    { image: business1, text: 'Whichever industry or business you operate in, with our experience, we can source the best and optimal insurance covers fit for your business needs.' },
-    { image: business2, text: 'We appreciate that different industries face varied challenges and risks, and our insurance experts are ready to assess your particular requirements. We work with your business to keep well-detailed business and employee records, giving you a clearer picture of operational aspects so your insurance proposals align with your needs.' },
-    { image: business3, text: 'Our detailed insights into solutions, costs, coverage, and other relevant information ensure you are informed. We arrange a consultation session with you to explain our proposal so you can make informed decisions on how to proceed.' },
-    { image: business4, text: 'From simple retail insurance to a major home, health to complex coverage solutions such as property, materials, transportation, and organization, our experience and expertise ensure we identify the right insurance covers for your business.' },
+    { image: business1, title: 'Industry fit', text: 'Experience across industries helps us source insurance covers that fit the way your business operates.' },
+    { image: business2, title: 'Risk understanding', text: 'We assess your specific challenges and risks, so proposals align with your actual requirements.' },
+    { image: business3, title: 'Clear consultation', text: 'We explain solutions, costs and coverage clearly, helping you make informed decisions.' },
+    { image: business4, title: 'Broad expertise', text: 'From retail insurance to complex business risks, we identify protection that is right for you.' },
+];
+const differenceCards = [
+    { image: timedifferent, title: 'Quite simply, the people', text: 'Our talented and committed professionals bring experience and a passion for the best client outcomes.' },
+    { image: timedifferent2, title: 'Claims focus', text: 'When a claim happens, we help make the process simple, smooth and less stressful.' },
 ];
 
-const DifferenceSection = () => {
-    const heroRef = useRef(null);
-    useEffect(() => {
-        const hero = heroRef.current;
-        if (!hero || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return undefined;
-        const onMove = event => { const rect = hero.getBoundingClientRect(); hero.style.setProperty('--mouse-x', `${((event.clientX - rect.left) / rect.width - .5) * 16}px`); hero.style.setProperty('--mouse-y', `${((event.clientY - rect.top) / rect.height - .5) * 16}px`); };
-        hero.addEventListener('mousemove', onMove);
-        return () => hero.removeEventListener('mousemove', onMove);
-    }, []);
-    return <div className="difference-section"><Header /><main>
-        <section className="philosophy-hero" ref={heroRef} style={{ backgroundImage: `url(${heroImage})` }}><div className="philosophy-copy"><h1>OUR PHILOSOPHY AT<br />I-PRO INFINITY IS SIMPLY TO<br /><strong>PROVIDE WHAT YOU WANT<br />AND VALUES!</strong></h1><ul>{philosophyPoints.map(point => <li key={point}><FaCheckCircle /><span>{point}</span></li>)}</ul></div></section>
-        <section className="difference-intro reveal-section"><h2>What Makes Us Different</h2><span className="section-line" /><p className="intro-copy">People make all the difference. We are a team of passionate and mature professionals with years of experience,<br className="desktop-break" /> having seen the ups and downs in life. The experience, expertise, and enthusiasm of our team is something<br className="desktop-break" /> that our clients truly benefit from.</p><div className="strength-list">{strengths.map(({ icon: Icon, title, text }) => <div className="strength-item" key={title}><span className="strength-icon"><Icon /></span><p><b>{title}</b> {text}</p></div>)}</div><p className="claim-copy">The unfortunate point at which a client has to make a claim is the true moment of truth. It’s the time when an insurer must promptly deliver the agreed benefits. Our professional claims team will be at your side, providing advice and support through the process, making it as easy as possible for you during a difficult period.</p></section>
-        <section className="business-container reveal-section"><h2>WE UNDERSTAND YOUR BUSINESS</h2><span className="section-line" /><div className="business-cards">{businessCards.map((card, index) => <article className="business-card" key={card.text} style={{ '--delay': `${index * 80}ms` }}><div className="business-image"><img src={card.image} alt="Insurance business consultation" /></div><p>{card.text}</p></article>)}</div></section>
-        <section className="ipro-container reveal-section"><h2>WHAT MAKES I-PRO INFINITY DIFFERENT?</h2><span className="section-line" /><div className="ipro-content"><article className="ipro-card"><h3>QUITE SIMPLY,<br />THE PEOPLE</h3><img src={timedifferent} alt="Team of insurance professionals" /><p>We recruit and retain talented, committed and motivated individuals. Our trained professionals bring a wealth of experience and a passion for delivering the best outcomes for our clients.</p></article><article className="ipro-card"><h3>CLAIMS FOCUS</h3><img src={timedifferent2} alt="Claims care and support" /><p>The unfortunate point at which you have to make a claim is the true moment of truth. We focus on making the claims process simple, smooth and stress-free.</p></article></div></section>
-    </main><a href="https://wa.me/919380029170" target="_blank" rel="noopener noreferrer" className="whatsapp-float" aria-label="Chat with I-Pro Infinity on WhatsApp"><FaWhatsapp /></a><Footer /></div>;
-};
+const DifferenceSection = () => (
+    <div className="wip-container">
+        <Header />
+        <main className="wip-page">
+            <section className="wip-hero">
+                <div className="wip-hero-copy">
+                    <span className="wip-eyebrow">Why i-Pro Infinity</span>
+                    <h1>Insurance advice shaped around what you value most.</h1>
+                    <p>We combine experienced people, practical market knowledge and responsive service to help you protect what matters with confidence.</p>
+                    <div className="wip-highlight-list">{philosophyPoints.map(point => <span className="wip-highlight-chip" key={point}><FaCheckCircle />{point}</span>)}</div>
+                    <div className="wip-actions"><a href="#our-difference" className="wip-btn wip-btn-primary"><span>Explore our difference</span><FaArrowRight /></a><a href="/contact-us" className="wip-btn wip-btn-secondary">Talk to an expert</a></div>
+                </div>
+                <div className="wip-hero-visual"><div className="wip-visual-toolbar"><span><FaShieldAlt /> Client-first protection</span><span>Trusted support</span></div><img src={heroImage} alt="i-Pro Infinity insurance advisory" /><div className="wip-visual-card"><FaHandshake /><div><strong>Here when it counts</strong><span>Advice that stays with you</span></div></div></div>
+            </section>
+            <section className="wip-stats" aria-label="i-Pro Infinity highlights"><div><strong>360°</strong><span>Insurance perspective</span></div><div><strong>1</strong><span>Dedicated client partner</span></div><div><strong>24×7</strong><span>Support when it matters</span></div></section>
+            <section className="wip-strengths" id="our-difference"><div className="wip-section-header"><span className="wip-eyebrow">What makes us different</span><h2>The confidence of a team that knows your world.</h2><p>From understanding your needs to supporting a claim, our people make the difference.</p></div><div className="wip-strength-grid">{strengths.map(({ icon: Icon, title, text }, index) => <article className="wip-strength-card" key={title}><span>{String(index + 1).padStart(2, '0')}</span><Icon /><h3>{title}</h3><p>{text}</p></article>)}</div></section>
+            <section className="wip-business"><div className="wip-section-header"><span className="wip-eyebrow">Business insight</span><h2>We understand your business.</h2></div><div className="wip-business-grid">{businessCards.map((card, index) => <article className="wip-business-card" key={card.title}><div><img src={card.image} alt="" /><span>{String(index + 1).padStart(2, '0')}</span></div><h3>{card.title}</h3><p>{card.text}</p></article>)}</div></section>
+            <section className="wip-difference-section"><div className="wip-section-header"><span className="wip-eyebrow">Our promise</span><h2>Support that remains personal.</h2></div><div className="wip-difference-grid">{differenceCards.map(card => <article className="wip-difference-card" key={card.title}><img src={card.image} alt="" /><div><h3>{card.title}</h3><p>{card.text}</p><a href="/contact-us">Speak with our team <FaArrowRight /></a></div></article>)}</div></section>
+        </main>
+        <a href="https://wa.me/919380029170" target="_blank" rel="noopener noreferrer" className="whatsapp-float" aria-label="Chat with I-Pro Infinity on WhatsApp"><FaWhatsapp /></a>
+        <Footer />
+    </div>
+);
+
 export default DifferenceSection;

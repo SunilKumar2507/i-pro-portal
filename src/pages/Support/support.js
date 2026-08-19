@@ -3,7 +3,7 @@ import Footer from '../../components/footer/footer';
 import Header from '../../components/Header/header';
 import heroImage from '../../assets/contact_us_hero_img.png';
 import quickAnswerImage from '../../assets/contact_us_quick_ans.png';
-import { FaEnvelope, FaMapMarkerAlt, FaPaperPlane, FaPhoneAlt, FaWhatsapp } from 'react-icons/fa';
+import { FaArrowRight, FaCheckCircle, FaEnvelope, FaMapMarkerAlt, FaPaperPlane, FaPhoneAlt, FaShieldAlt, FaWhatsapp } from 'react-icons/fa';
 import './support.css';
 
 const faqs = [
@@ -27,12 +27,19 @@ const ContactUs = () => {
         <div className="contact-page">
             <Header />
             <main>
-                <section className="contact-hero" style={{ backgroundImage: `url(${heroImage})` }}>
-                    <div className="contact-hero-copy"><span className="contact-kicker">We are here to help</span><h1>Questions?<br />Let's start a<br /><strong>conversation.</strong></h1><i /><p>Reach out to our team for helpful guidance<br />on your insurance needs.</p></div>
+                <section className="contact-hero">
+                    <div className="contact-hero-copy">
+                        <span className="contact-kicker">We are here to help</span>
+                        <h1>Questions? Let’s start a conversation.</h1>
+                        <p>Reach out to our team for clear, helpful guidance on your insurance needs.</p>
+                        <div className="contact-hero-highlights"><span><FaCheckCircle /> Expert guidance</span><span><FaCheckCircle /> Responsive support</span></div>
+                        <a href="#contact-form" className="contact-hero-action">Send a message <FaArrowRight /></a>
+                    </div>
+                    <div className="contact-hero-visual"><div className="contact-hero-toolbar"><span><FaShieldAlt /> Client-first support</span><span>We are listening</span></div><img src={heroImage} alt="Contact i-Pro Infinity" /><div className="contact-hero-badge"><FaPhoneAlt /><span><strong>Speak with our team</strong><small>Guidance when you need it</small></span></div></div>
                 </section>
 
                 <section className="contact-main-grid">
-                    <form className="contact-message-card" onSubmit={handleSubmit}>
+                    <form className="contact-message-card" id="contact-form" onSubmit={handleSubmit}>
                         <span className="contact-kicker">Send a message</span><h2>How can we help?</h2>
                         <div className="contact-two-fields"><label>Name*<input type="text" name="name" placeholder="Enter your full name" value={formData.name} onChange={handleChange} required /></label><label>Email*<input type="email" name="email" placeholder="Enter your email address" value={formData.email} onChange={handleChange} required /></label></div>
                         <label>Phone number*<input type="tel" name="phone" placeholder="Enter your phone number" value={formData.phone} onChange={handleChange} required /></label>

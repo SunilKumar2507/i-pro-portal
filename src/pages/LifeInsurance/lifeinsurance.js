@@ -71,12 +71,6 @@ function Lifeinsurance() {
         },
     ];
 
-    const quickStats = [
-        { value: "6", label: "Core policy benefits" },
-        { value: "Long-term", label: "Family protection" },
-        { value: "Soon", label: "Digital quote access" },
-    ];
-
     return (
         <div className="lii-container">
             <Header />
@@ -100,14 +94,10 @@ function Lifeinsurance() {
                         </div>
 
                         <div className="lii-actions">
-                            <button
-                                type="button"
-                                className="quotes-btn-carinformation lii-btn lii-btn-primary is-disabled"
-                                disabled
-                            >
-                                <span>Coming soon</span>
+                            <a href="/contact-us" className="quotes-btn-carinformation lii-btn lii-btn-primary">
+                                <span>Contact Us</span>
                                 <FaArrowRight />
-                            </button>
+                            </a>
                             <a href="#life-coverages" className="lii-btn lii-btn-secondary">
                                 <span>View Coverages</span>
                             </a>
@@ -130,13 +120,13 @@ function Lifeinsurance() {
                     </div>
                 </section>
 
-                <section className="lii-stats" aria-label="Life insurance overview">
-                    {quickStats.map((item, index) => (
-                        <div className="lii-stat" key={index}>
-                            <strong>{item.value}</strong>
-                            <span>{item.label}</span>
-                        </div>
-                    ))}
+                <section className="lii-contact-cta" aria-label="Contact us for life insurance information">
+                    <div>
+                        <span className="lii-eyebrow">Need More Information?</span>
+                        <h2>Our team can help you choose the right life cover.</h2>
+                        <p>Contact us to discuss your requirements and get guidance from our insurance experts.</p>
+                    </div>
+                    <a href="/contact-us" className="lii-btn lii-btn-primary">Contact Us <FaArrowRight /></a>
                 </section>
 
                 <section className="lii-plan-section">

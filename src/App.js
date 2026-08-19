@@ -22,6 +22,8 @@ import Ourphilosophy from "./pages/ourphy/ourphy";
 import Whyinsuranceintermediary from "./pages/whyinsuranceinterediary/whyinsuranceintermediary";
 import Personal from "./pages/personalinsurance/personal";
 import Corporateinsurancecontant from "./pages/corporateinsurance/corporateinsurance";
+import PrivacyPolicy from "./pages/privacypolicy/privacypolicy";
+import TermsOfUse from "./pages/termsofuse/termsofuse";
 
 function App() {
   return (
@@ -52,6 +54,8 @@ function App() {
         <Route path="/why-insurance-intermediary" element={<Whyinsuranceintermediary />} />
         <Route path="/personal-insurance" element={<Personal />} />
         <Route path="/corporate-insurance" element={<Corporateinsurancecontant />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/terms-of-use" element={<TermsOfUse />} />
       </Routes>
     </Router>
   );

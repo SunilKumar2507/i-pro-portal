@@ -131,13 +131,15 @@ const Header = () => {
     return (
         <AppBar position="sticky" className="app-bar">
             <Toolbar className="toolbar">
-                <img
-                    src={logo}
-                    className="header-logo"
-                    alt="I-Pro Infinity"
-                    style={{ transform: 'scale(1.3)' }}
-                    onClick={goHome}
-                />
+                <div className="brand-identity">
+                    <img
+                        src={logo}
+                        className="header-logo"
+                        alt="I-Pro Infinity"
+                        onClick={goHome}
+                    />
+                    <span className="insurance-broking-text">Insurance Broking Services</span>
+                </div>
 
                 {isMobile ? (
                     <>

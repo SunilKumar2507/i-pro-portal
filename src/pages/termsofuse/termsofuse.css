@@ -1,0 +1,91 @@
+.terms-of-use-page {
+  min-height: 100vh;
+  background: #fff;
+}
+
+.terms-of-use-main {
+  padding-bottom: 56px;
+}
+
+.terms-of-use-hero {
+  background: #fff;
+  color: #175a9e;
+  padding: 54px 24px;
+  border-bottom: 1px solid rgba(23, 90, 158, 0.15);
+}
+
+.terms-of-use-hero-content,
+.terms-of-use-content {
+  width: min(960px, calc(100% - 48px));
+  margin: 0 auto;
+}
+
+.terms-of-use-eyebrow {
+  margin: 0 0 8px;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.82;
+}
+
+.terms-of-use-hero h1 {
+  margin: 0;
+  font-size: clamp(30px, 4vw, 42px);
+  font-weight: 750;
+  line-height: 1.15;
+}
+
+.terms-of-use-hero p:last-child {
+  margin: 12px 0 0;
+  font-size: 17px;
+  line-height: 1.5;
+  color: #4b5563;
+  opacity: 1;
+}
+
+.terms-of-use-content {
+  margin-top: 36px;
+  padding: 36px 42px;
+  border-radius: 12px;
+  background: #fff;
+  border: 1px solid rgba(23, 90, 158, 0.14);
+  box-shadow: 0 8px 24px rgba(23, 90, 158, 0.07);
+  box-sizing: border-box;
+}
+
+.terms-of-use-content p {
+  margin: 0 0 22px;
+  color: #273444;
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+.terms-of-use-content p:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .terms-of-use-main {
+    padding-bottom: 36px;
+  }
+
+  .terms-of-use-hero {
+    padding: 40px 16px;
+  }
+
+  .terms-of-use-hero-content,
+  .terms-of-use-content {
+    width: calc(100% - 32px);
+  }
+
+  .terms-of-use-content {
+    margin-top: 24px;
+    padding: 26px 22px;
+  }
+
+  .terms-of-use-content p {
+    font-size: 15px;
+    line-height: 1.65;
+  }
+}

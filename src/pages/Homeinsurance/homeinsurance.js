@@ -69,12 +69,6 @@ function Homeinsurance() {
         },
     ];
 
-    const quickStats = [
-        { value: "6", label: "Core home coverages" },
-        { value: "Home", label: "Structure and contents" },
-        { value: "Soon", label: "Digital quote access" },
-    ];
-
     return (
         <div className="hoi-container">
             <Header />
@@ -98,14 +92,10 @@ function Homeinsurance() {
                         </div>
 
                         <div className="hoi-actions">
-                            <button
-                                type="button"
-                                className="quotes-btn-carinformation hoi-btn hoi-btn-primary is-disabled"
-                                disabled
-                            >
-                                <span>Coming soon</span>
+                            <a href="/contact-us" className="quotes-btn-carinformation hoi-btn hoi-btn-primary">
+                                <span>Contact Us</span>
                                 <FaArrowRight />
-                            </button>
+                            </a>
                             <a href="#home-coverages" className="hoi-btn hoi-btn-secondary">
                                 <span>View Coverages</span>
                             </a>
@@ -128,13 +118,13 @@ function Homeinsurance() {
                     </div>
                 </section>
 
-                <section className="hoi-stats" aria-label="Home insurance overview">
-                    {quickStats.map((item, index) => (
-                        <div className="hoi-stat" key={index}>
-                            <strong>{item.value}</strong>
-                            <span>{item.label}</span>
-                        </div>
-                    ))}
+                <section className="hoi-contact-cta" aria-label="Contact us for home insurance information">
+                    <div>
+                        <span className="hoi-eyebrow">Need More Information?</span>
+                        <h2>Our team can help protect the home you value.</h2>
+                        <p>Contact us to discuss your home insurance requirements and available cover options.</p>
+                    </div>
+                    <a href="/contact-us" className="hoi-btn hoi-btn-primary">Contact Us <FaArrowRight /></a>
                 </section>
 
                 <section className="hoi-plan-section">
