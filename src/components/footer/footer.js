@@ -20,7 +20,7 @@ const Footer = () => {
             </div>
             <div className="social-icons">
               <button type="button" className="social-icon-button" aria-label="Facebook" disabled><img src={facebokLogo} alt="facebook logo" className="facebook-logo" /></button>
-              <button type="button" className="social-icon-button" aria-label="Twitter" disabled><img src={xLogo} alt="X logo" className="x-logo" /></button>
+              {/* <button type="button" className="social-icon-button" aria-label="Twitter" disabled><img src={xLogo} alt="X logo" className="x-logo" /></button> */}
               <button type="button" className="social-icon-button" aria-label="LinkedIn" disabled><img src={linkedinLogo} alt="linkedin logo" className="linkedin-logo" /></button>
               <a href="https://www.instagram.com/i_pro_infinity_insurance?igsh=ZnE3NmoydzNvNmg4" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                 <img src={instaLogo} alt="instagram logo" className="instagram-logo" />

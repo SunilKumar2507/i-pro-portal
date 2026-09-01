@@ -138,7 +138,7 @@ const Header = () => {
                         alt="I-Pro Infinity"
                         onClick={goHome}
                     />
-                    <span className="insurance-broking-text">Insurance Broking Services</span>
+                    <span className="insurance-broking-text">I-PRO INFINITY INSURANCE BROKING SERVICES</span>
                 </div>
 
                 {isMobile ? (
