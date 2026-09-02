@@ -1,0 +1,15 @@
+/* Prevent the padded business section from exceeding the viewport. */
+.wip-business {
+    box-sizing: border-box;
+}
+
+/* Business imagery should remain fully visible rather than being cropped. */
+.wip-business-card > div {
+    background: #fff;
+}
+
+.wip-business-card img {
+    box-sizing: border-box;
+    object-fit: contain;
+    padding: 10px;
+}

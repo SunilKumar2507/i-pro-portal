@@ -50,10 +50,21 @@ const AboutIPro = () => (
             <section className="about-team-section" id="leadership">
                 <div className="about-team-heading"><span className="about-eyebrow">Leadership</span><h2>People behind the promise.</h2><p>Our leaders bring decades of experience across every dimension of insurance.</p></div>
                 <div className="about-leaders-grid">
-                    {leaders.map((leader, index) => (
+                    {leaders.map((leader) => (
                         <article className="about-leader-card" key={leader.name}>
-                            <div className="about-leader-image"><img src={Profile} alt={leader.name} /><span>{String(index + 1).padStart(2, '0')}</span></div>
-                            <div className="about-leader-content"><p className="about-leader-role">{leader.role}</p><h3>{leader.name}</h3><p>{leader.text}</p></div>
+                            <div className="about-leader-card-inner">
+                                <div className="about-leader-face about-leader-front">
+                                    <div className="about-leader-image"><img src={Profile} alt={leader.name} /></div>
+                                    <h3>{leader.name}</h3>
+                                </div>
+                                <div className="about-leader-face about-leader-back">
+                                    <div className="about-leader-content">
+                                        <p className="about-leader-role">{leader.role}</p>
+                                        <h3>{leader.name}</h3>
+                                        <p>{leader.text}</p>
+                                    </div>
+                                </div>
+                            </div>
                         </article>
                     ))}
                 </div>

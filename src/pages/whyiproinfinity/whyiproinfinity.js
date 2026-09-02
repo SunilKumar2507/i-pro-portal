@@ -1,5 +1,6 @@
 import React from 'react';
 import './whyiproinfinity.css';
+import './whyiproinfinity-overrides.css';
 import Footer from '../../components/footer/footer';
 import Header from '../../components/Header/header';
 import heroImage from '../../assets/why-ipro-hero-image.png';
