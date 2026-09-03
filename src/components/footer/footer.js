@@ -68,8 +68,8 @@ const Footer = () => {
 
           <div className="footer-contact-details">
             <h4>Connect Us</h4>
-            <p className="footer-contaact-p"><span className="icon"><img src={emailIcon} alt="email icon" className="email-icon" /></span>customerfirst@iproinfinity.com</p>
-            <p className="footer-contaact-p"><span className="icon"><img src={callIcon} alt="call icon" className="call-icon" /></span>080 23414133</p>
+            <p className="footer-contaact-p"><span className="icon"><img src={emailIcon} alt="email icon" className="email-icon" /></span><a href="mailto:customerfirst@iproinfinity.com">customerfirst@iproinfinity.com</a></p>
+            <p className="footer-contaact-p"><span className="icon"><img src={callIcon} alt="call icon" className="call-icon" /></span><a href="tel:08023414133">080 23414133</a></p>
             <p className="footer-contaact-p footer-address"><span className="icon"><img src={locationIcon} alt="location icon" className="location-icon" /></span><span className="address-text">#16/1, 3rd Cross, RMV2nd Stage, 4th Block,<br />MLA Layout, Sanjaynagar,<br />Bengaluru, Karnataka - 560094</span></p>
           </div>
         </div>
