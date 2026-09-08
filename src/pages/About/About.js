@@ -1,14 +1,17 @@
 import React from 'react';
 import Headers from '../../components/Header/header';
 import Profile from '../../assets/profile.jpg';
+import SureshProfile from '../../assets/Suresh_Profile.png';
+import UmeshProfile from '../../assets/Umesh_profile.png';
+import PadmanabhProfile from '../../assets/Padmanabh_img.jpeg';
 import { FaWhatsapp } from 'react-icons/fa';
 import Footer from '../../components/footer/footer';
 import './About.css';
 
 const leaders = [
-    { name: 'Mr. Suresh Sivalingam', role: 'Principal Officer & CEO', text: 'A Mechanical Engineer, he entered the insurance sector as a Direct Recruit Officer with United India Insurance Company before working in Oman and the UK. He brings more than three decades of experience across underwriting, claims, reinsurance, risk engineering and risk management.' },
-    { name: 'Mr. Umesh Kadarmandlagi', role: 'Executive Director', text: 'A Commerce Graduate with more than three decades of experience at United India Insurance Company, including leadership roles as Branch Manager and Divisional Manager. He heads the Corporate Insurance Team.' },
-    { name: 'Mr. Padmanabh H. Bhandary', role: 'Executive Director', text: 'A Law Graduate with more than three decades in the insurance industry, serving in leadership roles across regions and superannuating as Regional Manager, Calicut. He heads the Claims and Personal Insurance Team.' },
+    { name: 'Mr. Suresh Sivalingam', role: 'Principal Officer & CEO', image: SureshProfile, text: 'A Mechanical Engineer, he entered the insurance sector as a Direct Recruit Officer with United India Insurance Company before working in Oman and the UK. He brings more than three decades of experience across underwriting, claims, reinsurance, risk engineering and risk management.' },
+    { name: 'Mr. Umesh Kadarmandlagi', role: 'Executive Director', image: UmeshProfile, text: 'A Commerce Graduate with more than three decades of experience at United India Insurance Company, including leadership roles as Branch Manager and Divisional Manager. He heads the Corporate Insurance Team.' },
+    { name: 'Mr. H Padmanabh Bhandary', role: 'Executive Director', image: PadmanabhProfile, text: 'A Law Graduate and former Regional Manager at United India Insurance Co., he has more than three decades in the insurance industry, serving in leadership roles across regions and superannuating as Regional Manager, Calicut. He heads the Claims and Personal Insurance Team.' },
 ];
 
 const AboutIPro = () => (
@@ -54,7 +57,7 @@ const AboutIPro = () => (
                         <article className="about-leader-card" key={leader.name}>
                             <div className="about-leader-card-inner">
                                 <div className="about-leader-face about-leader-front">
-                                    <div className="about-leader-image"><img src={Profile} alt={leader.name} /></div>
+                                    <div className="about-leader-image"><img src={leader.image || Profile} alt={leader.name} className={leader.image ? 'about-leader-photo-full' : undefined} /></div>
                                     <h3>{leader.name}</h3>
                                 </div>
                                 <div className="about-leader-face about-leader-back">

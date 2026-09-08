@@ -16,9 +16,14 @@
 @media (max-width: 480px) { .about-hero,.about-story-section,.about-team-section { padding-left: 20px; padding-right: 20px; }.about-hero h1 { font-size: 2.8rem; }.about-floating-card { bottom: 4%; left: -2%; }.about-hero-actions { align-items: flex-start; flex-direction: column; gap: 1rem; } }
 @media (prefers-reduced-motion: reduce) { .about-hero-copy,.about-hero-visual { animation: none; }.about-leader-card-inner,.about-value-card,.about-primary-action { transition: none; } }
 
+.about-leader-front { position: relative; }
+.about-leader-image { aspect-ratio: 1 / 1; flex: none; width: 100%; }
+.about-leader-image img { display: block; }
+.about-leader-image img.about-leader-photo-full { object-fit: contain; object-position: center; }
+
 /* Keep the refreshed layout aligned with the portal's existing visual system. */
 .about-page { --about-ink: #175A9E; --about-blue: #175A9E; background: #f8f9fa; color: #333; font-family: 'Segoe UI', sans-serif; }
-.about-hero { background: linear-gradient(125deg, #f8f9fa 0%, #eef5fb 52%, #f8f9fa 100%); }
+.about-hero { background: linear-gradient(125deg, #f8f9fa 0%, #eef5fb 52%, #f8f9fa 100%); min-height: auto; padding-top: clamp(1.5rem, 3vw, 3rem); }
 .about-orb-two { background: #d5e8f7; }
 .about-hero h1, .about-story-section h2, .about-team-heading h2 { color: #175A9E; font-family: inherit; letter-spacing: 0; font-weight: 700; }
 .about-hero h1 { line-height: 1.05; }
@@ -28,5 +33,6 @@
 .about-value-card:hover { background: #0d47a1; }
 .about-value-number, .about-value-card p { color: #fff; }
 .about-value-card h3, .about-leader-content h3 { font-family: inherit; font-weight: 700; }
-.about-leader-card { border: 0; box-shadow: none; }
+.about-leader-card { border: 0; box-shadow: none; container-type: inline-size; }
+.about-leader-front h3, .about-leader-content h3 { font-size: clamp(.75rem, 5cqi, 1.25rem); white-space: nowrap; }
 .about-leader-card:hover { box-shadow: none; }
