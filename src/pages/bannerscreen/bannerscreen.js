@@ -4,7 +4,16 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 import { useNavigate } from 'react-router-dom';
 import Header from '../../components/Header/header';
 import Footer from "../../components/footer/footer";
-import { FaWhatsapp } from "react-icons/fa";
+import {
+  FaArrowRight,
+  FaEnvelope,
+  FaLock,
+  FaPhoneAlt,
+  FaShieldAlt,
+  FaTimes,
+  FaUser,
+  FaWhatsapp
+} from "react-icons/fa";
 import bluecar from "../../assets/Blue car (2).png";
 import scooter from "../../assets/Scooter.png";
 import commercial from "../../assets/Truck.png";
@@ -37,8 +46,7 @@ function Bannerscreen() {
   const [formData, setFormData] = useState({
   name: '',
   phone: '',
-  email: '',
-  reference_code: ''
+  email: ''
 });
   const [imageIndex, setImageIndex] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
@@ -138,18 +146,18 @@ function Bannerscreen() {
     const route = selectedGrid.route;
 
     setShowModal(false);
-    setFormData({ name: '', phone: '', email: '', reference_code: '' });
+    setFormData({ name: '', phone: '', email: '' });
     navigateToRoute(route);
   };
 
  const handleSubmit = async () => {
-  const { name, phone, email, reference_code } = formData;
+  const { name, phone, email } = formData;
 
   const phoneRegex = /^[6-9]\d{9}$/;
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-  if (!name || !phone || !email || !reference_code) {
-    alert("All fields are required!");
+  if (!name || !phone || !email) {
+    alert("Please complete all required fields.");
     return;
   }
 
@@ -166,8 +174,7 @@ function Bannerscreen() {
   const templateParams = {
     name,
     phone,
-    email,
-    reference_code
+    email
   };
 
   try {
@@ -190,8 +197,7 @@ function Bannerscreen() {
     setFormData({
       name: "",
       phone: "",
-      email: "",
-      reference_code: ""
+      email: ""
     });
 
     navigateToRoute(selectedGrid.route);
@@ -366,60 +372,124 @@ function Bannerscreen() {
             </div>
 
           {showModal && (
-  <div className="modal-overlay">
-    <div className="modal-box">
-      <h3>Enter your details</h3>
+            <div className="modal-overlay" role="presentation">
+              <div
+                className="modal-box"
+                role="dialog"
+                aria-modal="true"
+                aria-labelledby="assistance-modal-title"
+                aria-describedby="assistance-modal-description"
+              >
+                <div className="modal-accent" aria-hidden="true"></div>
 
-      <input
-        type="text"
-        name="name"
-        placeholder="Name"
-        value={formData.name}
-        onChange={handleChange}
-      />
+                <button
+                  type="button"
+                  className="modal-close"
+                  onClick={handleCancel}
+                  aria-label="Close"
+                >
+                  <FaTimes />
+                </button>
 
-      <input
-        type="tel"
-        name="phone"
-        placeholder="Phone Number"
-        value={formData.phone}
-        onChange={handleChange}
-      />
+                <div className="modal-heading">
+                  <span className="modal-shield" aria-hidden="true">
+                    <FaShieldAlt />
+                  </span>
+                  <div>
+                    <span className="modal-eyebrow">Personal insurance guidance</span>
+                    <h3 id="assistance-modal-title">Let Us Help You Better</h3>
+                  </div>
+                </div>
 
-      <input
-        type="email"
-        name="email"
-        placeholder="Email"
-        value={formData.email}
-        onChange={handleChange}
-      />
+                <p id="assistance-modal-description" className="modal-description">
+                  Please share your details and our insurance expert will get in touch with you shortly to understand your requirement and assist you with the right insurance solution.
+                </p>
 
-      <input
-        type="text"
-        name="reference_code"
-        placeholder="Reference Code (Example: deep001)"
-        value={formData.reference_code}
-        onChange={handleChange}
-      />
+                <form
+                  className="assistance-form"
+                  onSubmit={(event) => {
+                    event.preventDefault();
+                    handleSubmit();
+                  }}
+                >
+                  <label className="modal-field">
+                    <span className="modal-field-label">Full Name</span>
+                    <span className="modal-input-wrap">
+                      <FaUser aria-hidden="true" />
+                      <input
+                        type="text"
+                        name="name"
+                        placeholder="Enter your full name"
+                        value={formData.name}
+                        onChange={handleChange}
+                        autoComplete="name"
+                        required
+                      />
+                    </span>
+                  </label>
 
-      <div className="modal-buttons">
-        <button onClick={handleSubmit} disabled={loading}>
-          {loading ? (
-            <>
-              <span className="spinner"></span> Submitting...
-            </>
-          ) : (
-            "Submit"
+                  <label className="modal-field">
+                    <span className="modal-field-label">Mobile Number</span>
+                    <span className="modal-input-wrap">
+                      <FaPhoneAlt aria-hidden="true" />
+                      <input
+                        type="tel"
+                        name="phone"
+                        placeholder="Enter your mobile number"
+                        value={formData.phone}
+                        onChange={handleChange}
+                        autoComplete="tel"
+                        inputMode="numeric"
+                        maxLength="10"
+                        required
+                      />
+                    </span>
+                  </label>
+
+                  <label className="modal-field">
+                    <span className="modal-field-label">Email Address</span>
+                    <span className="modal-input-wrap">
+                      <FaEnvelope aria-hidden="true" />
+                      <input
+                        type="email"
+                        name="email"
+                        placeholder="Enter your email address"
+                        value={formData.email}
+                        onChange={handleChange}
+                        autoComplete="email"
+                        required
+                      />
+                    </span>
+                  </label>
+
+                  <div className="modal-buttons">
+                    <button className="modal-submit" type="submit" disabled={loading}>
+                      {loading ? (
+                        <>
+                          <span className="spinner"></span> Submitting...
+                        </>
+                      ) : (
+                        <>
+                          Get Expert Assistance <FaArrowRight aria-hidden="true" />
+                        </>
+                      )}
+                    </button>
+
+                    <button className="modal-cancel" type="button" onClick={handleCancel}>
+                      Cancel
+                    </button>
+                  </div>
+
+                  <p className="modal-trust-note">
+                    <FaLock aria-hidden="true" />
+                    <span>
+                      <strong>Your information is kept confidential</strong> and used only to assist you with your insurance requirement.
+                    </span>
+                  </p>
+                </form>
+              </div>
+            </div>
           )}
-        </button>
-
-        <button type="button" onClick={handleCancel}>
-          Cancel
-        </button>
-      </div>
-    </div>
-  </div>
-)}
  
           </div>
          
