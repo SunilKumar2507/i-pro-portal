@@ -1,0 +1,260 @@
+.grievance-policy-page {
+  min-height: 100vh;
+  background: #f7fbff;
+  color: #273444;
+}
+
+.grievance-policy-main {
+  padding-bottom: 64px;
+}
+
+.grievance-policy-shell {
+  width: min(960px, calc(100% - 48px));
+  margin: 0 auto;
+}
+
+.grievance-policy-hero {
+  padding: 54px 0;
+  background: #fff;
+  border-bottom: 1px solid rgba(23, 90, 158, 0.15);
+}
+
+.grievance-policy-eyebrow {
+  margin: 0 0 8px;
+  color: #175a9e;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.grievance-policy-hero h1 {
+  margin: 0;
+  color: #175a9e;
+  font-size: clamp(30px, 4vw, 42px);
+  font-weight: 750;
+  line-height: 1.15;
+}
+
+.grievance-policy-layout {
+  margin-top: 36px;
+}
+
+.grievance-policy-content {
+  padding: 40px 44px;
+  background: #fff;
+  border: 1px solid rgba(23, 90, 158, 0.14);
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(23, 90, 158, 0.07);
+}
+
+.grievance-policy-sections {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: grievance-section;
+}
+
+.grievance-policy-sections > li {
+  position: relative;
+  margin: 0 0 18px;
+  padding: 0 0 18px 50px;
+  border-bottom: 1px solid rgba(23, 90, 158, 0.1);
+  counter-increment: grievance-section;
+}
+
+.grievance-policy-sections > li::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  border-radius: 50%;
+  background: #175a9e;
+  color: #fff;
+  content: counter(grievance-section, upper-alpha) ")";
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.grievance-policy-sections > li:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.grievance-policy-content p,
+.grievance-policy-content li,
+.grievance-policy-content address {
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+.grievance-policy-content p {
+  margin: 0;
+}
+
+.grievance-policy-content a {
+  color: #0d5da8;
+  font-weight: 650;
+  overflow-wrap: anywhere;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.grievance-policy-content a:hover {
+  color: #083f73;
+}
+
+.grievance-policy-content a:focus-visible {
+  border-radius: 3px;
+  outline: 3px solid rgba(23, 90, 158, 0.28);
+  outline-offset: 3px;
+}
+
+.grievance-policy-subsections {
+  margin: 12px 0 0;
+  padding-left: 28px;
+}
+
+.grievance-policy-subsections li + li,
+.grievance-policy-registration li + li {
+  margin-top: 8px;
+}
+
+.grievance-policy-annexure {
+  margin-top: 42px;
+  padding-top: 38px;
+  border-top: 2px solid rgba(23, 90, 158, 0.18);
+}
+
+.grievance-policy-annexure-label {
+  margin-bottom: 8px !important;
+  color: #175a9e;
+  font-size: 14px !important;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.grievance-policy-annexure h2,
+.grievance-policy-annexure h3 {
+  color: #175a9e;
+  line-height: 1.3;
+}
+
+.grievance-policy-annexure h2 {
+  margin: 0 0 22px;
+  font-size: clamp(23px, 3vw, 30px);
+}
+
+.grievance-policy-annexure h3 {
+  margin: 28px 0 14px;
+  font-size: 20px;
+}
+
+.grievance-policy-annexure > p:not(.grievance-policy-annexure-label) + p {
+  margin-top: 18px;
+}
+
+.grievance-policy-registration {
+  margin: 0;
+  padding-left: 24px;
+}
+
+.grievance-policy-registration address {
+  margin-top: 12px;
+  font-style: normal;
+}
+
+.grievance-policy-whatsapp {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  z-index: 30;
+  display: grid;
+  width: 57px;
+  height: 57px;
+  place-items: center;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  background: #25d366;
+  box-shadow: 0 5px 13px rgba(0, 0, 0, 0.28);
+  color: #fff;
+  font-size: 30px;
+  text-decoration: none;
+}
+
+.grievance-policy-whatsapp:hover {
+  background: #1fad53;
+}
+
+.grievance-policy-whatsapp:focus-visible {
+  outline: 3px solid #175a9e;
+  outline-offset: 3px;
+}
+
+@media (max-width: 768px) {
+  .grievance-policy-main {
+    padding-bottom: 40px;
+  }
+
+  .grievance-policy-shell {
+    width: calc(100% - 32px);
+  }
+
+  .grievance-policy-hero {
+    padding: 40px 0;
+  }
+
+  .grievance-policy-layout {
+    margin-top: 24px;
+  }
+
+  .grievance-policy-content {
+    padding: 28px 22px;
+  }
+
+  .grievance-policy-sections > li {
+    padding-left: 42px;
+  }
+
+  .grievance-policy-sections > li::before {
+    width: 30px;
+    height: 30px;
+    font-size: 13px;
+  }
+
+  .grievance-policy-content p,
+  .grievance-policy-content li,
+  .grievance-policy-content address {
+    font-size: 15px;
+    line-height: 1.68;
+  }
+
+  .grievance-policy-annexure {
+    margin-top: 34px;
+    padding-top: 30px;
+  }
+
+  .grievance-policy-whatsapp {
+    right: 14px;
+    bottom: 14px;
+    width: 52px;
+    height: 52px;
+    font-size: 26px;
+  }
+}
+
+@media (max-width: 420px) {
+  .grievance-policy-content {
+    padding: 24px 17px;
+  }
+
+  .grievance-policy-sections > li {
+    padding-left: 38px;
+  }
+}

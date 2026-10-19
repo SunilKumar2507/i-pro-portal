@@ -5,9 +5,9 @@ import emailIcon from "../../assets/email icon.png";
 import callIcon from "../../assets/call icon.png";
 import locationIcon from "../../assets/location icon.png";
 import facebokLogo from "../../assets/facebook icon.png";
-import xLogo from "../../assets/x-logo icon.png";
 import linkedinLogo from "../../assets/linkedin-logo icon.png";
 import instaLogo from "../../assets/instagram-logo icon.png";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -59,7 +59,7 @@ const Footer = () => {
               <h4>Policy</h4>
               <ul>
                 <li><a href="/privacy-policy">Privacy Policy</a></li>
-                <li><button type="button" className="footer-link-button" disabled>Grievance Policy</button></li>
+                <li><Link to="/grievance-policy">Grievance Policy</Link></li>
                 <li><a href="/terms-of-use">Terms Of Use</a></li>
                 <li><a href="https://web.iproinfinity.com/customer-profile/" target="_blank" rel="noopener noreferrer">E-Insurance Accounts</a></li>
               </ul>

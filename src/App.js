@@ -24,6 +24,7 @@ import Personal from "./pages/personalinsurance/personal";
 import Corporateinsurancecontant from "./pages/corporateinsurance/corporateinsurance";
 import PrivacyPolicy from "./pages/privacypolicy/privacypolicy";
 import TermsOfUse from "./pages/termsofuse/termsofuse";
+import GrievancePolicy from "./pages/grievancepolicy/grievancepolicy";
 
 function App() {
   return (
@@ -55,6 +56,7 @@ function App() {
         <Route path="/personal-insurance" element={<Personal />} />
         <Route path="/corporate-insurance" element={<Corporateinsurancecontant />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/grievance-policy" element={<GrievancePolicy />} />
         <Route path="/terms-of-use" element={<TermsOfUse />} />
       </Routes>
     </Router>
